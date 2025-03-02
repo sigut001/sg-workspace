@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, HostListener } from '@angular/core';
-import { SlideInChildrenDirective } from '../directives/animation-directivs/slideChildren.directive';
+import { SlideInChildrenDirective } from '@sg-shared-librarys/directives';
 import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-action-button.component';
 
 @Component({

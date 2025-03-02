@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { SequentialFadeInDirective } from '../../../directives/animation-directivs/sequentiellFadeIn.directive';
+import { SequentialFadeInDirective } from '@sg-shared-librarys/directives';
 
 @Component({
   selector: 'sg-lib-component-company-values',

@@ -7,7 +7,7 @@ import {
   ViewChildren,
   QueryList,
 } from '@angular/core';
-import { Employee } from '../../../models/basicModels/company-personal.model';
+import { Employee } from '@sg-shared-librarys/models';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({

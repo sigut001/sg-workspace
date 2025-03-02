@@ -6,7 +6,7 @@ import {
   AfterViewInit,
   ViewChild,
 } from '@angular/core';
-import { SequentialFadeInDirective } from '../../../directives/animation-directivs/sequentiellFadeIn.directive';
+import { SequentialFadeInDirective } from '@sg-shared-librarys/directives';
 import { CommonModule } from '@angular/common';
 
 @Component({

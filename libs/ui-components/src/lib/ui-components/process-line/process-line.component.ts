@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProcessLineElement } from './process-line-element.model';
-import { SequentialFadeInDirective } from '../../directives/animation-directivs/sequentiellFadeIn.directive';
+import { SequentialFadeInDirective } from '@sg-shared-librarys/directives';
 import { selectProcessLineElements } from './state/costumer-reviews-state.selectors';
 
 @Component({

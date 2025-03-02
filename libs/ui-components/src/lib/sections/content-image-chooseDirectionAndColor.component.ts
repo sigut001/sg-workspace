@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { SlideInChildrenDirective } from '../directives/animation-directivs/slideChildren.directive';
+import { SlideInChildrenDirective } from '@sg-shared-librarys/directives';
 
 @Component({
   selector: 'sg-lib-component-content-image-choose-direction-and-color',

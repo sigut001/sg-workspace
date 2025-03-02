@@ -12,10 +12,10 @@ import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NavItem } from '../../header/header.model';
 import { CompanyInformations } from '@sg-shared-librarys/models';
-// import { CallToActionButtonComponent } from '../../ui-elements/buttons/call-to-action-button.component';
+import { CallToActionButtonComponent } from '@sg-shared-librarys/ui-components';
 import { HeaderState } from '../../header/state/header-state.reducer';
 import { selectNavItems } from '../../header/state/header-state.selectors';
-// import { selectCompanyInformations } from '../../sides/complete-sides/about-us-1/state/about-us.selectors';
+import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
 
 @Component({
   selector: 'sg-lib-component-desktop-footer-1',
@@ -25,16 +25,16 @@ import { selectNavItems } from '../../header/state/header-state.selectors';
     MatButtonModule,
     MatMenuModule,
     RouterModule,
-    // CallToActionButtonComponent,
+    CallToActionButtonComponent,
   ],
   template: `
     <footer
       class="bg-primary-500 text-slate-200 w-full flex flex-col min-h-[50vh]"
     >
-      <!-- <sg-lib-component-call-to-action-button
+      <sg-lib-component-call-to-action-button
         buttonText="Jetzt Kontakt aufnehmen"
         text="Haben  wir sie Neugierig gemacht ?"
-      ></sg-lib-component-call-to-action-button> -->
+      ></sg-lib-component-call-to-action-button>
       <div class="flex p-12 px-24">
         <!-- Box 1: Logo -->
         <div class="w-1/6 ">
@@ -128,14 +128,14 @@ export class DesktopFooter1Component {
     managingDirectors: [],
   });
 
-  // ngOnInit(): void {
-  //   // this.store.select(selectNavItems).subscribe((navItems) => {
-  //   //   this.$navItems.set(navItems);
-  //   // });
-  //   // this.store
-  //   //   .select(selectCompanyInformations)
-  //   //   .subscribe((companyInformations) => {
-  //   //     this.$companyInformations.set(companyInformations);
-  //   //   });
-  // }
+  ngOnInit(): void {
+    this.store.select(selectNavItems).subscribe((navItems) => {
+      this.$navItems.set(navItems);
+    });
+    this.store
+      .select(selectCompanyInformations)
+      .subscribe((companyInformations) => {
+        this.$companyInformations.set(companyInformations);
+      });
+  }
 }

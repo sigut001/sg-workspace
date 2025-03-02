@@ -6,9 +6,9 @@ import {
   ElementRef,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CompanyInformations } from '../../../models/basicModels/company-informations.model';
+import { CompanyInformations } from '@sg-shared-librarys/models';
 
-import { JobPositions } from '../../../models/basicModels/company-personal.model';
+import { JobPositions } from '@sg-shared-librarys/models';
 import { CommonModule } from '@angular/common';
 import { HeroImageComponent } from '../../../sections/hero-image.component';
 import { PersonalCardComponent } from './personal-karten.component';
