@@ -18,7 +18,8 @@
       "@sg-shared-librarys/directives": ["libs/directives/src/index.ts"],
       "@sg-shared-librarys/models": ["libs/models/src/index.ts"],
       "@sg-shared-librarys/navigation": ["libs/navigation/src/index.ts"],
-      "@sg-shared-librarys/services": ["libs/services/src/index.ts"]
+      "@sg-shared-librarys/services": ["libs/services/src/index.ts"],
+      "@sg-shared-librarys/ui-components": ["libs/ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
