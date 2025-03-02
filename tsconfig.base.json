@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sg-shared-librarys/directives": ["libs/directives/src/index.ts"],
+      "@sg-shared-librarys/models": ["libs/models/src/index.ts"],
+      "@sg-shared-librarys/navigation": ["libs/navigation/src/index.ts"],
+      "@sg-shared-librarys/services": ["libs/services/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "@sg-shared-librarys/navigation",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^19.1.0",
+    "@angular/core": "^19.1.0"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@angular/animations": "^19.2.0",
+    "@angular/cdk": "^19.2.1",
+    "@angular/material": "^19.2.1",
+    "@ngrx/router-store": "^19.0.1"
+  }
+}

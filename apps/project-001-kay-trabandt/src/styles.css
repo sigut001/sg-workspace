@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+html,
+body {
+  height: 100%;
+}
+
+html body {
+  margin: 0;
+  font-family: 'Onest', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Default (unterhalb von 640px, kein Breakpoint) */
+section {
+  padding: 10% 5%;
+  min-height: 100vh;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* sm (ab 640px) */
+@media (min-width: 640px) {
+  section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* md (ab 768px) */
+@media (min-width: 768px) {
+  section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* lg (ab 1024px) */
+@media (min-width: 1024px) {
+  section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* xl (ab 1280px) */
+@media (min-width: 1280px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+/* 2xl (ab 1536px) */
+@media (min-width: 1536px) {
+  section {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}

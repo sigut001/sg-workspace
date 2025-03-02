@@ -15,13 +15,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome project-001-kay-trabandt'
+      'Welcome trabbis3D'
     );
   });
 
-  it(`should have as title 'project-001-kay-trabandt'`, () => {
+  it(`should have as title 'trabbis3D'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('project-001-kay-trabandt');
+    expect(app.title).toEqual('trabbis3D');
   });
 });
