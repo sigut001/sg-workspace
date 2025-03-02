@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { JobPositions } from '../../../../models/basicModels/company-personal.model';
+import { JobPositions } from '@sg-shared-librarys/models';
 import { CompanyInformationsState } from './about-us.reducers';
 
 // Feature Selector for company informations state

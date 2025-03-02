@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { selectProcessTypes } from '@simons-workspace/ui-components';
 import { Observable } from 'rxjs';
-import { TextImageChooseDirectionAndColorComponent } from 'libs/src/lib/ui-components/basicElements/sectionElements/text-image-chooseDirectionAndColor.component';
-import { Process } from 'apps/trabbis3D/models/production-content.model';
+import { TextImageChooseDirectionAndColorComponent } from '@sg-shared-librarys/ui-components';
+import { Process } from '../../../models/production-content.model';
+import { selectProcessTypes } from '../../../state/state-threeDPrinting/threeDPrinting.selectors';
 
 @Component({
   selector: 'app-process-types-overview',
@@ -51,7 +51,7 @@ import { Process } from 'apps/trabbis3D/models/production-content.model';
     <div *ngIf="processes$ | async as processes; else loading">
       <ng-container *ngIf="processes.length > 0; else noData">
         <ng-container *ngFor="let processe of processes; let i = index">
-          <app-text-image-choose-direction-and-color
+          <sg-lib-component-text-image-choose-direction-and-color
             [theme]="i % 2 === 0 ? 'dark' : 'light'"
             [alignment]="i % 2 === 0 ? 'left' : 'right'"
             [imageURL]="processe.informations.media.additionalImages?.[0]?.url || ''"
@@ -66,7 +66,7 @@ import { Process } from 'apps/trabbis3D/models/production-content.model';
             "
             buttonText="Mehr Informationen"
             class="overflow-hidden"
-          ></app-text-image-choose-direction-and-color>
+          ></sg-lib-component-text-image-choose-direction-and-color>
         </ng-container>
       </ng-container>
     </div>

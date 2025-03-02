@@ -3,55 +3,60 @@ import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 import {
-  NavItem,
-  RespHeaderComponent,
-  setCredits,
-  setNavItems,
   setCustomerReviews,
-  setLogoPath,
   setCompanyValues,
   setProcessLineElements,
-  setProcessTypes,
-  setMaterials,
-  setAllChooseableColors,
   setCompanyInformations,
   setJobPositions,
-  // setFinishingProcessTypes,
-} from '@simons-workspace/ui-components';
-import { navItems } from 'apps/trabbis3D/config-files/nav-items.config';
+} from '@sg-shared-librarys/ui-components';
+import { navItems } from './config-files/nav-items.config';
 import { Observable } from 'rxjs';
-import { RespFooterComponent } from '@simons-workspace/ui-components';
-import { credits } from '../../config-files/credits-list.config';
-import { customerReviews } from '../../config-files/customer-reviews.config';
-import { companyValues } from 'apps/trabbis3D/config-files/company-values.config';
-import { processLineElements } from 'apps/trabbis3D/config-files/processLineElements.config';
+import {
+  NavItem,
+  RespFooter1Component,
+  RespHeader1Component,
+  setCredits,
+  setLogoPath,
+  setNavItems,
+} from '@sg-shared-librarys/navigation';
+import { credits } from './config-files/credits-list.config';
+import { customerReviews } from './config-files/customer-reviews.config';
+import { companyValues } from './config-files/company-values.config';
+import { processLineElements } from './config-files/process-line-elements.config';
 
 import {
   companyInformations,
   jobPositions,
-} from 'apps/trabbis3D/config-files/company-informations.config';
+} from './config-files/company-informations.config';
 import {
   processes,
   materials,
   allChooseableColors,
-} from 'apps/trabbis3D/config-files/production.config';
+} from './config-files/production.config';
+import {
+  setAllChooseableColors,
+  setMaterials,
+  setProcessTypes,
+} from './state/state-threeDPrinting/threeDPrinting.actions';
 
 @Component({
   standalone: true,
   imports: [
     RouterModule,
     CommonModule,
-    RespHeaderComponent,
-    RespFooterComponent,
+    RespHeader1Component,
+    RespFooter1Component,
   ],
   selector: 'app-root',
   template: `
     <div class="flex flex-col min-h-[100vh] bg-primary-600 relative">
-      <lib-resp-header class="sticky top-0 z-30"></lib-resp-header>
+      <sg-lib-component-resp-header-1
+        class="sticky top-0 z-30"
+      ></sg-lib-component-resp-header-1>
       <div class="w-full min-h-[100vh]">
         <router-outlet class="flex-grow pt-6"></router-outlet>
       </div>
-      <lib-resp-footer></lib-resp-footer>
+      <sg-lib-component-resp-footer-1></sg-lib-component-resp-footer-1>
     </div>
   `,
 })

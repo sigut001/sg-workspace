@@ -1,4 +1,4 @@
-import { CustomerReview } from '@simons-workspace/ui-components';
+import { CustomerReview } from '@sg-shared-librarys/models';
 
 export const customerReviews: CustomerReview[] = [
   {

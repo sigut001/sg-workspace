@@ -8,29 +8,29 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { selectMaterialByPath, selectProcessTypes } from '@simons-workspace/';
 
 import {
   TableComponent,
   HeroImageComponent,
   HeroContainerComponent,
   ProsConsComponent,
-  PrintedTextComponent,
   ImageSliderComponent,
   TextImageChooseDirectionAndColorComponent,
-} from '@simons-workspace/ui-components';
+  CallToActionButtonComponent,
+} from '@sg-shared-librarys/ui-components';
 
 import { CommonModule } from '@angular/common';
-import { CallToActionButtonComponent } from '@simons-workspace/ui-components/ui-components/ui-elements/buttons/call-to-action-button.component';
-import {
-  Material,
-  Process,
-} from 'apps/trabbis3D/models/production-content.model';
+import { Material, Process } from '../../../models/production-content.model';
+import { PrintedTextComponent } from '../../elements/printed-text/PrintedText.component';
 import {
   TechnicalDetailProcessLabel,
   TechnicalDetailProcessLabels,
-} from 'apps/trabbis3D/config-files/production.config';
+} from '../../../config-files/production.config';
 import { combineLatest, map } from 'rxjs';
+import {
+  selectMaterialByPath,
+  selectProcessTypes,
+} from '../../../state/state-threeDPrinting/threeDPrinting.selectors';
 
 @Component({
   selector: 'app-material-view',
@@ -50,25 +50,25 @@ import { combineLatest, map } from 'rxjs';
     @let material = this.materialSignal()!;
 
     <!-- Hero Image -->
-    <app-hero-image
+    <sg-lib-component-hero-image
       [backgroundUrl]="material.informations.media.heroImage.url"
       [subheadline]="material.informations.oneLineDescription"
       [headline]="material.informations.label"
-    ></app-hero-image>
+    ></sg-lib-component-hero-image>
     <!-- Eigenschaften & Anwendung -->
     @for (section of material.informations.contentSections; track
     section.header) {
-    <app-text-image-choose-direction-and-color
+    <sg-lib-component-text-image-choose-direction-and-color
       [theme]="$index % 2 === 0 ? 'dark' : 'light'"
       [alignment]="$index % 2 === 0 ? 'left' : 'right'"
       [imageURL]="section.imageURL || 'https://via.placeholder.com/800x600'"
       [title]="section.header"
       [paragraphs]="section.paragraphs"
-    ></app-text-image-choose-direction-and-color>
+    ></sg-lib-component-text-image-choose-direction-and-color>
     }
 
     <!-- Technische Details des Materials -->
-    <app-hero-container
+    <sg-lib-component-hero-container
       [backgroundUrl]="material.informations.media.mainImage.url"
     >
       <div class="flex flex-col justify-center items-center gap-20 py-40">
@@ -77,10 +77,10 @@ import { combineLatest, map } from 'rxjs';
           <p class="text-4xl font-bold text-slate-200 text-center">
             Technische Eigenschaften von {{ material.informations.label }}
           </p>
-          <app-table
+          <sg-lib-component-table
             [columns]="materialTechnicalDetailsColumns()"
             [data]="materialTechnicalDetailsData()"
-          ></app-table>
+          ></sg-lib-component-table>
         </div>
 
         <!-- Geeignete Verfahren für das Material -->
@@ -88,25 +88,25 @@ import { combineLatest, map } from 'rxjs';
           <p class="text-4xl font-bold text-slate-200 text-center">
             Geeignete Verfahren für {{ material.informations.label }}
           </p>
-          <app-table
+          <sg-lib-component-table
             [columns]="processTechnicalDetailsColumns()"
             [data]="processTechnicalDetailsData()"
             [links]="processLinks()"
-          ></app-table>
-          <lib-call-to-action-button
+          ></sg-lib-component-table>
+          <sg-lib-component-call-to-action-button
             [buttonText]="'Alle Fertigungsverfahren'"
             link="/3d-druck-infos/fertigungsverfahren-uebersicht"
-          ></lib-call-to-action-button>
+          ></sg-lib-component-call-to-action-button>
         </div>
       </div>
-    </app-hero-container>
+    </sg-lib-component-hero-container>
 
     <!-- Call-to-action -->
     <section class="flex flex-col gap-16 py-40" #materialAnimation>
       <p class="text-3xl font-bold text-slate-200 text-center">
         Interesse an {{ material.informations.label }} als Durckmaterial?
       </p>
-      <lib-printed-text
+      <app-printed-text
         [trigger]="trigger()"
         [animationSpeed]="175"
         [totalSteps]="30"
@@ -121,26 +121,26 @@ import { combineLatest, map } from 'rxjs';
         [primaryActionRoute]="'/materialanfrage'"
         [secondaryActionLabel]="'Beratung anfragen'"
         [secondaryActionUrl]="'tel:+492282920472'"
-      ></lib-printed-text>
+      ></app-printed-text>
     </section>
 
     <!-- Vorteile & Nachteile -->
-    <app-pros-cons
+    <sg-lib-component-pros-cons
       [headline]="material.informations.label + ' Eigenschaften'"
       [pros]="materialAdvantages()"
       [cons]="materialDisadvantages()"
       [theme]="'light'"
-    ></app-pros-cons>
+    ></sg-lib-component-pros-cons>
 
     <!-- Galerie -->
-    <app-image-slider
+    <sg-lib-component-image-slider
       [imageUrls]="imageUrls()"
       theme="dark"
       [pagination]="true"
       headline="Angefertigte Kundenprojekte in {{
         material.informations.label
       }}"
-    ></app-image-slider>
+    ></sg-lib-component-image-slider>
   </div>`,
 })
 export class MaterialViewComponent {
@@ -211,7 +211,7 @@ export class MaterialViewComponent {
   materialTechnicalDetailsColumns = computed(() =>
     this.materialSignal()?.informations.technicalDetails
       ? Object.values(
-          this.materialSignal()?.informations.technicalDetails!
+          this.materialSignal()?.informations.technicalDetails ?? {}
         ).map((detail) => detail.key)
       : []
   );
@@ -221,7 +221,7 @@ export class MaterialViewComponent {
     this.materialSignal()?.informations.technicalDetails
       ? [
           Object.values(
-            this.materialSignal()?.informations.technicalDetails!
+            this.materialSignal()?.informations.technicalDetails ?? {}
           ).reduce((acc, detail) => {
             acc[detail.key] = detail.value;
             return acc;

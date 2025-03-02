@@ -1,0 +1,169 @@
+<div class="w-full flex flex-col md:gap-20 2xl:py-16">
+  <!-- Willkommen mit Call to Action -->
+  <section
+    id="welcome-section"
+    class="w-full relative flex flex-col gap-10 lg:gap-0"
+  >
+    <div class="flex flex-col gap-6 text-center sm:text-left">
+      <p class="text-4xl lg:text-6xl 2xl:text-7xl font-bold text-slate-200">
+        Professioneller 3D-Druck<br />für Prototypen und Kleinserien
+      </p>
+      <div>
+        <p class="text-base text-slate-300">
+          Nutzen Sie modernste 3D-Drucktechnologie für maßgeschneiderte
+          Prototypen und Kleinserien. Ob für industrielle Anwendungen oder
+          private Projekte – wir liefern schnell, zuverlässig und ganz nach
+          Ihren Anforderungen. Starten Sie noch heute und fordern Sie ein
+          individuelles Angebot an.
+        </p>
+      </div>
+      <!-- Action Button Group -->
+      <div
+        class="flex flex-col lg:flex-row gap-4 justify-center lg:justify-start"
+      >
+        <sg-lib-component-call-to-action-button
+          link="/druckanfrage"
+          class="w-full md:w-fit"
+          buttonText="Angebot erhalten"
+        ></sg-lib-component-call-to-action-button>
+        <sg-lib-component-call-to-action-button
+          tel="+38292746482"
+          class="w-full md:w-fit"
+          buttonText="Kostenlose Beratung erhalten"
+        ></sg-lib-component-call-to-action-button>
+      </div>
+      <!-- Short text focus on data security -->
+      <div
+        class="flex flex-col lg:flex-row items-center justify-center w-full lg:w-fit gap-2 text-slate-400 text-sm"
+      >
+        <div class="flex justify-center items-center">
+          <mat-icon class="text-lg leading-tight text-center"
+            >shield_locked</mat-icon
+          >
+        </div>
+
+        <div class="flex flex-col lg:flex-row">
+          <span class="whitespace-nowrap"
+            >Alle hochgeladenen Dateien werden&nbsp;</span
+          >
+          <span>sicher und vertraulich behandelt.</span>
+        </div>
+
+        <a
+          class="text-action-500 hover:underline [text-shadow:1px_1px_2px_rgba(0,0,0,0.8)] hover:text-action-400 text-base"
+          href="/datenschutz"
+          >Info</a
+        >
+      </div>
+    </div>
+    <sg-lib-component-company-values
+      [trigger]="trigger()"
+      class="xl:mt-12 2xl:mt-20"
+    ></sg-lib-component-company-values>
+  </section>
+
+  <!-- Kurz beschreibung mit Bild  -->
+  <section
+    id="kurz-beschreibung"
+    class="flex flex-col bg-slate-200 text-primary-500"
+  >
+    <img
+      [src]="mediaURLs.unternehmensseite1"
+      loading="lazy"
+      class="w-full flex-grow lg: max-h-[45vh] object-cover rounded-sm xl:rounded-lg"
+      alt="prozess image"
+    />
+
+    <div
+      class="flex flex-col w-full gap-6 lg:gap-12 justify-center items-start py-8 lg:px-2 lg:py-8 text-justify lg:text-start"
+    >
+      <div
+        class="flex flex-col w-full gap-2 lg:gap-4 justify-center items-start"
+        appSlideInChildren
+      >
+        <span class="text-3xl xl:text-3xl 2xl:text-5xl font-bold">
+          Schnelle Entwicklung
+        </span>
+        <span class="text-3xl xl:text-3xl 2xl:text-5xl font-bold">
+          Schnelle Produktion
+        </span>
+        <span class="text-3xl xl:text-3xl 2xl:text-5xl font-bold">
+          Bereits in wenigen Tagen bei ihnen!
+        </span>
+      </div>
+      <div class="text-base 2xl:text-lg flex flex-col gap-2 w-full">
+        <p>
+          Kreativität und Präzision vereinen wir mit modernster
+          3D-Druck-Technologie, um maßgeschneiderte Lösungen für Ihre
+          Bedürfnisse zu schaffen. Unsere Priorität ist es, flexibel und schnell
+          zu reagieren: Wir setzen auf kurze Produktionszeiten, zuverlässige
+          Lieferung und eine enge Zusammenarbeit, um Ihre Projekte effizient und
+          termingerecht umzusetzen. Dabei legen wir besonderen Wert auf höchste
+          Qualität und Detailgenauigkeit, um Ihre Erwartungen nicht nur zu
+          erfüllen, sondern zu übertreffen. Unsere innovativen
+          Produktionsprozesse ermöglichen es uns, auch komplexe Anforderungen
+          präzise und kosteneffizient zu realisieren.
+        </p>
+        <p>
+          Gemeinsam mit Ihnen entwickeln wir kreative Konzepte und begleiten Sie
+          von der Idee bis zum fertigen Produkt – stets mit dem Ziel, Ihre
+          Vision zum Leben zu erwecken und einen nachhaltigen Mehrwert zu
+          schaffen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slider mit Kundenbewertungen -->
+  <section
+    id="html-slider-section"
+    class="w-full flex flex-col justify-start lg:py-16 gap-8 lg:gap-16 text-slate-200"
+  >
+    <p class="text-3xl font-bold text-center p-4">
+      Was unsere Kunden über uns sagen
+    </p>
+    <div class="flex text-md xl:text-sm 2xl:text-lg flex-col gap-4 w-full">
+      <p class="text-base sm:text-lg text-center lg:text-start">
+        Unser Ziel ist es nicht nur, unsere Arbeit zu erledigen, sondern
+        Menschen wirklich zufriedenzustellen. Das Feedback unserer Kunden liegt
+        uns dabei besonders am Herzen und motiviert uns, stets unser Bestes zu
+        geben. Hier sind einige der positiven Rückmeldungen, die wir erhalten
+        haben:
+      </p>
+    </div>
+
+    <sg-lib-component-customer-reviews
+      [navigation]="true"
+    ></sg-lib-component-customer-reviews>
+  </section>
+
+  <!-- Bestellprozess -->
+  <section
+    class="flex flex-col justify-center gap-20 bg-slate-200 text-primary-500"
+  >
+    <p class="text-3xl font-bold text-center">Unser Bestellprozess</p>
+    <sg-lib-component-process-line></sg-lib-component-process-line>
+  </section>
+
+  <!-- Druck Animation mit Call to Action -->
+  <section class="flex flex-col justify-center gap-16" #3dPrintedAnimation>
+    <p class="text-3xl font-bold text-slate-200 text-center">
+      Haben wir ihr Interesse geweckt?
+    </p>
+    <app-printed-text
+      [trigger]="trigger()"
+      [animationSpeed]="175"
+      [totalSteps]="30"
+      [ids]="['angebotAnfordernButton', 'beratungAnfragenButton']"
+      [icon]="'deployed_code'"
+      [text]="
+        'Fordern Sie ein unverbindliches Angebot an! Produktionstechnologie: 3D-Druck. Kontaktieren Sie uns für eine Beratung. Wir helfen Ihnen gerne weiter.'
+      "
+      [primaryActionLabel]="'Angebot anfordern'"
+      [primaryActionRoute]="'/druckanfrage'"
+      [secondaryActionLabel]="'Beratung anfragen'"
+      [secondaryActionUrl]="'tel:+492282920472'"
+    >
+    </app-printed-text>
+  </section>
+</div>

@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
-import { CompanyInformations } from '../../../../models/basicModels/company-informations.model';
 import {
+  CompanyInformations,
   Employee,
   JobPositions,
-} from '../../../../models/basicModels/company-personal.model';
+} from '@sg-shared-librarys/models';
 
 export const setCompanyInformations = createAction(
   '[Company] Set Company Informations',

@@ -1,4 +1,4 @@
-import { CompanyValue } from '@simons-workspace/ui-components';
+import { CompanyValue } from '@sg-shared-librarys/ui-components';
 
 export const companyValues: CompanyValue[] = [
   {

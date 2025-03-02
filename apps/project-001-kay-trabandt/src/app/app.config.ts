@@ -10,12 +10,13 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 
 import {
-  provideAppContentState,
-  provideCompanyInformationsState,
-  provideMetaState,
-  provideNavigationState,
-} from '@simons-workspace/ui-components';
-import { firebaseConfig } from '../../config-files/firebaseAPI.config';
+  provideHeaderState,
+  provideCreditState,
+} from '@sg-shared-librarys/navigation';
+
+import { provideCompanyValuesState } from '@sg-shared-librarys/ui-components';
+import { firebaseConfig } from './config-files/firebaseAPI.config';
+import { provideAppContentState } from './state/state-threeDPrinting/threeDPrinting.provider';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,11 +31,12 @@ export const appConfig: ApplicationConfig = {
     provideStore({
       router: routerReducer,
     }),
-    provideRouterStore(),
-    provideNavigationState(),
-    provideMetaState(),
     provideAppContentState(),
-    provideCompanyInformationsState(),
+    provideRouterStore(),
+    provideHeaderState(),
+    provideCreditState(),
+
+    provideCompanyValuesState(),
     provideStoreDevtools({
       maxAge: 25, // Anzahl der zu verfolgenden States
       logOnly: false,

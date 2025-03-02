@@ -1,6 +1,6 @@
 // credits.ts
 
-import { Credit } from '@simons-workspace/ui-components';
+import { Credit } from '@sg-shared-librarys/models';
 
 export const credits: Credit[] = [
   {

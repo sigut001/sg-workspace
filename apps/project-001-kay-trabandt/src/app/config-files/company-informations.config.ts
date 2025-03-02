@@ -1,5 +1,5 @@
-import { CompanyInformations } from 'libs/src/lib/ui-components/models/basicModels/company-informations.model';
-import { JobPositions } from 'libs/src/lib/ui-components/models/basicModels/company-personal.model';
+import { CompanyInformations } from '@sg-shared-librarys/models';
+import { JobPositions } from '@sg-shared-librarys/models';
 
 export const jobPositions: JobPositions = {
   Geschäftsführer: [

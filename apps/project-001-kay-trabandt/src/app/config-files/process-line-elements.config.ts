@@ -1,4 +1,4 @@
-import { ProcessLineElement } from '@simons-workspace/ui-components';
+import { ProcessLineElement } from '@sg-shared-librarys/ui-components';
 
 export const processLineElements: ProcessLineElement[] = [
   {

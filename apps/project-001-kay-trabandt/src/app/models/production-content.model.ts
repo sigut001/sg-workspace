@@ -1,11 +1,5 @@
-import {
-  Costs,
-  orderDetails,
-} from '../../../libs/src/lib/ui-components/models/basicModels/buisness.model';
-import {
-  Image,
-  Video,
-} from '../../../libs/src/lib/ui-components/models/basicModels/media.model';
+import { Costs, orderDetails, Image, Video } from '@sg-shared-librarys/models';
+
 import {
   chooseableColors,
   MaterialType,

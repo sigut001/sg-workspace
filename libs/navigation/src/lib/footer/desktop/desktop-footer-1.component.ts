@@ -111,7 +111,7 @@ import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
     </footer>
   `,
 })
-export class DesktopFooter1Component {
+export class DesktopFooter1Component implements OnInit {
   store = inject(Store<HeaderState>);
   cdr = inject(ChangeDetectorRef);
   $navItems = signal<NavItem[]>([]);

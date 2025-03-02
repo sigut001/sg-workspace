@@ -1,6 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { CompanyInformations } from '../../../../models/basicModels/company-informations.model';
-import { JobPositions } from '../../../../models/basicModels/company-personal.model';
+import { CompanyInformations, JobPositions } from '@sg-shared-librarys/models';
 import {
   refreshCompanyInformationsState,
   setCompanyInformations,

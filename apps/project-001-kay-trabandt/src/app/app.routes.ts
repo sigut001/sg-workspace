@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
 import {
-  UnternehmenComponent,
-  DruckanfrageComponent,
+  AboutUs1Component,
   NotFoundComponent,
-  AboutUsComponent,
-} from '@simons-workspace/ui-components';
-import { ProcessTypesOverviewComponent } from './sides/processTypes/processTypes-overview.component';
-import { navItems } from 'apps/trabbis3D/config-files/nav-items.config';
-import { NavItem, SubNavItem } from '@simons-workspace/ui-components';
-import { MaterialsOverviewComponent } from './sides/materials/materials-overview.component';
-import { ProcessTypeComponent } from './sides/processTypes/processType.component';
-import { MaterialViewComponent } from './sides/materials/material-view.component';
+} from '@sg-shared-librarys/ui-components';
+import { ProcessTypesOverviewComponent } from './ui-elements/sites/processTypes/processTypes-overview.component';
+import { navItems } from './config-files/nav-items.config';
+import { NavItem, SubNavItem } from '@sg-shared-librarys/navigation';
+import { MaterialsOverviewComponent } from './ui-elements/sites/materials/materials-overview.component';
+import { ProcessTypeComponent } from './ui-elements/sites/processTypes/processType.component';
+import { MaterialViewComponent } from './ui-elements/sites/materials/material-view.component';
+import { UnternehmenComponent } from './ui-elements/sites/unternehmen/unternehmen.component';
+import { DruckanfrageComponent } from './ui-elements/sites/druckanfrage/druckanfrage.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'unsere-dienstleistung', pathMatch: 'full' }, // Umleitung von "/" auf "unsere-dienstleistung"
@@ -19,7 +19,7 @@ export const routes: Routes = [
   { path: 'unsere-dienstleistung', component: UnternehmenComponent },
 
   // Über Uns-Seite
-  { path: 'ueber-uns', component: AboutUsComponent },
+  { path: 'ueber-uns', component: AboutUs1Component },
 
   // Produkte-Seite mit Unterseiten
   {

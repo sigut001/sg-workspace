@@ -81,7 +81,6 @@ export const materialTypes = {
   Metall: { name: 'Metall', path: 'metall' },
   Keramik: { name: 'Keramik', path: 'keramik' },
 } as const;
-// Typ für Materialtypen basierend auf `materialTypes`
 export type MaterialType = (typeof materialTypes)[keyof typeof materialTypes];
 export const TechnicalDetailMaterialLabels = {
   density: 'Dichte',
@@ -105,7 +104,6 @@ export const processTypes = {
   EBM: { name: 'EBM', path: 'ebm' },
   SLM: { name: 'SLM', path: 'slm' },
 } as const;
-// Typ für Prozess-Typen basierend auf `processTypes`
 export type ProcessType = (typeof processTypes)[keyof typeof processTypes];
 
 export const TechnicalDetailProcessLabels = {

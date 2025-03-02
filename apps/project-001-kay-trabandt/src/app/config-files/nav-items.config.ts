@@ -1,4 +1,4 @@
-import { NavItem, SubNavItem } from '@simons-workspace/ui-components';
+import { NavItem, SubNavItem } from '@sg-shared-librarys/navigation';
 import { materials, processes } from './production.config';
 
 // Dynamisch generierte NavItems (wird sofort beim Import aufgerufen)

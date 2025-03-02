@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectMaterials } from '@simons-workspace/ui-components';
-import { Material } from 'apps/trabbis3D/models/production-content.model';
-import { TextImageChooseDirectionAndColorComponent } from 'libs/src/lib/ui-components/basicElements/sectionElements/text-image-chooseDirectionAndColor.component';
+import { Material } from '../../../models/production-content.model';
+import { TextImageChooseDirectionAndColorComponent } from '@sg-shared-librarys/ui-components';
+import { selectMaterials } from '../../../state/state-threeDPrinting/threeDPrinting.selectors';
 
 @Component({
   selector: 'app-materials-overview',
@@ -44,7 +44,7 @@ import { TextImageChooseDirectionAndColorComponent } from 'libs/src/lib/ui-compo
 
     @if (materials().length > 0) { @for (material of materials(); track
     material.informations.label) {
-    <app-text-image-choose-direction-and-color
+    <sg-lib-component-text-image-choose-direction-and-color
       [theme]="materialIndex(material) % 2 === 0 ? 'dark' : 'light'"
       [alignment]="materialIndex(material) % 2 === 0 ? 'left' : 'right'"
       [imageURL]="material.informations.media.mainImage.url"
@@ -58,7 +58,7 @@ import { TextImageChooseDirectionAndColorComponent } from 'libs/src/lib/ui-compo
       [path]="'/3d-druck-infos/materialien/' + material.informations.path"
       buttonText="Mehr Informationen"
       class="overflow-hidden"
-    ></app-text-image-choose-direction-and-color>
+    ></sg-lib-component-text-image-choose-direction-and-color>
     } }
   `,
   imports: [TextImageChooseDirectionAndColorComponent],
