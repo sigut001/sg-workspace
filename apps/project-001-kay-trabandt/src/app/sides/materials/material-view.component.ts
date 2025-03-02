@@ -8,10 +8,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import {
-  selectMaterialByPath,
-  selectProcessTypes,
-} from '@simons-workspace/ui-components';
+import { selectMaterialByPath, selectProcessTypes } from '@simons-workspace/';
 
 import {
   TableComponent,
