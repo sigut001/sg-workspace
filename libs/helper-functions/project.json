@@ -1,0 +1,36 @@
+{
+  "name": "helper-functions",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/helper-functions/src",
+  "prefix": "sg",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/helper-functions/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/helper-functions/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/helper-functions/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/helper-functions/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
