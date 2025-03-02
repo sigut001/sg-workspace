@@ -1,0 +1,9 @@
+{
+  "name": "project-001-kay-trabandt-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/project-001-kay-trabandt-e2e/src",
+  "implicitDependencies": ["project-001-kay-trabandt"],
+  "// targets": "to see all targets run: nx show project project-001-kay-trabandt-e2e --web",
+  "targets": {}
+}
