@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NavItem } from '../../header/header.model';
 import { CompanyInformations } from '@sg-shared-librarys/models';
-import { CallToActionButtonComponent } from '@sg-shared-librarys/ui-components';
+import { CallToActionComponent } from '@sg-shared-librarys/ui-components';
 import { HeaderState } from '../../header/state/header-state.reducer';
 import { selectNavItems } from '../../header/state/header-state.selectors';
 import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
@@ -25,16 +25,16 @@ import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
     MatButtonModule,
     MatMenuModule,
     RouterModule,
-    CallToActionButtonComponent,
+    CallToActionComponent,
   ],
   template: `
     <footer
       class="bg-primary-500 text-slate-200 w-full flex flex-col min-h-[50vh]"
     >
-      <sg-lib-component-call-to-action-button
+      <sg-lib-component-call-to-action
         buttonText="Jetzt Kontakt aufnehmen"
-        text="Haben  wir sie Neugierig gemacht ?"
-      ></sg-lib-component-call-to-action-button>
+        text="Haben wir sie Neugierig gemacht?"
+      ></sg-lib-component-call-to-action>
       <div class="flex p-12 px-24">
         <!-- Box 1: Logo -->
         <div class="w-1/6 ">

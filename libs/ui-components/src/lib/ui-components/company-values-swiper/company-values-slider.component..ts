@@ -15,7 +15,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { selectCompanyValues } from './state/company-values-state.selectors';
 
 @Component({
-  selector: 'sg-lib-component-company-values',
+  selector: 'sg-lib-component-company-values-swiper',
   standalone: true,
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {
   CustomerReviewsComponent,
-  CompanyValuesComponent,
+  CompanyValuesSliderComponent,
   ProcessLineComponent,
   CallToActionButtonComponent,
 } from '@sg-shared-librarys/ui-components';
@@ -28,7 +28,7 @@ import { mediaURLs } from '../../../media/mediaURL';
     PrintedTextComponent,
     MatIconModule,
     CustomerReviewsComponent,
-    CompanyValuesComponent,
+    CompanyValuesSliderComponent,
     SlideInChildrenDirective,
     ProcessLineComponent,
     CallToActionButtonComponent,
@@ -38,7 +38,7 @@ import { mediaURLs } from '../../../media/mediaURL';
 export class UnternehmenComponent implements OnInit, AfterViewInit, OnDestroy {
   warningDialogService = inject(WarningDialogService);
   partners = signal<string[]>(['./logo.png', './logo.png', './logo.png']);
-  trigger = signal(false); // Signal für den Trigger
+  trigger = signal(false);
 
   @ViewChild('3dPrintedAnimation', { static: false })
   sectionElement3d!: ElementRef;
@@ -56,11 +56,11 @@ export class UnternehmenComponent implements OnInit, AfterViewInit, OnDestroy {
       this.#observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            this.trigger.set(true); // Element sichtbar
+            this.trigger.set(true);
             console.log('trigger is set to: ', this.trigger());
           }
         },
-        { threshold: 0.1 } // 100% des Elements müssen sichtbar sein
+        { threshold: 0.1 }
       );
 
       this.#observer.observe(sectionElement);
@@ -69,7 +69,7 @@ export class UnternehmenComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.#observer) {
-      this.#observer.disconnect(); // Intersection#observer aufräumen
+      this.#observer.disconnect();
     }
   }
 }

@@ -7,6 +7,7 @@ export * from './lib/sections/image-slider.component';
 export * from './lib/sections/pros-cons.component';
 export * from './lib/sections/table.component';
 export * from './lib/sections/text-image-chooseDirectionAndColor.component';
+export * from './lib/sections/call-to-action.component';
 
 // sides - complete-sides - about-us-1
 export * from './lib/sides/complete-sides/about-us-1/about-us-1';

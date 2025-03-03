@@ -40,18 +40,10 @@ export class CustomerReviewsComponent implements AfterViewInit {
     this.reviewGroups$.subscribe((reviews) => {
       this.reviews.set(reviews);
     });
-
-    // React to changes in reviews
-    effect(() => {
-      const updatedReviews = this.reviews();
-      if (updatedReviews.length > 0) {
-        this.initializeSwiper();
-      }
-    });
   }
 
   @Input() loop = true;
-  @Input() speed = 1700; // Wechselgeschwindigkeit in ms
+  @Input() speed = 1700;
   @Input() autoplay = true;
   @Input() autoplay_delay = 3550; // Verweildauer in ms
   @Input() navigation = false;
@@ -62,10 +54,17 @@ export class CustomerReviewsComponent implements AfterViewInit {
   private swiperEl: HTMLElement | null = null;
 
   ngAfterViewInit(): void {
+    console.log(this.elementRef.nativeElement.innerHTML);
     this.swiperEl =
       this.elementRef.nativeElement.querySelector('swiper-container');
     if (!this.swiperEl) {
       console.error('Swiper element not found.');
+    }
+    const updatedReviews = this.reviews();
+
+    if (updatedReviews.length > 0) {
+      console.log('Initializing Swiper with reviews:', updatedReviews);
+      this.initializeSwiper();
     }
   }
 
