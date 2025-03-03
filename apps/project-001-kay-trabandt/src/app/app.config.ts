@@ -14,7 +14,12 @@ import {
   provideCreditState,
 } from '@sg-shared-librarys/navigation';
 
-import { provideCompanyValuesState } from '@sg-shared-librarys/ui-components';
+import {
+  provideCompanyInformationsState,
+  provideCompanyValuesState,
+  provideCostumerReviewsState,
+  provideProcessLineState,
+} from '@sg-shared-librarys/ui-components';
 import { firebaseConfig } from './config-files/firebaseAPI.config';
 import { provideAppContentState } from './state/state-threeDPrinting/threeDPrinting.provider';
 
@@ -35,8 +40,11 @@ export const appConfig: ApplicationConfig = {
     provideRouterStore(),
     provideHeaderState(),
     provideCreditState(),
+    provideCompanyInformationsState(),
 
     provideCompanyValuesState(),
+    provideCostumerReviewsState(),
+    provideProcessLineState(),
     provideStoreDevtools({
       maxAge: 25, // Anzahl der zu verfolgenden States
       logOnly: false,

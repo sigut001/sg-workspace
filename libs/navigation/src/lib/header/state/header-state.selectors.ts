@@ -5,7 +5,7 @@ import { HeaderState } from './header-state.reducer';
 //#region Header
 
 // Feature Selector for Header state
-export const selectHeaderState = createFeatureSelector<HeaderState>('Header');
+export const selectHeaderState = createFeatureSelector<HeaderState>('header');
 
 // Select active dropdown
 export const selectActiveDropdown = createSelector(
