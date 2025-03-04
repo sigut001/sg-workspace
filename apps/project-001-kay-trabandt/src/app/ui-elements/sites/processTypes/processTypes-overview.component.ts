@@ -31,7 +31,7 @@ import { selectProcessTypes } from '../../../state/state-threeDPrinting/threeDPr
         ></iframe>
       </div>
 
-      <div class="flex flex-col lg:p-8 text-slate-300 text-lg">
+      <div class="flex flex-col lg:p-8 text-slate-300 lg:text-lg">
         <p class=" text-justify p-2">
           In der additiven Fertigung gibt es verschiedene Verfahren, die je nach
           Anwendungsbereich ihre spezifischen Vorteile bieten. Von Fused

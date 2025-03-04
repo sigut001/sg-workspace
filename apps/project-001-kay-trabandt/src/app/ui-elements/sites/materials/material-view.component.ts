@@ -71,20 +71,24 @@ import {
     <sg-lib-component-hero-container
       [backgroundUrl]="material.informations.media.mainImage.url"
     >
-      <div class="flex flex-col justify-center items-center gap-20 py-40">
+      <div
+        class="flex flex-col justify-center items-center gap-20 py-40 w-full"
+      >
         <!-- Materialeigenschaften -->
-        <div class="flex flex-col justify-center items-center gap-8">
+        <div class="flex flex-col justify-center items-center gap-8 w-full">
           <p class="text-4xl font-bold text-slate-200 text-center">
             Technische Eigenschaften von {{ material.informations.label }}
           </p>
           <sg-lib-component-table
             [columns]="materialTechnicalDetailsColumns()"
             [data]="materialTechnicalDetailsData()"
+            [colors]="materialColors()"
+            class="w-full lg:w-fit"
           ></sg-lib-component-table>
         </div>
 
         <!-- Geeignete Verfahren für das Material -->
-        <div class="flex flex-col justify-center items-center gap-8">
+        <div class="flex flex-col justify-center items-center gap-8 w-full">
           <p class="text-4xl font-bold text-slate-200 text-center">
             Geeignete Verfahren für {{ material.informations.label }}
           </p>
@@ -92,6 +96,7 @@ import {
             [columns]="processTechnicalDetailsColumns()"
             [data]="processTechnicalDetailsData()"
             [links]="processLinks()"
+            class="w-full lg:w-fit"
           ></sg-lib-component-table>
           <sg-lib-component-call-to-action-button
             [buttonText]="'Alle Fertigungsverfahren'"
@@ -299,4 +304,18 @@ export class MaterialViewComponent {
       return acc;
     }, {} as Record<string, string>)
   );
+
+  materialColors = computed(() => {
+    const material = this.materialSignal(); // Einzelnes Material-Objekt holen
+
+    if (!material || !material.informations?.summary?.chooseableColors) {
+      return {}; // Falls kein Material oder keine Farben vorhanden sind, leere Map zurückgeben
+    }
+
+    return {
+      [material.type.name]: material.informations.summary.chooseableColors.map(
+        (color) => color.hex
+      ),
+    };
+  });
 }

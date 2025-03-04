@@ -10,6 +10,7 @@ import {
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-action-button.component';
+import { ScreenSizeService } from '@sg-shared-librarys/services';
 
 @Component({
   selector: 'sg-lib-component-table',
@@ -18,7 +19,8 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <!-- Tableview for big screens -->
-    <div class="hidden lg:block overflow-x-auto">
+    @if (!screenSizeService.isMobile()) {
+    <div class="overflow-x-auto">
       <table class="w-full border-collapse border border-gray-300">
         <thead>
           <tr class="bg-gray-200 text-slate-700">
@@ -61,8 +63,9 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
         </tbody>
       </table>
     </div>
+    } @else {
     <!-- Cardview for small screens -->
-    <div class="block lg:hidden w-full">
+    <div class="w-full">
       <swiper-container init="false" class="w-full">
         @for (row of data(); track row) {
         <swiper-slide class="size-full p-4">
@@ -106,9 +109,11 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
         }
       </swiper-container>
     </div>
+    }
   `,
 })
 export class TableComponent implements AfterViewInit {
+  screenSizeService = inject(ScreenSizeService);
   columns = input.required<string[]>();
   data = input.required<Record<string, any>[]>();
   links = input<Record<string, string>>();
