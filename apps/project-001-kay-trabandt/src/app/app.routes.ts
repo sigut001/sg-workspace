@@ -3,11 +3,11 @@ import {
   AboutUs1Component,
   NotFoundComponent,
 } from '@sg-shared-librarys/ui-components';
-import { ProcessTypesOverviewComponent } from './ui-elements/sites/processTypes/processTypes-overview.component';
+import { ProcessTypesOverviewComponent } from './ui-elements/sites/processtypes/processtypes-overview.component';
 import { navItems } from './config-files/nav-items.config';
 import { NavItem, SubNavItem } from '@sg-shared-librarys/navigation';
 import { MaterialsOverviewComponent } from './ui-elements/sites/materials/materials-overview.component';
-import { ProcessTypeComponent } from './ui-elements/sites/processTypes/processType.component';
+import { ProcessTypeComponent } from './ui-elements/sites/processtypes/processtype.component';
 import { MaterialViewComponent } from './ui-elements/sites/materials/material-view.component';
 import { UnternehmenComponent } from './ui-elements/sites/unternehmen/unternehmen.component';
 import { DruckanfrageComponent } from './ui-elements/sites/druckanfrage/druckanfrage.component';
