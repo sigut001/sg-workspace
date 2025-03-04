@@ -81,10 +81,10 @@ export const materialTypes = {
   TPU: { name: 'Thermoplastisches Polyurethan (TPU)', path: 'tpu' },
   PETG: { name: 'Polyethylenterephthalat-Glykol (PETG)', path: 'petg' },
   ABS: { name: 'Acrylnitril-Butadien-Styrol (ABS)', path: 'abs' },
-  ABS_CF_GF: { name: 'ABS mit Kohlenstoff- und Glasfasern', path: 'abs-cf-gf' },
+  ABS_CF_GF: { name: 'ABS mit Kohlenstoff- und Glasfasern', path: 'absCfGf' },
   PA6_CF_GF: {
     name: 'Polyamid 6 mit Kohlenstoff- und Glasfasern',
-    path: 'pa6-cf-gf',
+    path: 'pa6CfGf',
   },
   Resin: { name: 'Harz (Resin)', path: 'resin' },
   Nylon: { name: 'Nylon (Polyamid)', path: 'nylon' },
@@ -136,7 +136,7 @@ export const materials: Material[] = [
       label: 'PLA (Polylactid)',
       oneLineDescription:
         'Einfach zu drucken, biologisch abbaubar und vielseitig einsetzbar.',
-      path: 'pla',
+      path: materialTypes.PLA.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -260,7 +260,7 @@ export const materials: Material[] = [
       label: 'ABS (Acrylnitril-Butadien-Styrol)',
       oneLineDescription:
         'Robust, temperaturbeständig und für technische Anwendungen geeignet.',
-      path: 'abs',
+      path: materialTypes.ABS.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -377,7 +377,7 @@ export const materials: Material[] = [
       label: 'ABS mit Carbon- oder Glasfaser',
       oneLineDescription:
         'Verstärktes ABS für höhere Festigkeit, Steifigkeit und Temperaturbeständigkeit.',
-      path: 'abs-cf-gf',
+      path: materialTypes.ABS_CF_GF.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -504,7 +504,7 @@ export const materials: Material[] = [
       label: 'PA6 mit Carbon- oder Glasfaser',
       oneLineDescription:
         'Hochfeste und temperaturbeständige Nylon-Variante mit Carbon- oder Glasfasern.',
-      path: 'pa6-cf-gf',
+      path: materialTypes.PA6_CF_GF.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -633,7 +633,8 @@ export const materials: Material[] = [
       label: 'PETG (Polyethylenterephthalat-Glykol)',
       oneLineDescription:
         'Robust, flexibel und widerstandsfähig gegen Feuchtigkeit und Chemikalien.',
-      path: 'petg',
+      path: materialTypes.PETG.path,
+
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -760,7 +761,8 @@ export const materials: Material[] = [
       label: 'TPU (Thermoplastisches Polyurethan)',
       oneLineDescription:
         'Flexibles, stoßfestes und langlebiges Material mit hoher Elastizität.',
-      path: 'tpu',
+      path: materialTypes.TPU.path,
+
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -887,7 +889,8 @@ export const materials: Material[] = [
       label: 'ASA (Acrylnitril-Styrol-Acrylat)',
       oneLineDescription:
         'Witterungsbeständiges und UV-resistentes Material für den Außeneinsatz.',
-      path: 'asa',
+      path: materialTypes.ASA.path,
+
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -1013,7 +1016,8 @@ export const materials: Material[] = [
       label: 'Standard Resin',
       oneLineDescription:
         'Detaillierte Druckergebnisse mit glatter Oberfläche für hochpräzise Modelle.',
-      path: 'standard-resin',
+      path: materialTypes.Resin.path,
+
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -1133,7 +1137,8 @@ export const materials: Material[] = [
       label: 'ABS Like Resin',
       oneLineDescription:
         'Hohe Zähigkeit und verbesserte Schlagfestigkeit für funktionale Prototypen.',
-      path: 'abs-like-resin',
+      path: materialTypes.AbsLikeResin.path,
+
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -1253,7 +1258,7 @@ export const materials: Material[] = [
       label: 'TPU Like Resin',
       oneLineDescription:
         'Elastisches Resin für flexible und strapazierfähige Drucke.',
-      path: 'tpu-like-resin',
+      path: materialTypes.TpuLikeResin.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
