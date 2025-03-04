@@ -75,7 +75,14 @@ export const allChooseableColors = {
 };
 export const materialTypes = {
   PLA: { name: 'PLA', path: 'pla' },
+  AbsLikeResin: { name: 'AbsLikeResin', path: 'abs-like-resin' },
+  TpuLikeResin: { name: 'TpuLikeResin', path: 'tpu-like-resin' },
+  ASA: { name: 'ASA', path: 'asa' },
+  TPU: { name: 'TPU', path: 'tpu' },
+  PETG: { name: 'PETG', path: 'petg' },
   ABS: { name: 'ABS', path: 'abs' },
+  ABS_CF_GF: { name: 'ABS_CF_GF', path: 'abs-cf-gf' },
+  PA6_CF_GF: { name: 'PA6_CF_GF', path: 'pa6-cf-gf' },
   Resin: { name: 'Resin', path: 'resin' },
   Nylon: { name: 'Nylon', path: 'nylon' },
   Metall: { name: 'Metall', path: 'metall' },
@@ -97,6 +104,7 @@ export type TechnicalDetailMaterialLabel =
   (typeof TechnicalDetailMaterialLabels)[keyof typeof TechnicalDetailMaterialLabels];
 export const processTypes = {
   FDM: { name: 'FDM', path: 'fdm' },
+  FDM_big_scale: { name: 'FDM_big_scale', path: 'fdm-big-scale' },
   SLA: { name: 'SLA', path: 'sla' },
   SLS: { name: 'SLS', path: 'sls' },
   DLP: { name: 'DLP', path: 'dlp' },
@@ -125,48 +133,19 @@ export const materials: Material[] = [
       oneLineDescription:
         'Einfach zu drucken, biologisch abbaubar und vielseitig einsetzbar.',
       path: 'pla',
-
-      // Medieninhalte
       media: {
         heroImage: {
-          url: 'https://m.media-amazon.com/images/I/81hLSwOc9fL.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'PLA Filament',
         },
         mainImage: {
-          url: 'https://www.kokoni3d.com/cdn/shop/files/7_7e13e153-ce19-4eb3-83c4-baed3456ed07.png?v=1713500690&width=1500',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-18428283.jpg?alt=media&token=272d6912-015a-4ee8-a967-5f028f833a3e',
           altText: 'PLA Filament',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
           'PLA ist eines der am häufigsten verwendeten 3D-Druckmaterialien und überzeugt durch seine einfache Handhabung.',
@@ -176,26 +155,20 @@ export const materials: Material[] = [
         advantages: [
           'Einfache Verarbeitung',
           'Geringes Warping',
-          'Große Auswahl an Farben und Spezialfilamenten',
+          'Große Auswahl an Farben',
         ],
         disadvantages: [
           'Weniger temperaturbeständig als ABS oder Nylon',
-          'Brüchiger als andere Filamente bei mechanischer Belastung',
+          'Brüchiger bei mechanischer Belastung',
         ],
         suitableProcesses: [processTypes.FDM],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
-        ],
-
+        chooseableColors: Object.values(allChooseableColors),
         useCases: ['Prototyping', 'Modellbau', 'Spielzeugherstellung'],
         recommendedFor: 'Hobby-Drucker und Einsteiger',
         costRange: '€',
         durability: 'Mittel',
         flexibility: 'Gering',
       },
-
-      // Technische Details
       technicalDetails: {
         density: { key: 'Dichte', value: '1.25 g/cm³' },
         meltingPoint: { key: 'Schmelzpunkt', value: '190°C' },
@@ -205,15 +178,12 @@ export const materials: Material[] = [
         thermalResistance: { key: 'Wärmebeständigkeit', value: '60°C' },
         flexibility: { key: 'Flexibilität', value: '3/10' },
         thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
         biodegradable: true,
         recyclable: false,
       },
-
-      // Call to Action
       callToAction: {
         paragraph1:
           'Starte mit PLA – dem idealen Material für Einsteiger und Profis!',
@@ -222,35 +192,46 @@ export const materials: Material[] = [
         paragraph3:
           'Sichere dir jetzt dein PLA-Filament in deiner Wunschfarbe!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Einfache Verarbeitung',
+          header: 'Einfache Verarbeitung – Ideal für Einsteiger',
           paragraphs: [
-            'PLA ist ein benutzerfreundliches Material, das sich leicht drucken lässt.',
-            'Es erfordert keine beheizte Druckplatte und neigt kaum zum Warping.',
+            'PLA ist eines der am einfachsten zu verarbeitenden 3D-Druckmaterialien. Es bietet eine hervorragende Druckqualität und ist besonders für Anfänger geeignet.',
+            'Im Vergleich zu anderen Materialien benötigt PLA keine beheizte Druckplatte und verzieht sich kaum. Dadurch sind Drucke mit hoher Präzision und feinen Details möglich.',
+            'Es eignet sich für eine Vielzahl von Anwendungen, von Prototypen bis hin zu dekorativen Modellen, da es sich einfach schleifen, bemalen und nachbearbeiten lässt.',
           ],
           imageURL:
-            'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-20341728.jpg?alt=media&token=ca92bf82-d941-4ec2-8b4a-488042774e09',
         },
         {
-          header: 'Vielseitige Farboptionen',
+          header: 'Umweltfreundlich und nachhaltig',
           paragraphs: [
-            'PLA ist in einer Vielzahl von Farben erhältlich, darunter Neon- und Glow-in-the-Dark-Töne.',
-            'Dies macht es ideal für kreative und dekorative Anwendungen.',
+            'PLA besteht aus nachwachsenden Rohstoffen wie Maisstärke oder Zuckerrohr, was es zu einer der umweltfreundlichsten Optionen im 3D-Druck macht.',
+            'Das Material ist biologisch abbaubar, wodurch es eine nachhaltige Alternative zu herkömmlichen Kunststoffen darstellt. Besonders für umweltbewusste Maker ist PLA daher eine hervorragende Wahl.',
+            'Trotz seiner Abbaubarkeit bleibt PLA bei normalen Bedingungen stabil und langlebig. Dies macht es ideal für dekorative Objekte, Modelle und andere Anwendungen mit geringer mechanischer Belastung.',
           ],
           imageURL:
-            'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpla_sustainability.jpg?alt=media',
         },
         {
-          header: 'Nachhaltige Wahl',
+          header: 'Vielseitige Anwendungsmöglichkeiten',
           paragraphs: [
-            'PLA besteht aus nachwachsenden Rohstoffen und ist biologisch abbaubar.',
-            'Es eignet sich besonders für umweltbewusste Projekte.',
+            'PLA wird in zahlreichen Bereichen eingesetzt – von der Spielzeugherstellung über Architekturmodelle bis hin zu personalisierten Haushaltsgegenständen.',
+            'Dank der hohen Verfügbarkeit in verschiedenen Farben und Spezialvarianten (z. B. Holz- oder Metalloptik) lassen sich kreative Projekte mit einzigartigen Designs realisieren.',
+            'Es eignet sich sowohl für funktionale als auch für ästhetische Anwendungen, da es detailreiche und optisch ansprechende Ergebnisse liefert.',
           ],
           imageURL:
-            'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpla_applications.jpg?alt=media',
+        },
+        {
+          header: 'Technische Eigenschaften und Grenzen',
+          paragraphs: [
+            'PLA überzeugt durch eine hohe Detailgenauigkeit und Steifigkeit, hat jedoch eine geringere Hitzebeständigkeit als ABS oder Nylon.',
+            'Bei Temperaturen über 60°C kann PLA erweichen, was es für Anwendungen mit hoher thermischer Belastung ungeeignet macht.',
+            'Mechanisch ist PLA etwas spröder als andere Kunststoffe, weshalb es für belastbare Bauteile oder bewegliche Komponenten weniger geeignet ist. Dennoch bleibt es für viele statische Anwendungen und dekorative Objekte eine Top-Wahl.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpla_technical.jpg?alt=media',
         },
       ],
 
@@ -272,142 +253,70 @@ export const materials: Material[] = [
     informations: {
       label: 'ABS (Acrylnitril-Butadien-Styrol)',
       oneLineDescription:
-        'Robust, temperaturbeständig und ideal für funktionale Bauteile.',
+        'Robust, temperaturbeständig und für technische Anwendungen geeignet.',
       path: 'abs',
-
-      // Medieninhalte
       media: {
         heroImage: {
-          url: 'https://m.media-amazon.com/images/I/71LBRX6oOvL._AC_UF1000,1000_QL80_.jpg',
+          url: 'https://example.com/abs-hero.jpg',
           altText: 'ABS Filament',
         },
         mainImage: {
-          url: 'https://m.media-amazon.com/images/I/71LBRX6oOvL._AC_UF1000,1000_QL80_.jpg',
+          url: 'https://example.com/abs-main.jpg',
           altText: 'ABS Filament',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
-          'ABS ist ein langlebiges und mechanisch starkes Material, das häufig in der Industrie und für funktionale Prototypen verwendet wird.',
-          'Es hat eine höhere Hitzebeständigkeit als PLA und kann mit Aceton bearbeitet werden, um glatte Oberflächen zu erzeugen.',
-          'ABS benötigt jedoch eine beheizte Druckplatte, um Warping zu vermeiden, und sollte in gut belüfteten Räumen gedruckt werden.',
+          'ABS ist ein beliebtes Material für technische Anwendungen aufgrund seiner hohen Schlagfestigkeit.',
+          'Es benötigt eine beheizte Druckplatte und tendiert zu Warping.',
         ],
         advantages: [
-          'Höhere Hitzebeständigkeit als PLA',
-          'Robust und schlagfest',
-          'Mit Aceton glättbar für eine professionelle Oberfläche',
+          'Hohe Temperaturbeständigkeit',
+          'Gute mechanische Eigenschaften',
         ],
-        disadvantages: [
-          'Stärkeres Warping als PLA',
-          'Druck benötigt eine beheizte Druckplatte',
-          'Freisetzung von Dämpfen während des Drucks',
-        ],
+        disadvantages: ['Warping', 'Benötigt geschlossene Druckumgebung'],
         suitableProcesses: [processTypes.FDM],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
-        ],
-
-        useCases: [
-          'Funktionsprototypen',
-          'Werkzeuge',
-          'Gehäuse für elektronische Geräte',
-        ],
-        recommendedFor: 'Erfahrene Anwender und industrielle Anwendungen',
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: ['Technische Bauteile', 'Gehäuse', 'Mechanische Prototypen'],
+        recommendedFor: 'Erfahrene Drucker mit geschlossener Kammer',
         costRange: '€€',
         durability: 'Hoch',
         flexibility: 'Mittel',
       },
-
-      // Technische Details
       technicalDetails: {
         density: { key: 'Dichte', value: '1.04 g/cm³' },
         meltingPoint: { key: 'Schmelzpunkt', value: '220°C' },
         tensileStrength: { key: 'Zugfestigkeit', value: '40 MPa' },
         elongationAtBreak: { key: 'Bruchdehnung', value: '10%' },
-        impactResistance: { key: 'Schlagfestigkeit', value: '6 kJ/m²' },
+        impactResistance: { key: 'Schlagfestigkeit', value: '10 kJ/m²' },
         thermalResistance: { key: 'Wärmebeständigkeit', value: '85°C' },
-        flexibility: { key: 'Flexibilität', value: '4/10' },
+        flexibility: { key: 'Flexibilität', value: '5/10' },
         thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
         biodegradable: false,
         recyclable: true,
       },
-
-      // Call to Action
       callToAction: {
-        paragraph1:
-          'Steigere deine 3D-Druckprojekte mit robustem und widerstandsfähigem ABS!',
+        paragraph1: 'Setze auf ABS für stabile und langlebige Bauteile!',
         paragraph2:
-          'Ideal für funktionale Prototypen, mechanische Bauteile und technische Anwendungen.',
-        paragraph3:
-          'Jetzt ABS-Filament entdecken und hochwertige Drucke realisieren!',
+          'Ideal für funktionale Prototypen und technische Komponenten.',
+        paragraph3: 'Jetzt dein ABS-Filament in deiner Wunschfarbe sichern!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Hohe Widerstandsfähigkeit',
+          header: 'Robust und beständig',
           paragraphs: [
-            'ABS ist bekannt für seine Robustheit und Beständigkeit gegen Stöße.',
-            'Es eignet sich besonders für funktionale Bauteile und technische Anwendungen.',
+            'ABS ist für seine hohe Schlagzähigkeit und Temperaturbeständigkeit bekannt.',
+            'Daher ist es besonders für technische Anwendungen geeignet.',
           ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Glatte Oberflächenbearbeitung',
-          paragraphs: [
-            'Mit Aceton-Dampf kann ABS eine glänzende, glatte Oberfläche erhalten.',
-            'Dadurch ist es ideal für professionelle Modelle und Prototypen.',
-          ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-          header: 'Hitzebeständig',
-          paragraphs: [
-            'ABS hält höheren Temperaturen stand als PLA und bleibt stabil.',
-            'Dies macht es zur bevorzugten Wahl für mechanische Teile.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+          imageURL: 'https://example.com/abs-section.jpg',
         },
       ],
-
       costs: {
         priceEntry: [
           {
@@ -422,296 +331,85 @@ export const materials: Material[] = [
     },
   },
   {
-    type: materialTypes.Resin,
+    type: materialTypes.ABS_CF_GF,
     informations: {
-      label: 'Resin (Harz)',
+      label:
+        'ABS CF / GF (Acrylnitril-Butadien-Styrol mit Carbon- oder Glasfaserverstärkung)',
       oneLineDescription:
-        'Höchste Detailgenauigkeit und glatte Oberflächen – ideal für SLA- und DLP-Druck.',
-      path: 'resin',
-
-      // Medieninhalte
+        'Verstärktes ABS für höhere Festigkeit, Steifigkeit und Temperaturbeständigkeit.',
+      path: 'abs-cf-gf',
       media: {
         heroImage: {
-          url: 'https://bansaltrading.com/wp-content/uploads/2022/07/fi-14.jpg',
-          altText: 'Resin Flasche',
+          url: 'https://example.com/abs-cf-gf-hero.jpg',
+          altText: 'ABS CF / GF Filament',
         },
         mainImage: {
-          url: 'https://bansaltrading.com/wp-content/uploads/2022/07/fi-14.jpg',
-          altText: 'Resin Flasche',
+          url: 'https://example.com/abs-cf-gf-main.jpg',
+          altText: 'ABS CF / GF Filament',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
-          'Resin ist ein flüssiges Photopolymer, das mit UV-Licht ausgehärtet wird und vor allem im SLA- und DLP-3D-Druck verwendet wird.',
-          'Es ermöglicht hochpräzise Drucke mit feinen Details und glatten Oberflächen.',
-          'Nachbearbeitung mit UV-Härtung ist notwendig, um die volle Stabilität zu erreichen.',
+          'ABS CF / GF ist eine verstärkte Version von ABS mit Carbon- oder Glasfasern für höhere mechanische Eigenschaften.',
+          'Es bietet eine verbesserte Temperaturbeständigkeit und geringere Verformung.',
+          'Ideal für technische Bauteile mit hohen Anforderungen an Stabilität und Steifigkeit.',
         ],
         advantages: [
-          'Extrem hohe Detailgenauigkeit',
-          'Glatte, nahezu perfekte Oberflächen',
-          'Ideal für Miniaturen, Schmuck und medizinische Anwendungen',
+          'Sehr hohe Festigkeit und Steifigkeit',
+          'Hohe Temperaturbeständigkeit',
+          'Geringeres Warping als reguläres ABS',
         ],
         disadvantages: [
-          'Benötigt Nachhärtung mit UV-Licht',
-          'Nicht so robust wie FDM-Materialien',
-          'Erfordert sorgfältige Handhabung und Schutzmaßnahmen',
+          'Erfordert eine geschlossene Druckkammer',
+          'Kann Druckdüsen schneller abnutzen',
         ],
-        suitableProcesses: [processTypes.SLA, processTypes.DLP],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
+        suitableProcesses: [processTypes.FDM],
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: [
+          'Industriebauteile',
+          'Funktionsprototypen',
+          'Mechanische Komponenten',
         ],
-
-        useCases: ['Schmuckdesign', 'Zahntechnik', 'Hochdetaillierte Modelle'],
-        recommendedFor: 'Präzisionsdrucke und industrielle Anwendungen',
+        recommendedFor: 'Erfahrene Anwender mit hochleistungsfähigen Druckern',
         costRange: '€€€',
-        durability: 'Mittel',
+        durability: 'Sehr hoch',
         flexibility: 'Gering',
       },
-
-      // Technische Details
       technicalDetails: {
-        density: { key: 'Dichte', value: '1.1 g/cm³' },
-        meltingPoint: { key: 'Schmelzpunkt', value: 'N/A' },
-        tensileStrength: { key: 'Zugfestigkeit', value: '35 MPa' },
+        density: { key: 'Dichte', value: '1.10 g/cm³' },
+        meltingPoint: { key: 'Schmelzpunkt', value: '240°C' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '80 MPa' },
         elongationAtBreak: { key: 'Bruchdehnung', value: '5%' },
-        impactResistance: { key: 'Schlagfestigkeit', value: '3 kJ/m²' },
-        thermalResistance: { key: 'Wärmebeständigkeit', value: '70°C' },
+        impactResistance: { key: 'Schlagfestigkeit', value: '9 kJ/m²' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '100°C' },
         flexibility: { key: 'Flexibilität', value: '2/10' },
-        thickness: { key: 'Schichtdicke', value: '0.05 - 0.1 mm' },
-      },
-
-      // Nachhaltigkeit
-      sustainability: {
-        biodegradable: false,
-        recyclable: false,
-      },
-
-      // Call to Action
-      callToAction: {
-        paragraph1:
-          'Erreiche höchste Detailgenauigkeit mit hochwertigem Resin für SLA- und DLP-Druck!',
-        paragraph2:
-          'Ideal für komplexe Modelle, medizinische Anwendungen und Schmuckdesign.',
-        paragraph3:
-          'Jetzt hochwertiges Resin entdecken und professionelle 3D-Drucke erstellen!',
-      },
-
-      // Abschnittsbasierte Inhalte
-      contentSections: [
-        {
-          header: 'Ultrafeine Details',
-          paragraphs: [
-            'Resin bietet eine außergewöhnliche Druckauflösung und ermöglicht hochpräzise Details.',
-            'Es wird häufig für Miniaturen, Schmuck und medizinische Modelle verwendet.',
-          ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Spezielle Nachbearbeitung erforderlich',
-          paragraphs: [
-            'Nach dem Druck muss Resin ausgehärtet werden, um maximale Festigkeit zu erreichen.',
-            'UV-Licht oder Sonnenlicht werden dafür typischerweise genutzt.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1615286922420-c6b348ffbd62?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Geeignet für SLA- und DLP-Druck',
-          paragraphs: [
-            'Resin ist speziell für SLA- und DLP-Drucktechnologien entwickelt.',
-            'Diese Druckverfahren bieten eine überragende Detailgenauigkeit im Vergleich zu FDM.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1609862776364-897efc7dafdb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fDNkJTIwZHJ1Y2t8ZW58MHx8MHx8fDA%3D',
-        },
-      ],
-
-      costs: {
-        priceEntry: [
-          {
-            quantity: 1,
-            price: '49.99',
-            calculationType: 'perPiece',
-            unit: '/Stück',
-            currency: '€',
-          },
-        ],
-      },
-    },
-  },
-  {
-    type: materialTypes.Nylon,
-    informations: {
-      label: 'Nylon (Polyamid)',
-      oneLineDescription:
-        'Hochbelastbar, flexibel und abriebfest – ideal für mechanische Bauteile.',
-      path: 'nylon',
-
-      // Medieninhalte
-      media: {
-        heroImage: {
-          url: 'https://blog.prusa3d.com/wp-content/uploads/2022/06/IG-title_photo_blog-scaled.jpg',
-          altText: 'Nylon Filament',
-        },
-        mainImage: {
-          url: 'https://blog.prusa3d.com/wp-content/uploads/2022/06/IG-title_photo_blog-scaled.jpg',
-          altText: 'Nylon Filament',
-        },
-        mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
-        additionalVideos: [],
-      },
-
-      // Zusammenfassung & Eigenschaften
-      summary: {
-        descriptions: [
-          'Nylon ist ein starkes, flexibles und abriebfestes Material, das häufig für industrielle Anwendungen eingesetzt wird.',
-          'Es bietet eine hohe mechanische Belastbarkeit und eignet sich für bewegliche Teile oder Zahnräder.',
-          'Aufgrund seiner hygroskopischen Eigenschaften muss es vor dem Druck trocken gelagert werden.',
-        ],
-        advantages: [
-          'Hohe mechanische Festigkeit und Flexibilität',
-          'Abrieb- und chemikalienbeständig',
-          'Sehr haltbar und langlebig',
-        ],
-        disadvantages: [
-          'Muss vor dem Druck trocken gelagert werden',
-          'Neigt zu Warping und benötigt eine beheizte Druckkammer',
-          'Nicht so einfach zu drucken wie PLA oder ABS',
-        ],
-        suitableProcesses: [processTypes.FDM, processTypes.SLS],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
-        ],
-
-        useCases: [
-          'Mechanische Bauteile',
-          'Zahnräder',
-          'Funktionale Prototypen',
-        ],
-        recommendedFor: 'Industrielle Anwendungen und Hochleistungsbauteile',
-        costRange: '€€',
-        durability: 'Sehr hoch',
-        flexibility: 'Hoch',
-      },
-
-      // Technische Details
-      technicalDetails: {
-        density: { key: 'Dichte', value: '1.14 g/cm³' },
-        meltingPoint: { key: 'Schmelzpunkt', value: '250°C' },
-        tensileStrength: { key: 'Zugfestigkeit', value: '50 MPa' },
-        elongationAtBreak: { key: 'Bruchdehnung', value: '20%' },
-        impactResistance: { key: 'Schlagfestigkeit', value: '8 kJ/m²' },
-        thermalResistance: { key: 'Wärmebeständigkeit', value: '120°C' },
-        flexibility: { key: 'Flexibilität', value: '7/10' },
         thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
         biodegradable: false,
         recyclable: true,
       },
-
-      // Call to Action
       callToAction: {
-        paragraph1:
-          'Steigere deine Projekte mit extrem widerstandsfähigem Nylon-Filament!',
+        paragraph1: 'Nutze ABS CF / GF für hochbelastbare, präzise Bauteile!',
         paragraph2:
-          'Ideal für funktionale Bauteile, die hohe mechanische Belastungen aushalten müssen.',
+          'Dank Carbon- oder Glasfaserverstärkung bietet es maximale Stabilität und Temperaturbeständigkeit.',
         paragraph3:
-          'Jetzt Nylon-Filament entdecken und langlebige Bauteile drucken!',
+          'Jetzt dein Hochleistungs-Filament in deiner Wunschfarbe sichern!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Hohe Flexibilität und Festigkeit',
+          header: 'Maximale Festigkeit und Beständigkeit',
           paragraphs: [
-            'Nylon ist extrem widerstandsfähig und flexibel, ideal für mechanische Bauteile.',
-            'Es bietet eine gute Mischung aus Zähigkeit und Dehnbarkeit.',
+            'ABS CF / GF kombiniert die Robustheit von ABS mit der Steifigkeit von Carbon- oder Glasfasern.',
+            'Ideal für anspruchsvolle Anwendungen, die hohe Belastbarkeit erfordern.',
           ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1715786200844-25e7b7b8b21c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fDNkJTIwZHJ1Y2t8ZW58MHx8MHx8fDA%3D',
-        },
-        {
-          header: 'Abrieb- und Chemikalienbeständig',
-          paragraphs: [
-            'Dank seiner Abriebfestigkeit eignet sich Nylon für langlebige Bauteile.',
-            'Es hält auch verschiedenen Chemikalien und Ölen stand.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Optimale Anwendung für industrielle Zwecke',
-          paragraphs: [
-            'Nylon wird häufig für industrielle Anwendungen wie Zahnräder oder Scharniere verwendet.',
-            'Seine thermische Stabilität macht es zu einer idealen Wahl für anspruchsvolle Projekte.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+          imageURL: 'https://example.com/abs-cf-gf-section.jpg',
         },
       ],
-
       costs: {
         priceEntry: [
           {
@@ -726,146 +424,91 @@ export const materials: Material[] = [
     },
   },
   {
-    type: materialTypes.PLA,
+    type: materialTypes.PA6_CF_GF,
     informations: {
-      label: 'PLA (Polylactid)',
+      label:
+        'PA6 CF / GF (Polyamid 6 mit Carbon- oder Glasfaserverstärkung) / aka Nylon',
       oneLineDescription:
-        'Einfach zu drucken, biologisch abbaubar und vielseitig einsetzbar.',
-      path: 'pla',
-
-      // Medieninhalte
+        'Hochfeste und temperaturbeständige Nylon-Variante mit Carbon- oder Glasfasern.',
+      path: 'pa6-cf-gf',
       media: {
         heroImage: {
-          url: 'https://m.media-amazon.com/images/I/81hLSwOc9fL.jpg',
-          altText: 'PLA Filament',
+          url: 'https://example.com/pa6-cf-gf-hero.jpg',
+          altText: 'PA6 CF / GF Filament',
         },
         mainImage: {
-          url: 'https://www.kokoni3d.com/cdn/shop/files/7_7e13e153-ce19-4eb3-83c4-baed3456ed07.png?v=1713500690&width=1500',
-          altText: 'PLA Filament',
+          url: 'https://example.com/pa6-cf-gf-main.jpg',
+          altText: 'PA6 CF / GF Filament',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
-          'PLA ist eines der am häufigsten verwendeten 3D-Druckmaterialien und überzeugt durch seine einfache Handhabung.',
-          'Das Material hat eine geringe Verzugsneigung und benötigt keine beheizte Druckplatte.',
-          'Es ist biologisch abbaubar und daher eine umweltfreundliche Option für viele Anwendungen.',
+          'PA6 CF / GF ist ein verstärktes Nylon-Material mit hervorragenden mechanischen Eigenschaften.',
+          'Die Carbon- oder Glasfasern erhöhen die Steifigkeit und Temperaturbeständigkeit.',
+          'Ideal für industrielle Anwendungen, die hohe Festigkeit erfordern.',
         ],
         advantages: [
-          'Einfache Verarbeitung',
+          'Sehr hohe Festigkeit',
+          'Hohe Temperaturbeständigkeit',
           'Geringes Warping',
-          'Große Auswahl an Farben und Spezialfilamenten',
         ],
         disadvantages: [
-          'Weniger temperaturbeständig als ABS oder Nylon',
-          'Brüchiger als andere Filamente bei mechanischer Belastung',
+          'Erfordert hohe Drucktemperaturen',
+          'Kann Düsen schneller abnutzen',
         ],
-        suitableProcesses: [processTypes.FDM],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
+        suitableProcesses: [processTypes.FDM, processTypes.SLS],
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: [
+          'Industriebauteile',
+          'Funktionsprototypen',
+          'Mechanische Komponenten',
         ],
-
-        useCases: ['Prototyping', 'Modellbau', 'Spielzeugherstellung'],
-        recommendedFor: 'Hobby-Drucker und Einsteiger',
-        costRange: '€',
-        durability: 'Mittel',
+        recommendedFor: 'Erfahrene Drucker mit gehärteten Düsen',
+        costRange: '€€€',
+        durability: 'Sehr hoch',
         flexibility: 'Gering',
       },
-
-      // Technische Details
       technicalDetails: {
-        density: { key: 'Dichte', value: '1.25 g/cm³' },
-        meltingPoint: { key: 'Schmelzpunkt', value: '190°C' },
-        tensileStrength: { key: 'Zugfestigkeit', value: '60 MPa' },
-        elongationAtBreak: { key: 'Bruchdehnung', value: '6%' },
-        impactResistance: { key: 'Schlagfestigkeit', value: '2.5 kJ/m²' },
-        thermalResistance: { key: 'Wärmebeständigkeit', value: '60°C' },
-        flexibility: { key: 'Flexibilität', value: '3/10' },
+        density: { key: 'Dichte', value: '1.35 g/cm³' },
+        meltingPoint: { key: 'Schmelzpunkt', value: '250°C' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '85 MPa' },
+        elongationAtBreak: { key: 'Bruchdehnung', value: '3%' },
+        impactResistance: { key: 'Schlagfestigkeit', value: '12 kJ/m²' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '120°C' },
+        flexibility: { key: 'Flexibilität', value: '2/10' },
         thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
-        biodegradable: true,
-        recyclable: false,
+        biodegradable: false,
+        recyclable: true,
       },
-
-      // Call to Action
       callToAction: {
         paragraph1:
-          'Starte mit PLA – dem idealen Material für Einsteiger und Profis!',
+          'Nutze PA6 CF / GF für industrielle und hochbelastbare Bauteile!',
         paragraph2:
-          'Perfekt für detailreiche Modelle, umweltfreundlich und leicht zu drucken.',
+          'Dank Carbon- oder Glasfaserverstärkung bietet es maximale Stabilität.',
         paragraph3:
-          'Sichere dir jetzt dein PLA-Filament in deiner Wunschfarbe!',
+          'Jetzt dein Hochleistungs-Filament in deiner Wunschfarbe sichern!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Einfache Verarbeitung',
+          header: 'Extrem widerstandsfähig',
           paragraphs: [
-            'PLA ist ein benutzerfreundliches Material, das sich leicht drucken lässt.',
-            'Es erfordert keine beheizte Druckplatte und neigt kaum zum Warping.',
+            'PA6 CF / GF kombiniert die Flexibilität von Nylon mit der Festigkeit von Carbon- oder Glasfasern.',
+            'Es eignet sich für Anwendungen, die hohe mechanische Belastbarkeit erfordern.',
           ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-          header: 'Vielseitige Farboptionen',
-          paragraphs: [
-            'PLA ist in einer Vielzahl von Farben erhältlich, darunter Neon- und Glow-in-the-Dark-Töne.',
-            'Dies macht es ideal für kreative und dekorative Anwendungen.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Nachhaltige Wahl',
-          paragraphs: [
-            'PLA besteht aus nachwachsenden Rohstoffen und ist biologisch abbaubar.',
-            'Es eignet sich besonders für umweltbewusste Projekte.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+          imageURL: 'https://example.com/pa6-cf-gf-section.jpg',
         },
       ],
-
       costs: {
         priceEntry: [
           {
             quantity: 1,
-            price: '19.99',
+            price: '49.99',
             calculationType: 'perRoll',
             unit: '/Rolle',
             currency: '€',
@@ -875,151 +518,272 @@ export const materials: Material[] = [
     },
   },
   {
-    type: materialTypes.ABS,
+    type: materialTypes.PETG,
     informations: {
-      label: 'ABS (Acrylnitril-Butadien-Styrol)',
+      label: 'PETG (Polyethylenterephthalat-Glykol)',
       oneLineDescription:
-        'Robust, temperaturbeständig und ideal für funktionale Bauteile.',
-      path: 'abs',
-
-      // Medieninhalte
+        'Robust, flexibel und widerstandsfähig gegen Feuchtigkeit und Chemikalien.',
+      path: 'petg',
       media: {
         heroImage: {
-          url: 'https://m.media-amazon.com/images/I/71LBRX6oOvL._AC_UF1000,1000_QL80_.jpg',
-          altText: 'ABS Filament',
+          url: 'https://example.com/petg-hero.jpg',
+          altText: 'PETG Filament',
         },
         mainImage: {
-          url: 'https://m.media-amazon.com/images/I/71LBRX6oOvL._AC_UF1000,1000_QL80_.jpg',
-          altText: 'ABS Filament',
+          url: 'https://example.com/petg-main.jpg',
+          altText: 'PETG Filament',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
-          'ABS ist ein langlebiges und mechanisch starkes Material, das häufig in der Industrie und für funktionale Prototypen verwendet wird.',
-          'Es hat eine höhere Hitzebeständigkeit als PLA und kann mit Aceton bearbeitet werden, um glatte Oberflächen zu erzeugen.',
-          'ABS benötigt jedoch eine beheizte Druckplatte, um Warping zu vermeiden, und sollte in gut belüfteten Räumen gedruckt werden.',
+          'PETG ist eine Mischung aus PET und Glykol, wodurch es eine hohe Schlagfestigkeit und Flexibilität aufweist.',
+          'Es ist UV-beständig und feuchtigkeitsresistent, ideal für Outdoor-Anwendungen.',
+          'PETG bietet ein gutes Gleichgewicht zwischen Stabilität und Druckfreundlichkeit.',
         ],
         advantages: [
-          'Höhere Hitzebeständigkeit als PLA',
-          'Robust und schlagfest',
-          'Mit Aceton glättbar für eine professionelle Oberfläche',
+          'Sehr haltbar und flexibel',
+          'Geringes Warping',
+          'Hohe chemische Beständigkeit',
         ],
         disadvantages: [
-          'Stärkeres Warping als PLA',
-          'Druck benötigt eine beheizte Druckplatte',
-          'Freisetzung von Dämpfen während des Drucks',
+          'Kann Fäden ziehen (Stringing)',
+          'Nicht so hart wie ABS oder Nylon',
         ],
         suitableProcesses: [processTypes.FDM],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
-        ],
-
+        chooseableColors: Object.values(allChooseableColors),
         useCases: [
-          'Funktionsprototypen',
-          'Werkzeuge',
-          'Gehäuse für elektronische Geräte',
+          'Outdoor-Bauteile',
+          'Lebensmittelsichere Anwendungen',
+          'Technische Bauteile',
         ],
-        recommendedFor: 'Erfahrene Anwender und industrielle Anwendungen',
+        recommendedFor:
+          'Fortgeschrittene Anwender und industrielle Anwendungen',
         costRange: '€€',
         durability: 'Hoch',
         flexibility: 'Mittel',
       },
-
-      // Technische Details
       technicalDetails: {
-        density: { key: 'Dichte', value: '1.04 g/cm³' },
-        meltingPoint: { key: 'Schmelzpunkt', value: '220°C' },
-        tensileStrength: { key: 'Zugfestigkeit', value: '40 MPa' },
-        elongationAtBreak: { key: 'Bruchdehnung', value: '10%' },
-        impactResistance: { key: 'Schlagfestigkeit', value: '6 kJ/m²' },
-        thermalResistance: { key: 'Wärmebeständigkeit', value: '85°C' },
-        flexibility: { key: 'Flexibilität', value: '4/10' },
+        density: { key: 'Dichte', value: '1.27 g/cm³' },
+        meltingPoint: { key: 'Schmelzpunkt', value: '230°C' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '50 MPa' },
+        elongationAtBreak: { key: 'Bruchdehnung', value: '8%' },
+        impactResistance: { key: 'Schlagfestigkeit', value: '9 kJ/m²' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '75°C' },
+        flexibility: { key: 'Flexibilität', value: '6/10' },
         thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
         biodegradable: false,
         recyclable: true,
       },
-
-      // Call to Action
       callToAction: {
-        paragraph1:
-          'Steigere deine 3D-Druckprojekte mit robustem und widerstandsfähigem ABS!',
+        paragraph1: 'Entdecke PETG für robuste und flexible Bauteile!',
         paragraph2:
-          'Ideal für funktionale Prototypen, mechanische Bauteile und technische Anwendungen.',
-        paragraph3:
-          'Jetzt ABS-Filament entdecken und hochwertige Drucke realisieren!',
+          'Perfekt für Anwendungen mit hohen mechanischen Anforderungen und chemischer Beständigkeit.',
+        paragraph3: 'Jetzt dein PETG-Filament in deiner Wunschfarbe sichern!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Hohe Widerstandsfähigkeit',
+          header: 'Robust und vielseitig',
           paragraphs: [
-            'ABS ist bekannt für seine Robustheit und Beständigkeit gegen Stöße.',
-            'Es eignet sich besonders für funktionale Bauteile und technische Anwendungen.',
+            'PETG ist ein idealer Kompromiss zwischen PLA und ABS, mit hoher Festigkeit und einfacher Druckbarkeit.',
+            'Es eignet sich besonders für mechanisch beanspruchte Bauteile oder Outdoor-Projekte.',
           ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Glatte Oberflächenbearbeitung',
-          paragraphs: [
-            'Mit Aceton-Dampf kann ABS eine glänzende, glatte Oberfläche erhalten.',
-            'Dadurch ist es ideal für professionelle Modelle und Prototypen.',
-          ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-          header: 'Hitzebeständig',
-          paragraphs: [
-            'ABS hält höheren Temperaturen stand als PLA und bleibt stabil.',
-            'Dies macht es zur bevorzugten Wahl für mechanische Teile.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+          imageURL: 'https://example.com/petg-section.jpg',
         },
       ],
-
       costs: {
         priceEntry: [
           {
             quantity: 1,
-            price: '24.99',
+            price: '27.99',
+            calculationType: 'perRoll',
+            unit: '/Rolle',
+            currency: '€',
+          },
+        ],
+      },
+    },
+  },
+  {
+    type: materialTypes.TPU,
+    informations: {
+      label: 'TPU (Thermoplastisches Polyurethan)',
+      oneLineDescription:
+        'Flexibles, stoßfestes und langlebiges Material mit hoher Elastizität.',
+      path: 'tpu',
+      media: {
+        heroImage: {
+          url: 'https://example.com/tpu-hero.jpg',
+          altText: 'TPU Filament',
+        },
+        mainImage: {
+          url: 'https://example.com/tpu-main.jpg',
+          altText: 'TPU Filament',
+        },
+        mainVideo: { url: '', description: '' },
+        additionalImages: [],
+        additionalVideos: [],
+      },
+      summary: {
+        descriptions: [
+          'TPU ist ein flexibles und gummiartiges Material, das für Anwendungen mit hoher Stoßfestigkeit geeignet ist.',
+          'Es bietet eine hohe Elastizität, Abriebfestigkeit und chemische Beständigkeit.',
+          'Ideal für funktionale Prototypen, Dichtungen und elastische Bauteile.',
+        ],
+        advantages: [
+          'Hohe Flexibilität und Elastizität',
+          'Abriebfest und langlebig',
+          'Gute Beständigkeit gegen Chemikalien und Öle',
+        ],
+        disadvantages: [
+          'Schwerer zu drucken als starre Materialien',
+          'Erfordert langsamere Druckgeschwindigkeiten',
+        ],
+        suitableProcesses: [processTypes.FDM],
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: [
+          'Stoßdämpfende Bauteile',
+          'Dichtungen',
+          'Elastische Komponenten',
+        ],
+        recommendedFor: 'Fortgeschrittene Nutzer mit Direktantriebsdruckern',
+        costRange: '€€',
+        durability: 'Sehr hoch',
+        flexibility: 'Sehr hoch',
+      },
+      technicalDetails: {
+        density: { key: 'Dichte', value: '1.20 g/cm³' },
+        meltingPoint: { key: 'Schmelzpunkt', value: '220°C' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '30 MPa' },
+        elongationAtBreak: { key: 'Bruchdehnung', value: '500%' },
+        impactResistance: { key: 'Schlagfestigkeit', value: 'Sehr hoch' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '80°C' },
+        flexibility: { key: 'Flexibilität', value: '10/10' },
+        thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
+      },
+      sustainability: {
+        biodegradable: false,
+        recyclable: true,
+      },
+      callToAction: {
+        paragraph1:
+          'Erlebe TPU – das flexible Filament für widerstandsfähige Bauteile!',
+        paragraph2:
+          'Perfekt für elastische, abriebfeste und stoßdämpfende Anwendungen.',
+        paragraph3: 'Sichere dir jetzt TPU-Filament in deiner Wunschfarbe!',
+      },
+      contentSections: [
+        {
+          header: 'Maximale Elastizität',
+          paragraphs: [
+            'TPU ist extrem dehnbar und eignet sich perfekt für flexible Anwendungen.',
+            'Es kombiniert hohe Schlagfestigkeit mit guter Chemikalienbeständigkeit.',
+          ],
+          imageURL: 'https://example.com/tpu-section.jpg',
+        },
+      ],
+      costs: {
+        priceEntry: [
+          {
+            quantity: 1,
+            price: '34.99',
+            calculationType: 'perRoll',
+            unit: '/Rolle',
+            currency: '€',
+          },
+        ],
+      },
+    },
+  },
+  {
+    type: materialTypes.ASA,
+    informations: {
+      label: 'ASA (Acrylnitril-Styrol-Acrylat)',
+      oneLineDescription:
+        'Witterungsbeständiges und UV-resistentes Material für den Außeneinsatz.',
+      path: 'asa',
+      media: {
+        heroImage: {
+          url: 'https://example.com/asa-hero.jpg',
+          altText: 'ASA Filament',
+        },
+        mainImage: {
+          url: 'https://example.com/asa-main.jpg',
+          altText: 'ASA Filament',
+        },
+        mainVideo: { url: '', description: '' },
+        additionalImages: [],
+        additionalVideos: [],
+      },
+      summary: {
+        descriptions: [
+          'ASA ist ein technisches Material, das sich durch seine hohe UV- und Witterungsbeständigkeit auszeichnet.',
+          'Es ist eine Alternative zu ABS, aber weniger anfällig für Vergilbung und Verformung durch Sonneneinstrahlung.',
+          'Ideal für den Außeneinsatz und mechanisch belastbare Bauteile.',
+        ],
+        advantages: [
+          'Sehr hohe UV- und Witterungsbeständigkeit',
+          'Hohe mechanische Festigkeit',
+          'Geringere Schrumpfung als ABS',
+        ],
+        disadvantages: [
+          'Benötigt beheizte Druckplatte und hohe Drucktemperaturen',
+          'Kann Warping aufweisen ohne geschlossene Kammer',
+        ],
+        suitableProcesses: [processTypes.FDM],
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: [
+          'Außenbauteile',
+          'Technische Prototypen',
+          'Gehäuse für Elektronik',
+        ],
+        recommendedFor: 'Erfahrene Nutzer mit geschlossener Druckkammer',
+        costRange: '€€€',
+        durability: 'Sehr hoch',
+        flexibility: 'Mittel',
+      },
+      technicalDetails: {
+        density: { key: 'Dichte', value: '1.07 g/cm³' },
+        meltingPoint: { key: 'Schmelzpunkt', value: '250°C' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '45 MPa' },
+        elongationAtBreak: { key: 'Bruchdehnung', value: '6%' },
+        impactResistance: { key: 'Schlagfestigkeit', value: '15 kJ/m²' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '95°C' },
+        flexibility: { key: 'Flexibilität', value: '4/10' },
+        thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
+      },
+      sustainability: {
+        biodegradable: false,
+        recyclable: true,
+      },
+      callToAction: {
+        paragraph1: 'Nutze ASA für langlebige und wetterfeste Bauteile!',
+        paragraph2:
+          'Perfekt für den Außeneinsatz und Anwendungen mit hoher UV-Belastung.',
+        paragraph3: 'Jetzt dein ASA-Filament in deiner Wunschfarbe sichern!',
+      },
+      contentSections: [
+        {
+          header: 'Maximale Witterungsbeständigkeit',
+          paragraphs: [
+            'ASA ist die perfekte Wahl für langlebige, wetterfeste Bauteile.',
+            'Es ist resistent gegen UV-Strahlung und behält seine mechanischen Eigenschaften über lange Zeit.',
+          ],
+          imageURL: 'https://example.com/asa-section.jpg',
+        },
+      ],
+      costs: {
+        priceEntry: [
+          {
+            quantity: 1,
+            price: '39.99',
             calculationType: 'perRoll',
             unit: '/Rolle',
             currency: '€',
@@ -1031,147 +795,85 @@ export const materials: Material[] = [
   {
     type: materialTypes.Resin,
     informations: {
-      label: 'Resin (Harz)',
+      label: 'Standard Resin',
       oneLineDescription:
-        'Höchste Detailgenauigkeit und glatte Oberflächen – ideal für SLA- und DLP-Druck.',
-      path: 'resin',
-
-      // Medieninhalte
+        'Detaillierte Druckergebnisse mit glatter Oberfläche für hochpräzise Modelle.',
+      path: 'standard-resin',
       media: {
         heroImage: {
-          url: 'https://bansaltrading.com/wp-content/uploads/2022/07/fi-14.jpg',
-          altText: 'Resin Flasche',
+          url: 'https://example.com/resin-hero.jpg',
+          altText: 'Standard Resin',
         },
         mainImage: {
-          url: 'https://bansaltrading.com/wp-content/uploads/2022/07/fi-14.jpg',
-          altText: 'Resin Flasche',
+          url: 'https://example.com/resin-main.jpg',
+          altText: 'Standard Resin',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
-          'Resin ist ein flüssiges Photopolymer, das mit UV-Licht ausgehärtet wird und vor allem im SLA- und DLP-3D-Druck verwendet wird.',
-          'Es ermöglicht hochpräzise Drucke mit feinen Details und glatten Oberflächen.',
-          'Nachbearbeitung mit UV-Härtung ist notwendig, um die volle Stabilität zu erreichen.',
+          'Standard Resin ist ideal für hochpräzise Modelle mit glatter Oberfläche und feinen Details.',
+          'Es eignet sich besonders für Miniaturen, Prototypen und detaillierte Designs.',
+          'Erfordert Nachbearbeitung durch UV-Härtung für optimale Festigkeit.',
         ],
         advantages: [
-          'Extrem hohe Detailgenauigkeit',
-          'Glatte, nahezu perfekte Oberflächen',
-          'Ideal für Miniaturen, Schmuck und medizinische Anwendungen',
+          'Sehr hohe Detailgenauigkeit',
+          'Glatte Oberflächenstruktur',
+          'Ideal für visuelle Modelle und Miniaturen',
         ],
         disadvantages: [
-          'Benötigt Nachhärtung mit UV-Licht',
-          'Nicht so robust wie FDM-Materialien',
-          'Erfordert sorgfältige Handhabung und Schutzmaßnahmen',
+          'Spröder als FDM-Materialien',
+          'Benötigt UV-Nachhärtung',
+          'Nicht so temperatur- und stoßfest wie technische Resine',
         ],
         suitableProcesses: [processTypes.SLA, processTypes.DLP],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
-        ],
-
-        useCases: ['Schmuckdesign', 'Zahntechnik', 'Hochdetaillierte Modelle'],
-        recommendedFor: 'Präzisionsdrucke und industrielle Anwendungen',
-        costRange: '€€€',
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: ['Miniaturen', 'Modellbau', 'Detaillierte Prototypen'],
+        recommendedFor: 'Design- und Modellbauprojekte mit hoher Präzision',
+        costRange: '€€',
         durability: 'Mittel',
         flexibility: 'Gering',
       },
-
-      // Technische Details
       technicalDetails: {
         density: { key: 'Dichte', value: '1.1 g/cm³' },
-        meltingPoint: { key: 'Schmelzpunkt', value: 'N/A' },
-        tensileStrength: { key: 'Zugfestigkeit', value: '35 MPa' },
+        meltingPoint: { key: 'Aushärtetemperatur', value: 'UV-Licht 405 nm' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '50 MPa' },
         elongationAtBreak: { key: 'Bruchdehnung', value: '5%' },
         impactResistance: { key: 'Schlagfestigkeit', value: '3 kJ/m²' },
-        thermalResistance: { key: 'Wärmebeständigkeit', value: '70°C' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '55°C' },
         flexibility: { key: 'Flexibilität', value: '2/10' },
-        thickness: { key: 'Schichtdicke', value: '0.05 - 0.1 mm' },
+        thickness: { key: 'Schichtdicke', value: '0.025 - 0.1 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
         biodegradable: false,
         recyclable: false,
       },
-
-      // Call to Action
       callToAction: {
-        paragraph1:
-          'Erreiche höchste Detailgenauigkeit mit hochwertigem Resin für SLA- und DLP-Druck!',
+        paragraph1: 'Nutze Standard Resin für hochpräzise, glatte Modelle!',
         paragraph2:
-          'Ideal für komplexe Modelle, medizinische Anwendungen und Schmuckdesign.',
-        paragraph3:
-          'Jetzt hochwertiges Resin entdecken und professionelle 3D-Drucke erstellen!',
+          'Ideal für Miniaturen, Prototypen und detailreiche Designs.',
+        paragraph3: 'Jetzt dein Resin in deiner Wunschfarbe sichern!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Ultrafeine Details',
+          header: 'Maximale Detailgenauigkeit',
           paragraphs: [
-            'Resin bietet eine außergewöhnliche Druckauflösung und ermöglicht hochpräzise Details.',
-            'Es wird häufig für Miniaturen, Schmuck und medizinische Modelle verwendet.',
+            'Standard Resin ermöglicht hochpräzise Drucke mit extrem feinen Details.',
+            'Perfekt für Miniaturen, Schmuckdesign und andere filigrane Anwendungen.',
           ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Spezielle Nachbearbeitung erforderlich',
-          paragraphs: [
-            'Nach dem Druck muss Resin ausgehärtet werden, um maximale Festigkeit zu erreichen.',
-            'UV-Licht oder Sonnenlicht werden dafür typischerweise genutzt.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1615286922420-c6b348ffbd62?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Geeignet für SLA- und DLP-Druck',
-          paragraphs: [
-            'Resin ist speziell für SLA- und DLP-Drucktechnologien entwickelt.',
-            'Diese Druckverfahren bieten eine überragende Detailgenauigkeit im Vergleich zu FDM.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1609862776364-897efc7dafdb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fDNkJTIwZHJ1Y2t8ZW58MHx8MHx8fDA%3D',
+          imageURL: 'https://example.com/resin-section.jpg',
         },
       ],
-
       costs: {
         priceEntry: [
           {
             quantity: 1,
             price: '49.99',
-            calculationType: 'perPiece',
-            unit: '/Stück',
+            calculationType: 'perRoll',
+            unit: '/Rolle',
             currency: '€',
           },
         ],
@@ -1179,151 +881,176 @@ export const materials: Material[] = [
     },
   },
   {
-    type: materialTypes.Nylon,
+    type: materialTypes.AbsLikeResin,
     informations: {
-      label: 'Nylon (Polyamid)',
+      label: 'ABS Like Resin',
       oneLineDescription:
-        'Hochbelastbar, flexibel und abriebfest – ideal für mechanische Bauteile.',
-      path: 'nylon',
-
-      // Medieninhalte
+        'Hohe Zähigkeit und verbesserte Schlagfestigkeit für funktionale Prototypen.',
+      path: 'abs-like-resin',
       media: {
         heroImage: {
-          url: 'https://blog.prusa3d.com/wp-content/uploads/2022/06/IG-title_photo_blog-scaled.jpg',
-          altText: 'Nylon Filament',
+          url: 'https://example.com/abs-like-resin-hero.jpg',
+          altText: 'ABS Like Resin',
         },
         mainImage: {
-          url: 'https://blog.prusa3d.com/wp-content/uploads/2022/06/IG-title_photo_blog-scaled.jpg',
-          altText: 'Nylon Filament',
+          url: 'https://example.com/abs-like-resin-main.jpg',
+          altText: 'ABS Like Resin',
         },
         mainVideo: { url: '', description: '' },
-        additionalImages: [
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1714859729164-5e5b6af0db28?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611505908502-5b67e53e3a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-          {
-            url: 'https://plus.unsplash.com/premium_photo-1715876679877-079db51d1d6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-            altText: '',
-          },
-        ],
+        additionalImages: [],
         additionalVideos: [],
       },
-
-      // Zusammenfassung & Eigenschaften
       summary: {
         descriptions: [
-          'Nylon ist ein starkes, flexibles und abriebfestes Material, das häufig für industrielle Anwendungen eingesetzt wird.',
-          'Es bietet eine hohe mechanische Belastbarkeit und eignet sich für bewegliche Teile oder Zahnräder.',
-          'Aufgrund seiner hygroskopischen Eigenschaften muss es vor dem Druck trocken gelagert werden.',
+          'ABS Like Resin ist eine verbesserte Variante von Standard Resin mit erhöhter Zähigkeit.',
+          'Es eignet sich besonders für funktionale Prototypen und mechanisch beanspruchte Bauteile.',
+          'Die höhere Schlagfestigkeit macht es weniger spröde als Standard Resin.',
         ],
         advantages: [
-          'Hohe mechanische Festigkeit und Flexibilität',
-          'Abrieb- und chemikalienbeständig',
-          'Sehr haltbar und langlebig',
+          'Erhöhte Schlagfestigkeit im Vergleich zu Standard Resin',
+          'Gute mechanische Eigenschaften',
+          'Glatte Oberflächenstruktur mit hoher Detailgenauigkeit',
         ],
         disadvantages: [
-          'Muss vor dem Druck trocken gelagert werden',
-          'Neigt zu Warping und benötigt eine beheizte Druckkammer',
-          'Nicht so einfach zu drucken wie PLA oder ABS',
+          'Benötigt Nachhärtung für optimale Festigkeit',
+          'Nicht so flexibel wie TPU oder andere Elastomere',
         ],
-        suitableProcesses: [processTypes.FDM, processTypes.SLS],
-        chooseableColors: [
-          allChooseableColors.silver,
-          allChooseableColors.gold,
-        ],
-
-        useCases: [
-          'Mechanische Bauteile',
-          'Zahnräder',
-          'Funktionale Prototypen',
-        ],
-        recommendedFor: 'Industrielle Anwendungen und Hochleistungsbauteile',
-        costRange: '€€',
-        durability: 'Sehr hoch',
-        flexibility: 'Hoch',
+        suitableProcesses: [processTypes.SLA, processTypes.DLP],
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: ['Funktionsprototypen', 'Mechanische Bauteile', 'Modellbau'],
+        recommendedFor: 'Anwendungen mit höheren mechanischen Anforderungen',
+        costRange: '€€€',
+        durability: 'Hoch',
+        flexibility: 'Mittel',
       },
-
-      // Technische Details
       technicalDetails: {
-        density: { key: 'Dichte', value: '1.14 g/cm³' },
-        meltingPoint: { key: 'Schmelzpunkt', value: '250°C' },
-        tensileStrength: { key: 'Zugfestigkeit', value: '50 MPa' },
-        elongationAtBreak: { key: 'Bruchdehnung', value: '20%' },
-        impactResistance: { key: 'Schlagfestigkeit', value: '8 kJ/m²' },
-        thermalResistance: { key: 'Wärmebeständigkeit', value: '120°C' },
-        flexibility: { key: 'Flexibilität', value: '7/10' },
-        thickness: { key: 'Filamentdurchmesser', value: '1.75 mm, 2.85 mm' },
+        density: { key: 'Dichte', value: '1.15 g/cm³' },
+        meltingPoint: { key: 'Aushärtetemperatur', value: 'UV-Licht 405 nm' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '65 MPa' },
+        elongationAtBreak: { key: 'Bruchdehnung', value: '8%' },
+        impactResistance: { key: 'Schlagfestigkeit', value: '5 kJ/m²' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '65°C' },
+        flexibility: { key: 'Flexibilität', value: '4/10' },
+        thickness: { key: 'Schichtdicke', value: '0.025 - 0.1 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
       },
-
-      // Nachhaltigkeit
       sustainability: {
         biodegradable: false,
-        recyclable: true,
+        recyclable: false,
       },
-
-      // Call to Action
       callToAction: {
         paragraph1:
-          'Steigere deine Projekte mit extrem widerstandsfähigem Nylon-Filament!',
+          'Nutze ABS Like Resin für robuste und funktionale Bauteile!',
         paragraph2:
-          'Ideal für funktionale Bauteile, die hohe mechanische Belastungen aushalten müssen.',
-        paragraph3:
-          'Jetzt Nylon-Filament entdecken und langlebige Bauteile drucken!',
+          'Ideal für mechanisch belastete Anwendungen mit hoher Präzision.',
+        paragraph3: 'Jetzt dein ABS Like Resin in deiner Wunschfarbe sichern!',
       },
-
-      // Abschnittsbasierte Inhalte
       contentSections: [
         {
-          header: 'Hohe Flexibilität und Festigkeit',
+          header: 'Hohe mechanische Festigkeit',
           paragraphs: [
-            'Nylon ist extrem widerstandsfähig und flexibel, ideal für mechanische Bauteile.',
-            'Es bietet eine gute Mischung aus Zähigkeit und Dehnbarkeit.',
+            'ABS Like Resin bietet eine verbesserte Zähigkeit im Vergleich zu Standard Resin.',
+            'Perfekt für Prototypen, die mechanischer Belastung standhalten müssen.',
           ],
-          imageURL:
-            'https://plus.unsplash.com/premium_photo-1715786200844-25e7b7b8b21c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fDNkJTIwZHJ1Y2t8ZW58MHx8MHx8fDA%3D',
-        },
-        {
-          header: 'Abrieb- und Chemikalienbeständig',
-          paragraphs: [
-            'Dank seiner Abriebfestigkeit eignet sich Nylon für langlebige Bauteile.',
-            'Es hält auch verschiedenen Chemikalien und Ölen stand.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1597765206558-6f4e06954f2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
-        },
-        {
-          header: 'Optimale Anwendung für industrielle Zwecke',
-          paragraphs: [
-            'Nylon wird häufig für industrielle Anwendungen wie Zahnräder oder Scharniere verwendet.',
-            'Seine thermische Stabilität macht es zu einer idealen Wahl für anspruchsvolle Projekte.',
-          ],
-          imageURL:
-            'https://images.unsplash.com/photo-1611117775350-ac3950990985?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBkcnVja3xlbnwwfHwwfHx8MA%3D%3D',
+          imageURL: 'https://example.com/abs-like-resin-section.jpg',
         },
       ],
-
       costs: {
         priceEntry: [
           {
             quantity: 1,
-            price: '39.99',
+            price: '49.99',
+            calculationType: 'perRoll',
+            unit: '/Rolle',
+            currency: '€',
+          },
+        ],
+      },
+    },
+  },
+  {
+    type: materialTypes.TpuLikeResin,
+    informations: {
+      label: 'TPU Like Resin',
+      oneLineDescription:
+        'Elastisches Resin für flexible und strapazierfähige Drucke.',
+      path: 'tpu-like-resin',
+      media: {
+        heroImage: {
+          url: 'https://example.com/tpu-like-resin-hero.jpg',
+          altText: 'TPU Like Resin',
+        },
+        mainImage: {
+          url: 'https://example.com/tpu-like-resin-main.jpg',
+          altText: 'TPU Like Resin',
+        },
+        mainVideo: { url: '', description: '' },
+        additionalImages: [],
+        additionalVideos: [],
+      },
+      summary: {
+        descriptions: [
+          'TPU Like Resin ist ein flexibles Kunstharz, das sich ideal für elastische und stoßfeste Bauteile eignet.',
+          'Es vereint die Vorteile von Resindruck mit hoher Flexibilität und Dehnbarkeit.',
+          'Perfekt für Anwendungen, die eine gewisse Nachgiebigkeit erfordern.',
+        ],
+        advantages: [
+          'Hohe Elastizität und Flexibilität',
+          'Widerstandsfähig gegenüber Stößen',
+          'Feine Details und glatte Oberflächenstruktur',
+        ],
+        disadvantages: [
+          'Benötigt spezielle Nachhärtung für optimale Elastizität',
+          'Kann nicht so stark gedehnt werden wie FDM-TPU',
+        ],
+        suitableProcesses: [processTypes.SLA, processTypes.DLP],
+        chooseableColors: Object.values(allChooseableColors),
+        useCases: [
+          'Stoßdämpfende Bauteile',
+          'Elastische Komponenten',
+          'Schutzgehäuse',
+        ],
+        recommendedFor: 'Flexibel einsetzbare Resindrucke mit hoher Präzision',
+        costRange: '€€€',
+        durability: 'Hoch',
+        flexibility: 'Sehr hoch',
+      },
+      technicalDetails: {
+        density: { key: 'Dichte', value: '1.05 g/cm³' },
+        meltingPoint: { key: 'Aushärtetemperatur', value: 'UV-Licht 405 nm' },
+        tensileStrength: { key: 'Zugfestigkeit', value: '25 MPa' },
+        elongationAtBreak: { key: 'Bruchdehnung', value: '200%' },
+        impactResistance: { key: 'Schlagfestigkeit', value: 'Sehr hoch' },
+        thermalResistance: { key: 'Wärmebeständigkeit', value: '50°C' },
+        flexibility: { key: 'Flexibilität', value: '9/10' },
+        thickness: { key: 'Schichtdicke', value: '0.025 - 0.1 mm' },
+        colors: { key: 'Farben', value: 'jegliche auf Anfrage' },
+      },
+      sustainability: {
+        biodegradable: false,
+        recyclable: false,
+      },
+      callToAction: {
+        paragraph1:
+          'Nutze TPU Like Resin für flexible und widerstandsfähige Drucke!',
+        paragraph2: 'Perfekt für stoßfeste und elastische Anwendungen.',
+        paragraph3: 'Jetzt dein TPU Like Resin in deiner Wunschfarbe sichern!',
+      },
+      contentSections: [
+        {
+          header: 'Maximale Flexibilität',
+          paragraphs: [
+            'TPU Like Resin bietet eine hohe Elastizität und eignet sich für flexible Bauteile.',
+            'Es vereint die Vorteile von Resin- und TPU-Druck für strapazierfähige Anwendungen.',
+          ],
+          imageURL: 'https://example.com/tpu-like-resin-section.jpg',
+        },
+      ],
+      costs: {
+        priceEntry: [
+          {
+            quantity: 1,
+            price: '49.99',
             calculationType: 'perRoll',
             unit: '/Rolle',
             currency: '€',
@@ -1336,362 +1063,67 @@ export const materials: Material[] = [
 
 export const processes: Process[] = [
   {
-    type: processTypes.FDM,
-    informations: {
-      label: 'Fused Deposition Modeling (FDM)',
-      oneLineDescription:
-        'Dein perfekter Einstieg in den 3D-Druck – kostengünstig, zuverlässig und einfach zu bedienen!',
-      numberCompletedProjects: '100',
-      path: 'fdm',
-
-      // Gruppierung: Medien
-      media: {
-        heroImage: {
-          url: 'https://biocraftlab.com/cdn/shop/articles/Wie_funktioniert_FDM_3D_Druck_1000x.jpg?v=1719421047',
-          altText: 'FDM-Druck in Aktion',
-        },
-        mainImage: {
-          url: 'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-          altText: 'FDM-Druck in Aktion',
-        },
-        mainVideo: {
-          url: 'https://www.youtube.com/watch?v=exampleFDM',
-          description:
-            'Erklärung des FDM-Druckverfahrens und seiner Anwendungen',
-        },
-        additionalImages: [
-          {
-            url: 'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-            altText: 'FDM-Druck in Aktion',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/89/51/bc/21/58/large_display_V%C3%BDst%C5%99i%C5%BEek.PNG',
-            altText: 'Einführung in den FDM-Druck',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/76/b8/bf/1c/5d/large_display_1.jpg',
-            altText: 'Einführung in den FDM-Druck',
-          },
-
-          {
-            url: 'https://cdn.thingiverse.com/assets/27/79/19/38/4e/large_display_Extra-Size-Cat-1-1.jpg',
-            altText: '',
-          },
-
-          {
-            url: 'https://cdn.thingiverse.com/assets/12/d4/da/0f/fa/large_display_dinosaurs.jpg',
-            altText: '',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/bf/e5/aa/99/28/large_display_20250102_151511.jpg',
-            altText: '',
-          },
-        ],
-        additionalVideos: [
-          {
-            url: 'https://www.youtube.com/watch?v=exampleFDM',
-            description: 'Einführung in den FDM-Druck',
-          },
-        ],
-      },
-
-      // Gruppierung: Zusammenfassung & Eigenschaften
-      summary: {
-        descriptions: [
-          `Das Fused Deposition Modeling (FDM) ist eines der am weitesten verbreiteten 3D-Druckverfahren. 
-          Es arbeitet mit Thermoplasten, die erhitzt und durch eine Düse extrudiert werden. Diese Düse bewegt sich präzise entlang einer definierten Bahn, 
-          um jede Schicht eines Modells zu formen. Nach dem Abkühlen verfestigt sich der Kunststoff und bildet eine stabile Struktur.`,
-
-          `FDM ist besonders beliebt aufgrund seiner Zugänglichkeit und Vielseitigkeit. Es kann eine breite Palette von Materialien verwenden, darunter PLA, ABS, PETG und viele andere. 
-          Das Verfahren ist auch deshalb so weit verbreitet, weil es eine kostengünstige Lösung für die Prototypenentwicklung darstellt.`,
-
-          `Ein weiterer Vorteil von FDM ist die Möglichkeit, Modelle mit einer großen Bandbreite an Farben und Oberflächen zu erstellen. 
-          Fortschrittliche Drucker unterstützen sogar die Verwendung mehrerer Materialien in einem einzigen Druckvorgang.`,
-        ],
-        advantages: [
-          'Günstige Anschaffungskosten',
-          'Einfache Bedienung',
-          'Vielseitige Materialauswahl',
-        ],
-        disadvantages: [
-          'Begrenzte Präzision',
-          'Mechanische Schwächen entlang der Schichtgrenzen',
-        ],
-        suitableMaterials: [materialTypes.PLA, materialTypes.ABS],
-        useCases: ['Prototypenbau', 'Werkzeugfertigung', 'Bildungsprojekte'],
-        recommendedFor: 'Hobbyisten & Prototypenbauer',
-        costRange: '€',
-        precision: 'mittel',
-        productionSpeed: 'mittel',
-      },
-
-      // Gruppierung: Technische Details
-      technicalDetails: {
-        maximaleBaugroesse: {
-          key: 'Maximale Baugr.',
-          value: '300 x 300 x 400 mm',
-        },
-        standardVorlaufzeiten: {
-          key: 'Vorlaufzeiten',
-          value: '1-3 Werktage',
-        },
-        massGenauigkeit: {
-          key: 'Maßgenauigkeit',
-          value: '± 0.2 mm oder ± 0.5 %',
-        },
-        schichtStaerke: { key: 'Schichtstärke', value: '0.1 - 0.4 mm' },
-        mindestMerkmalsgroesse: {
-          key: 'Mind.-Merkmalgr.',
-          value: '0.8 mm',
-        },
-      },
-      // Gruppierung: Call to Action
-      callToAction: {
-        paragraph1:
-          'Starte noch heute mit dem FDM-Druck – einfach, kostengünstig und ideal für Einsteiger und Profis!',
-        paragraph2:
-          'Mit FDM kannst du eine Vielzahl von Materialien nutzen und deine eigenen Prototypen oder funktionale Bauteile erstellen.',
-        paragraph3:
-          'Sichere dir jetzt dein eigenes FDM-Drucksystem und erlebe die Zukunft des 3D-Drucks hautnah!',
-      },
-
-      // Gruppierung: Abschnittsbasierte Inhalte
-      contentSections: [
-        {
-          header: 'Wie funktioniert das FDM-Druckverfahren?',
-          paragraphs: [
-            `Beim Fused Deposition Modeling (FDM) wird ein Kunststofffilament erhitzt und durch eine feine Düse extrudiert. 
-            Die Düse bewegt sich über die Druckplattform und trägt das Material schichtweise auf, um das Modell zu formen.`,
-
-            `Sobald eine Schicht abgekühlt ist, wird die nächste Schicht darüber aufgetragen. 
-            Dieser Prozess wiederholt sich, bis das vollständige Objekt erstellt wurde. 
-            Da FDM auf Schmelzschichtung basiert, können die einzelnen Layer in der Oberfläche sichtbar sein.`,
-          ],
-          imageURL:
-            'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-        },
-        {
-          header: 'Welche Materialien kann man mit FDM verwenden?',
-          paragraphs: [
-            `FDM-Drucker sind sehr vielseitig und unterstützen verschiedene Arten von Thermoplasten. 
-            Die gängigsten Materialien sind PLA, ABS und PETG, die sich durch unterschiedliche Eigenschaften auszeichnen.`,
-
-            `PLA ist biologisch abbaubar und einfach zu drucken, während ABS hitzebeständiger und mechanisch stabiler ist. 
-            PETG kombiniert die Vorteile beider Materialien und bietet eine hohe Schlagfestigkeit. 
-            Es gibt auch Spezialmaterialien wie flexible Filamente oder kohlefaserverstärktes Filament für industrielle Anwendungen.`,
-          ],
-          imageURL:
-            'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-        },
-        {
-          header: 'Für welche Anwendungen eignet sich FDM besonders?',
-          paragraphs: [
-            `FDM wird häufig für Prototypenbau, funktionale Bauteile und die Fertigung von Gehäusen genutzt. 
-            Dank der einfachen Handhabung und der niedrigen Kosten ist es sowohl für Hobbyisten als auch für professionelle Anwendungen interessant.`,
-
-            `Bildungseinrichtungen setzen FDM ein, um Schülern und Studenten praktische Erfahrungen im 3D-Druck zu ermöglichen. 
-            Auch Unternehmen verwenden FDM für Rapid Prototyping, um Designs kostengünstig zu testen, bevor sie in die Massenproduktion gehen.`,
-          ],
-          imageURL:
-            'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-        },
-      ],
-    },
-  },
-  {
     type: processTypes.SLA,
     informations: {
       label: 'Stereolithografie (SLA)',
       oneLineDescription:
-        'Perfekte Oberflächen und höchste Präzision – ideal für Schmuck, Zahnmedizin und Prototypen!',
-      numberCompletedProjects: '100',
-
-      path: 'sla',
+        'Hochpräziser 3D-Druck mit glatten Oberflächen und feinen Details.',
+      numberCompletedProjects: '200',
+      path: processTypes.SLA.path,
 
       media: {
         heroImage: {
-          url: 'https://biocraftlab.com/cdn/shop/articles/Wie_funktioniert_FDM_3D_Druck_1000x.jpg?v=1719421047',
-          altText: 'FDM-Druck in Aktion',
+          url: 'https://example.com/sla-hero.jpg',
+          altText: 'SLA-Druck in Aktion',
         },
         mainImage: {
-          url: 'https://www.rapidobject.com/static/50b0f1bb44b55729aaa59ab253a02b49/b49cb/rapidobject-entstehung-3d-druck-bauteil-im-sla-verfahren.webp',
-          altText: 'SLA-3D-Druck in Aktion',
+          url: 'https://example.com/sla-main.jpg',
+          altText: 'SLA-gedrucktes Modell',
         },
         mainVideo: {
           url: 'https://www.youtube.com/watch?v=exampleSLA',
-          description: 'Detaillierte Einführung in das SLA-3D-Druckverfahren',
+          description: 'Einführung in die SLA-Drucktechnologie',
         },
         additionalImages: [
           {
-            url: 'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-            altText: 'FDM-Druck in Aktion',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/89/51/bc/21/58/large_display_V%C3%BDst%C5%99i%C5%BEek.PNG',
-            altText: 'Einführung in den FDM-Druck',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/76/b8/bf/1c/5d/large_display_1.jpg',
-            altText: 'Einführung in den FDM-Druck',
-          },
-
-          {
-            url: 'https://cdn.thingiverse.com/assets/27/79/19/38/4e/large_display_Extra-Size-Cat-1-1.jpg',
-            altText: '',
-          },
-
-          {
-            url: 'https://cdn.thingiverse.com/assets/12/d4/da/0f/fa/large_display_dinosaurs.jpg',
-            altText: '',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/bf/e5/aa/99/28/large_display_20250102_151511.jpg',
-            altText: '',
+            url: 'https://example.com/sla-image1.jpg',
+            altText: 'Detailliertes SLA-Modell',
           },
         ],
         additionalVideos: [
           {
-            url: 'https://www.youtube.com/watch?v=exampleSLA',
-            description: 'Funktionsweise des SLA-Drucks',
+            url: 'https://www.youtube.com/watch?v=exampleSLA2',
+            description: 'Fortgeschrittene SLA-Techniken',
           },
         ],
       },
 
       summary: {
         descriptions: [
-          'Die Stereolithografie (SLA) ist eines der präzisesten 3D-Druckverfahren, das flüssiges Harz mit Hilfe eines UV-Lasers schichtweise aushärtet.',
-          'SLA wird häufig in Branchen eingesetzt, in denen Präzision und Oberflächenqualität entscheidend sind, z. B. Schmuckherstellung, Zahnmedizin und Modellbau.',
-          'Die erzeugten Teile weisen eine hohe Maßhaltigkeit auf und eignen sich für maßgeschneiderte Prototypen oder Endverbrauchsteile.',
+          'Die Stereolithografie (SLA) ist ein präzises 3D-Druckverfahren, das flüssiges Harz mit einem UV-Laser aushärtet.',
+          'SLA ermöglicht sehr feine Details und glatte Oberflächen, ideal für Prototypen und hochdetaillierte Modelle.',
+          'Es eignet sich besonders für Anwendungen, die hohe Maßgenauigkeit und geringe Toleranzen erfordern.',
         ],
         advantages: [
-          'Ultrahohe Präzision',
+          'Extrem hohe Detailgenauigkeit',
           'Sehr glatte Oberflächen',
-          'Ideal für feinste Details',
-        ],
-        disadvantages: ['Höhere Materialkosten', 'Nachbearbeitung notwendig'],
-        suitableMaterials: [materialTypes.Resin],
-        useCases: ['Zahntechnik', 'Schmuckdesign', 'Hochdetaillierte Modelle'],
-        recommendedFor: 'Professionelle Anwendungen',
-        costRange: '€€€',
-        precision: 'hoch',
-        productionSpeed: 'langsam',
-      },
-
-      technicalDetails: {
-        maximaleBaugroesse: {
-          key: 'Maximale Baugr.',
-          value: '145 x 145 x 175 mm',
-        },
-        standardVorlaufzeiten: {
-          key: 'Vorlaufzeiten',
-          value: '2-5 Werktage',
-        },
-        massGenauigkeit: { key: 'Maßgenauigkeit', value: '± 0.1 mm' },
-        schichtStaerke: { key: 'Schichtstärke', value: '0.025 - 0.1 mm' },
-        mindestMerkmalsgroesse: {
-          key: 'Mind.-Merkmalgr.',
-          value: '0.2 mm',
-        },
-      },
-      callToAction: {
-        paragraph1:
-          'Entdecke die Welt der hochpräzisen 3D-Drucktechnologie mit SLA – perfekt für detailreiche Modelle!',
-        paragraph2:
-          'SLA-Druck bietet dir glatte Oberflächen und höchste Maßhaltigkeit für professionelle Anwendungen.',
-        paragraph3:
-          'Jetzt mehr erfahren und in die nächste Stufe der additiven Fertigung eintauchen!',
-      },
-
-      contentSections: [
-        {
-          header: 'Wie funktioniert das SLA-Druckverfahren?',
-          paragraphs: [
-            'Bei der Stereolithografie (SLA) wird ein UV-Laser verwendet, um flüssiges Harz gezielt auszuhärten.',
-            'Nach jeder ausgehärteten Schicht wird die Bauplattform abgesenkt, sodass eine neue Harzschicht über das Modell fließt.',
-          ],
-          imageURL:
-            'https://www.rapidobject.com/static/50b0f1bb44b55729aaa59ab253a02b49/b49cb/rapidobject-entstehung-3d-druck-bauteil-im-sla-verfahren.webp',
-        },
-      ],
-    },
-  },
-  {
-    type: processTypes.SLS,
-    informations: {
-      label: 'Selektives Lasersintern (SLS)',
-      oneLineDescription:
-        'Drucke robuste, komplexe Bauteile ohne Stützstrukturen – Perfekt für Industrie & Luftfahrt!',
-      numberCompletedProjects: '100',
-
-      path: 'sls',
-
-      media: {
-        heroImage: {
-          url: 'https://biocraftlab.com/cdn/shop/articles/Wie_funktioniert_FDM_3D_Druck_1000x.jpg?v=1719421047',
-          altText: 'FDM-Druck in Aktion',
-        },
-        mainImage: {
-          url: 'https://www.3ds.com/assets/invest/styles/banner/public/2022-01/powder-bed-fusion-3.jpg.webp?itok=ud2Ma3kz',
-          altText: 'SLS-Druckprozess mit Lasersintern-Technologie',
-        },
-        mainVideo: {
-          url: 'https://www.youtube.com/watch?v=exampleSLS',
-          description: 'Wie funktioniert selektives Lasersintern (SLS)?',
-        },
-        additionalImages: [
-          {
-            url: 'https://faigle3d.ch/wp-content/uploads/2022/05/FDM-scaled.jpg',
-            altText: 'FDM-Druck in Aktion',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/89/51/bc/21/58/large_display_V%C3%BDst%C5%99i%C5%BEek.PNG',
-            altText: 'Einführung in den FDM-Druck',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/76/b8/bf/1c/5d/large_display_1.jpg',
-            altText: 'Einführung in den FDM-Druck',
-          },
-
-          {
-            url: 'https://cdn.thingiverse.com/assets/27/79/19/38/4e/large_display_Extra-Size-Cat-1-1.jpg',
-            altText: '',
-          },
-
-          {
-            url: 'https://cdn.thingiverse.com/assets/12/d4/da/0f/fa/large_display_dinosaurs.jpg',
-            altText: '',
-          },
-          {
-            url: 'https://cdn.thingiverse.com/assets/bf/e5/aa/99/28/large_display_20250102_151511.jpg',
-            altText: '',
-          },
-        ],
-        additionalVideos: [
-          {
-            url: 'https://www.youtube.com/watch?v=exampleSLS',
-            description: 'SLS-3D-Druck im Detail erklärt',
-          },
-        ],
-      },
-
-      summary: {
-        descriptions: [
-          'Das selektive Lasersintern (SLS) nutzt einen Hochleistungslaser, um pulverförmige Materialien zu verschmelzen.',
-          'Da das umgebende Pulver als Stützstruktur fungiert, können komplexe Geometrien ohne zusätzliche Stützen realisiert werden.',
-          'SLS wird vor allem in der Luftfahrt, Automobilindustrie und Medizintechnik für belastbare Bauteile verwendet.',
-        ],
-        advantages: [
-          'Keine Stützstrukturen erforderlich',
-          'Hohe mechanische Belastbarkeit',
-          'Komplexe Geometrien möglich',
+          'Geeignet für komplexe Geometrien',
         ],
         disadvantages: [
-          'Hohe Anschaffungskosten',
-          'Nachbearbeitung von Pulver erforderlich',
+          'Material ist spröder als FDM-Drucke',
+          'UV-Licht kann die Haltbarkeit beeinträchtigen',
         ],
-        suitableMaterials: [materialTypes.Nylon],
-        useCases: ['Luftfahrt', 'Medizintechnik', 'Funktionale Prototypen'],
-        recommendedFor: 'Industrielle Fertigung',
+        suitableMaterials: [
+          materialTypes.Resin,
+          materialTypes.AbsLikeResin,
+          materialTypes.TpuLikeResin,
+        ],
+        useCases: [
+          'Design-Prototypen',
+          'Feine Schmuckmodelle',
+          'Medizinische Anwendungen',
+        ],
+        recommendedFor: 'Hochpräzise Modelle & Prototypen',
         costRange: '€€',
         precision: 'hoch',
         productionSpeed: 'mittel',
@@ -1700,37 +1132,308 @@ export const processes: Process[] = [
       technicalDetails: {
         maximaleBaugroesse: {
           key: 'Maximale Baugr.',
-          value: '340 x 340 x 600 mm',
+          value: '228 x 128 x 245 mm',
         },
         standardVorlaufzeiten: {
           key: 'Vorlaufzeiten',
-          value: '3-7 Werktage',
+          value: '2-5 Werktage',
         },
-        massGenauigkeit: { key: 'Maßgenauigkeit', value: '± 0.3 mm' },
-        schichtStaerke: { key: 'Schichtstärke', value: '0.08 - 0.15 mm' },
+        massGenauigkeit: {
+          key: 'Maßgenauigkeit',
+          value: '± 0.1 mm',
+        },
+        schichtStaerke: {
+          key: 'Schichtstärke',
+          value: '0.025 - 0.1 mm',
+        },
         mindestMerkmalsgroesse: {
           key: 'Mind.-Merkmalgr.',
-          value: '0.6 mm',
+          value: '0.2 mm',
         },
       },
+
       callToAction: {
         paragraph1:
-          'Revolutioniere deine Fertigung mit SLS – dem Industriestandard für langlebige und komplexe Bauteile!',
+          'Erlebe die Präzision des SLA-Drucks für hochdetaillierte Modelle und Prototypen!',
         paragraph2:
-          'Dank der stützfreien Drucktechnologie kannst du selbst komplizierte Geometrien problemlos realisieren.',
+          'Mit SLA kannst du feine Strukturen und glatte Oberflächen realisieren – ideal für anspruchsvolle Anwendungen!',
         paragraph3:
-          'Jetzt informieren und das volle Potenzial des selektiven Lasersinterns entdecken!',
+          'Nutze SLA für deine nächste Design- oder Ingenieursarbeit und sichere dir ein professionelles Ergebnis.',
       },
 
       contentSections: [
         {
-          header: 'Wie funktioniert das SLS-Druckverfahren?',
+          header: 'Wie funktioniert das SLA-Druckverfahren?',
           paragraphs: [
-            'Beim Selektiven Lasersintern (SLS) wird ein Hochleistungslaser genutzt, um ein pulverförmiges Material gezielt zu verschmelzen.',
-            'Das Material liegt als feine Pulverschicht auf einer Bauplattform, und der Laser fährt die vorher definierte Geometrie ab, wodurch das Material an den gewünschten Stellen verschmilzt.',
+            'Beim Stereolithografie-Verfahren (SLA) wird flüssiges Harz Schicht für Schicht mit einem UV-Laser ausgehärtet.',
+            'Durch den Laser entsteht ein hochdetailliertes und genaues Modell, das nach dem Druck in einem Nachhärtungsprozess stabilisiert wird.',
           ],
-          imageURL:
-            'https://www.3ds.com/assets/invest/styles/banner/public/2022-01/powder-bed-fusion-3.jpg.webp?itok=ud2Ma3kz',
+          imageURL: 'https://example.com/sla-process.jpg',
+        },
+        {
+          header: 'Welche Materialien sind für SLA verfügbar?',
+          paragraphs: [
+            'SLA kann verschiedene Harze nutzen, darunter Standard-Resin für allgemeine Anwendungen, ABS-like Resin für robustere Drucke und TPU-like Resin für flexible Strukturen.',
+          ],
+          imageURL: 'https://example.com/sla-materials.jpg',
+        },
+        {
+          header: 'Für welche Anwendungen eignet sich SLA?',
+          paragraphs: [
+            'SLA wird häufig für die Herstellung von detaillierten Prototypen, medizinischen Modellen und hochwertigen Schmuckstücken verwendet.',
+            'Dank seiner Präzision ist es ideal für Anwendungen, bei denen feinste Details gefragt sind.',
+          ],
+          imageURL: 'https://example.com/sla-applications.jpg',
+        },
+      ],
+    },
+  },
+  {
+    type: processTypes.FDM,
+    informations: {
+      label: 'Fused Deposition Modeling (FDM)',
+      oneLineDescription:
+        'Kostengünstiger und zuverlässiger 3D-Druck mit einer großen Materialvielfalt.',
+      numberCompletedProjects: '300',
+      path: processTypes.FDM.path,
+
+      media: {
+        heroImage: {
+          url: 'https://example.com/fdm-hero.jpg',
+          altText: 'FDM-Druck in Aktion',
+        },
+        mainImage: {
+          url: 'https://example.com/fdm-main.jpg',
+          altText: 'FDM-gedrucktes Modell',
+        },
+        mainVideo: {
+          url: 'https://www.youtube.com/watch?v=exampleFDM',
+          description: 'Einführung in die FDM-Drucktechnologie',
+        },
+        additionalImages: [
+          {
+            url: 'https://example.com/fdm-image1.jpg',
+            altText: 'Detail eines FDM-Drucks',
+          },
+        ],
+        additionalVideos: [
+          {
+            url: 'https://www.youtube.com/watch?v=exampleFDM2',
+            description: 'Fortgeschrittene FDM-Techniken',
+          },
+        ],
+      },
+
+      summary: {
+        descriptions: [
+          'Das Fused Deposition Modeling (FDM) ist eines der am weitesten verbreiteten 3D-Druckverfahren.',
+          'FDM nutzt eine erhitzte Düse, um geschmolzenen Kunststoff Schicht für Schicht aufzutragen.',
+          'Dieses Verfahren ist kostengünstig, einfach zu bedienen und bietet eine große Materialvielfalt.',
+        ],
+        advantages: [
+          'Günstige Anschaffungskosten',
+          'Einfache Bedienung',
+          'Vielfältige Materialauswahl',
+        ],
+        disadvantages: [
+          'Begrenzte Präzision',
+          'Mechanische Schwächen entlang der Schichtgrenzen',
+        ],
+        suitableMaterials: [
+          materialTypes.ABS,
+          materialTypes.PLA,
+          materialTypes.PA6_CF_GF,
+          materialTypes.PETG,
+          materialTypes.ABS_CF_GF,
+          materialTypes.TPU,
+          materialTypes.ASA,
+        ],
+        useCases: ['Prototypenbau', 'Werkzeugfertigung', 'Technische Bauteile'],
+        recommendedFor: 'Hobbyisten & Ingenieure',
+        costRange: '€',
+        precision: 'mittel',
+        productionSpeed: 'schnell',
+      },
+
+      technicalDetails: {
+        maximaleBaugroesse: {
+          key: 'Maximale Baugr.',
+          value: '250 x 250 x 250 mm',
+        },
+        standardVorlaufzeiten: {
+          key: 'Vorlaufzeiten',
+          value: '1-3 Werktage',
+        },
+        massGenauigkeit: {
+          key: 'Maßgenauigkeit',
+          value: '± 0.2 mm',
+        },
+        schichtStaerke: {
+          key: 'Schichtstärke',
+          value: '0.2 mm',
+        },
+        mindestMerkmalsgroesse: {
+          key: 'Mind.-Merkmalgr.',
+          value: '0.8 mm',
+        },
+      },
+
+      callToAction: {
+        paragraph1:
+          'Starte noch heute mit dem FDM-Druck – einfach, kostengünstig und vielseitig!',
+        paragraph2:
+          'Mit FDM kannst du eine Vielzahl von Materialien nutzen und individuelle Bauteile fertigen.',
+        paragraph3:
+          'Entdecke die Möglichkeiten des 3D-Drucks mit FDM und erwecke deine Ideen zum Leben!',
+      },
+
+      contentSections: [
+        {
+          header: 'Wie funktioniert das FDM-Druckverfahren?',
+          paragraphs: [
+            'Beim FDM-Druck wird ein Kunststofffilament erhitzt und durch eine Düse extrudiert.',
+            'Die Düse bewegt sich über die Druckplattform und trägt das Material schichtweise auf.',
+          ],
+          imageURL: 'https://example.com/fdm-process.jpg',
+        },
+        {
+          header: 'Welche Materialien kann man mit FDM verwenden?',
+          paragraphs: [
+            'FDM-Drucker unterstützen viele Thermoplaste, darunter ABS, PLA, PETG und spezielle Carbon-verstärkte Filamente.',
+          ],
+          imageURL: 'https://example.com/fdm-materials.jpg',
+        },
+        {
+          header: 'Für welche Anwendungen eignet sich FDM?',
+          paragraphs: [
+            'FDM wird für Prototypen, funktionale Bauteile und den Bildungsbereich genutzt.',
+            'Es ist sowohl für Hobbyisten als auch für industrielle Anwendungen interessant.',
+          ],
+          imageURL: 'https://example.com/fdm-applications.jpg',
+        },
+      ],
+    },
+  },
+  {
+    type: processTypes.FDM_big_scale,
+    informations: {
+      label: 'Großformatiger FDM-Druck',
+      oneLineDescription:
+        'FDM-Druck für große Bauteile mit einem Volumen von bis zu 1m³ – nur auf Anfrage.',
+      numberCompletedProjects: 'In Planung',
+      path: processTypes.FDM_big_scale.path,
+
+      media: {
+        heroImage: {
+          url: 'https://example.com/fdm-large-hero.jpg',
+          altText: 'Großformatiger FDM-Druck in Aktion',
+        },
+        mainImage: {
+          url: 'https://example.com/fdm-large-main.jpg',
+          altText: 'Großer FDM-Druck',
+        },
+        mainVideo: {
+          url: 'https://www.youtube.com/watch?v=exampleFDMlarge',
+          description: 'Einführung in den großformatigen FDM-Druck',
+        },
+        additionalImages: [
+          {
+            url: 'https://example.com/fdm-large-image1.jpg',
+            altText: 'Detail eines großformatigen FDM-Drucks',
+          },
+        ],
+        additionalVideos: [
+          {
+            url: 'https://www.youtube.com/watch?v=exampleFDMlarge2',
+            description: 'Technische Einblicke in den großformatigen FDM-Druck',
+          },
+        ],
+      },
+
+      summary: {
+        descriptions: [
+          'Geplantes FDM-Druckverfahren für großformatige Bauteile mit einer maximalen Baugröße von bis zu 1m³.',
+          'Dieses Verfahren eignet sich für große Prototypen, Architekturmodelle und industrielle Anwendungen.',
+          'Der Druckprozess ist nur auf Anfrage verfügbar und nicht über das reguläre Buchungssystem online buchbar.',
+        ],
+        advantages: [
+          'Sehr große Bauteile möglich',
+          'Kosteneffizient für große Prototypen',
+          'Geeignet für Architekturmodelle und industrielle Anwendungen',
+        ],
+        disadvantages: [
+          'Nur begrenzte Materialauswahl',
+          'Längere Produktionszeiten',
+          'Nur auf Anfrage verfügbar',
+        ],
+        suitableMaterials: [materialTypes.PLA, materialTypes.PETG],
+        useCases: [
+          'Großformatige Prototypen',
+          'Architekturmodelle',
+          'Industrielle Bauteile',
+        ],
+        recommendedFor: 'Industrielle Anwendungen & Großprojekte',
+        costRange: '€€€',
+        precision: 'mittel',
+        productionSpeed: 'langsam',
+      },
+
+      technicalDetails: {
+        maximaleBaugroesse: {
+          key: 'Maximale Baugr.',
+          value: 'Bis zu 1m³',
+        },
+        standardVorlaufzeiten: {
+          key: 'Vorlaufzeiten',
+          value: 'Auf Anfrage',
+        },
+        massGenauigkeit: {
+          key: 'Maßgenauigkeit',
+          value: '± 0.5 mm',
+        },
+        schichtStaerke: {
+          key: 'Schichtstärke',
+          value: '0.2 - 0.8 mm',
+        },
+        mindestMerkmalsgroesse: {
+          key: 'Mind.-Merkmalgr.',
+          value: '1.5 mm',
+        },
+      },
+
+      callToAction: {
+        paragraph1:
+          'Interessiert an großformatigem 3D-Druck? Wir bieten FDM-Druck mit bis zu 1m³ Baugröße – nur auf Anfrage!',
+        paragraph2:
+          'Ideal für Architekturmodelle, industrielle Anwendungen und großformatige Prototypen.',
+        paragraph3:
+          'Kontaktiere uns für eine individuelle Beratung und ein maßgeschneidertes Angebot!',
+      },
+
+      contentSections: [
+        {
+          header: 'Wie funktioniert der großformatige FDM-Druck?',
+          paragraphs: [
+            'Beim großformatigen FDM-Druck wird ein beheiztes Druckbett mit einer Düse kombiniert, um sehr große Bauteile Schicht für Schicht aufzubauen.',
+            'Aufgrund der Größe des Druckbereichs sind spezielle Kalibrierungs- und Stützstrukturen notwendig.',
+          ],
+          imageURL: 'https://example.com/fdm-large-process.jpg',
+        },
+        {
+          header: 'Welche Materialien sind verfügbar?',
+          paragraphs: [
+            'Aktuell sind für den großformatigen Druck nur PLA und PETG verfügbar, da diese Materialien eine gute Balance zwischen Stabilität und Druckbarkeit bieten.',
+          ],
+          imageURL: 'https://example.com/fdm-large-materials.jpg',
+        },
+        {
+          header:
+            'Für welche Anwendungen eignet sich großformatiger FDM-Druck?',
+          paragraphs: [
+            'Dieses Verfahren eignet sich besonders für Anwendungen, bei denen große Einzelteile benötigt werden, z. B. für Architekturmodelle, industrielle Prototypen oder Spezialanfertigungen.',
+            'Da der Druck nur auf Anfrage verfügbar ist, können wir maßgeschneiderte Lösungen anbieten.',
+          ],
+          imageURL: 'https://example.com/fdm-large-applications.jpg',
         },
       ],
     },

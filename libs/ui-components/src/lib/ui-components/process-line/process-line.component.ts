@@ -18,6 +18,8 @@ import {
   SequentialFadeInDirective,
 } from '@sg-shared-librarys/directives';
 import { selectProcessLineElements } from './state/costumer-reviews-state.selectors';
+import { Router } from '@angular/router';
+import { CallBackRequestService } from '@sg-shared-librarys/services';
 
 @Component({
   selector: 'sg-lib-component-process-line',
@@ -39,15 +41,21 @@ import { selectProcessLineElements } from './state/costumer-reviews-state.select
       >
         <div
           *ngFor="let element of processLineElements(); let i = index"
-          class="p-4 bg-primary-500 border border-primary-300 shadow-sm rounded-lg opacity-0 h-60 w-full flex flex-col justify-center hoer: cursor-pointer"
+          (click)="getFunctionForProcessLineElement(i)"
+          class="group p-4 bg-primary-500 border border-primary-300 shadow-sm rounded-lg opacity-0 h-60 w-full flex flex-col justify-center cursor-pointer transition-all duration-300"
+          tabindex="0"
+          (keyup.enter)="getFunctionForProcessLineElement(i)"
+          (keydown.space)="getFunctionForProcessLineElement(i)"
           appHoverScale
           appHoverShadow
         >
+          <!-- Zahlen-Container -->
           <div
-            class="flex items-center justify-center w-10 h-10 bg-slate-200 text-black rounded-full mb-4 mx-auto"
+            class="flex items-center justify-center w-10 h-10 bg-slate-200 text-black rounded-full mb-4 mx-auto transition-colors duration-300 group-hover:bg-action-500 group-hover:text-white"
           >
             {{ i + 1 }}
           </div>
+
           <div class="text-slate-200 text-center">
             <h3 class="text-lg font-bold mb-2">{{ element.title }}</h3>
             <p class="text-sm">{{ element.description }}</p>
@@ -56,23 +64,34 @@ import { selectProcessLineElements } from './state/costumer-reviews-state.select
       </div>
     </div>
   `,
+  styles: [
+    `
+      /* Falls du lieber direkt mit CSS arbeitest */
+      .group:hover .number-circle {
+        background-color: var(
+          --color-action-500
+        ); /* Falls du CSS Variablen nutzt */
+        color: white;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+    `,
+  ],
 })
 export class ProcessLineComponent implements AfterViewInit, OnDestroy {
-  // $ Wichtig wenn die hier angwendete Directive verwedent wird müssen die Kinderelemente im vorfeld auf opacity:0 gesetzt sein!
-
+  router = inject(Router);
+  callBackRequestService = inject(CallBackRequestService);
   @ViewChild('processLineContainer', { static: true })
   processLineContainer!: ElementRef;
   processLineElements = signal<ProcessLineElement[]>([]);
   store = inject(Store);
   trigger = false; // Trigger für die Animation
   observer: IntersectionObserver | null = null;
-  //
+
   processLineElements$: Observable<ProcessLineElement[]> = this.store.select(
     selectProcessLineElements
   );
 
   constructor(private renderer: Renderer2) {
-    // Subscribe to NgRx Store
     this.processLineElements$.subscribe((elements) => {
       this.processLineElements.set(elements);
     });
@@ -93,24 +112,30 @@ export class ProcessLineComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  getFunctionForProcessLineElement(processLineIndex: number) {
+    if (processLineIndex !== 0) {
+      this.router.navigate(['/druckanfrage']);
+    } else {
+      this.callBackRequestService.openDialog();
+    }
+  }
+
   private setupIntersectionObserver(): void {
-    // IntersectionObserver konfigurieren
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            this.trigger = true; // Trigger aktivieren, wenn sichtbar
-            this.observer?.disconnect(); // Observer deaktivieren, wenn Animation gestartet
+            this.trigger = true;
+            this.observer?.disconnect();
           }
         });
       },
       {
-        root: null, // Standard: Viewport
-        threshold: 0.1, // Sichtbarkeitsschwelle (10% sichtbar)
+        root: null,
+        threshold: 0.1,
       }
     );
 
-    // Beobachtung starten
     if (this.processLineContainer) {
       this.observer.observe(this.processLineContainer.nativeElement);
     }

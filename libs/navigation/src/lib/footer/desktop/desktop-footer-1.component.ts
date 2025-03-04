@@ -16,6 +16,7 @@ import { CallToActionComponent } from '@sg-shared-librarys/ui-components';
 import { HeaderState } from '../../header/state/header-state.reducer';
 import { selectNavItems } from '../../header/state/header-state.selectors';
 import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
+import { CallBackRequestService } from '@sg-shared-librarys/services';
 
 @Component({
   selector: 'sg-lib-component-desktop-footer-1',
@@ -34,6 +35,7 @@ import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
       <sg-lib-component-call-to-action
         buttonText="Jetzt Kontakt aufnehmen"
         text="Haben wir sie Neugierig gemacht?"
+        (click)="callBackRequestService.openDialog()"
       ></sg-lib-component-call-to-action>
       <div class="flex p-12 px-24">
         <!-- Box 1: Logo -->
@@ -112,6 +114,7 @@ import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
   `,
 })
 export class DesktopFooter1Component implements OnInit {
+  callBackRequestService = inject(CallBackRequestService);
   store = inject(Store<HeaderState>);
   cdr = inject(ChangeDetectorRef);
   $navItems = signal<NavItem[]>([]);

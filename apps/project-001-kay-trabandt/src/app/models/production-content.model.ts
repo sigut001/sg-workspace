@@ -50,6 +50,7 @@ export interface Material {
       thermalResistance: { key: string; value: string };
       flexibility: { key: string; value: string };
       thickness: { key: string; value: string };
+      colors: { key: string; value: string };
     };
 
     // Gruppierung: Nachhaltigkeit & Umweltfreundlichkeit

@@ -84,7 +84,6 @@ import {
           <sg-lib-component-table
             [columns]="materialTechnicalDetailsColumns()"
             [data]="materialTechnicalDetailsData()"
-            [colors]="materialColors()"
             class="w-full lg:w-fit"
           ></sg-lib-component-table>
         </div>
@@ -309,17 +308,17 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
     }, {} as Record<string, string>)
   );
 
-  materialColors = computed(() => {
-    const material = this.materialSignal();
+  // materialColors = computed(() => {
+  //   const material = this.materialSignal();
 
-    if (!material || !material.informations?.summary?.chooseableColors) {
-      return {};
-    }
+  //   if (!material || !material.informations?.summary?.chooseableColors) {
+  //     return {};
+  //   }
 
-    return {
-      [material.type.name]: material.informations.summary.chooseableColors.map(
-        (color) => color.hex
-      ),
-    };
-  });
+  //   return {
+  //     [material.type.name]: material.informations.summary.chooseableColors.map(
+  //       (color) => color.hex
+  //     ),
+  //   };
+  // });
 }

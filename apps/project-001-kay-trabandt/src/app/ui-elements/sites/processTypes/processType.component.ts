@@ -108,7 +108,6 @@ import {
             [columns]="materialTechnicalDetailsColumns()"
             [data]="materialTechnicalDetailsData()"
             [links]="materialLinks()"
-            [colors]="materialColors()"
             class="w-full lg:w-fit"
           ></sg-lib-component-table>
           <sg-lib-component-call-to-action-button

@@ -50,9 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
     ]),
   ],
   template: `
-    <div
-      class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg mx-auto overflow-scroll"
-    >
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg mx-auto ">
       <div
         *ngIf="submitted"
         @fadeInOut
