@@ -5,6 +5,8 @@ import {
   inject,
   ViewChild,
   ElementRef,
+  AfterViewInit,
+  OnDestroy,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -148,7 +150,7 @@ import {
     ></sg-lib-component-image-slider>
   </div>`,
 })
-export class MaterialViewComponent {
+export class MaterialViewComponent implements AfterViewInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   materialSignal = signal<Material | null>(null);
@@ -165,8 +167,10 @@ export class MaterialViewComponent {
       .map((segment) => segment.path)
       .pop();
 
+    if (!materialPathFromUrl) throw new Error('No material path found in URL');
+
     this.store
-      .select(selectMaterialByPath(materialPathFromUrl!))
+      .select(selectMaterialByPath(materialPathFromUrl))
       .subscribe((material) => {
         this.materialSignal.set(material);
         if (material) {
@@ -261,7 +265,7 @@ export class MaterialViewComponent {
 
   processTechnicalDetailsColumns = computed(() =>
     this.processesSignal()?.length > 0
-      ? ['Prozessarten', ...Array.from(this.importantProcessDetails)] // "Prozessarten" als erste Spalte
+      ? ['Prozessarten', ...Array.from(this.importantProcessDetails)]
       : []
   );
 
@@ -273,8 +277,8 @@ export class MaterialViewComponent {
           process.informations.technicalDetails
         );
 
-        const row: Record<string, any> = {
-          Prozessarten: process.type.name, // Erste Spalte mit dem Verfahrenstyp
+        const row: Record<string, string> = {
+          Prozessarten: process.type.name,
         };
 
         Object.values(process.informations.technicalDetails).forEach(
@@ -306,10 +310,10 @@ export class MaterialViewComponent {
   );
 
   materialColors = computed(() => {
-    const material = this.materialSignal(); // Einzelnes Material-Objekt holen
+    const material = this.materialSignal();
 
     if (!material || !material.informations?.summary?.chooseableColors) {
-      return {}; // Falls kein Material oder keine Farben vorhanden sind, leere Map zurückgeben
+      return {};
     }
 
     return {
