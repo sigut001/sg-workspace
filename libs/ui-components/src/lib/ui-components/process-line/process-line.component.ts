@@ -12,13 +12,22 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProcessLineElement } from './process-line-element.model';
-import { SequentialFadeInDirective } from '@sg-shared-librarys/directives';
+import {
+  HoverScaleDirective,
+  HoverShadowDirective,
+  SequentialFadeInDirective,
+} from '@sg-shared-librarys/directives';
 import { selectProcessLineElements } from './state/costumer-reviews-state.selectors';
 
 @Component({
   selector: 'sg-lib-component-process-line',
   standalone: true,
-  imports: [CommonModule, SequentialFadeInDirective],
+  imports: [
+    CommonModule,
+    SequentialFadeInDirective,
+    HoverScaleDirective,
+    HoverShadowDirective,
+  ],
   template: `
     <div #processLineContainer class="flex flex-col items-center w-full">
       <div
@@ -30,7 +39,9 @@ import { selectProcessLineElements } from './state/costumer-reviews-state.select
       >
         <div
           *ngFor="let element of processLineElements(); let i = index"
-          class="p-4 bg-primary-500 border border-primary-300 shadow-sm rounded-lg opacity-0 h-60 w-full flex flex-col justify-center "
+          class="p-4 bg-primary-500 border border-primary-300 shadow-sm rounded-lg opacity-0 h-60 w-full flex flex-col justify-center hoer: cursor-pointer"
+          appHoverScale
+          appHoverShadow
         >
           <div
             class="flex items-center justify-center w-10 h-10 bg-slate-200 text-black rounded-full mb-4 mx-auto"

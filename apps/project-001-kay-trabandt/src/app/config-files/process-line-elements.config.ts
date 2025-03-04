@@ -2,38 +2,39 @@ import { ProcessLineElement } from '@sg-shared-librarys/ui-components';
 
 export const processLineElements: ProcessLineElement[] = [
   {
+    title: 'Beratung einholen',
+    description:
+      'Falls sie noch unsicher sind, klicken sie hier für eine unverbindlichen Beratung.',
+    iconURL: '',
+  },
+  {
     title: 'Datei hochladen',
     description: 'Laden Sie Ihre Datei einfach hoch.',
-    iconURL: '/assets/icons/upload.svg',
+    iconURL: '',
   },
   {
     title: 'Technologie wählen',
     description: 'Entscheiden Sie sich für FDM, SLA oder SLS.',
-    iconURL: '/assets/icons/technology.svg',
+    iconURL: '',
   },
   {
     title: 'Material entdecken',
     description: 'Wählen Sie aus über 20 Materialien.',
-    iconURL: '/assets/icons/material.svg',
+    iconURL: '',
   },
   {
     title: 'Farbe auswählen',
     description: 'Farben passend zu Ihrem Projekt.',
-    iconURL: '/assets/icons/color.svg',
+    iconURL: '',
   },
   {
     title: 'Daten eingeben',
     description: 'Füllen Sie das Kontaktformular aus.',
-    iconURL: '/assets/icons/contact.svg',
+    iconURL: '',
   },
   {
     title: 'Angebot anfordern',
     description: 'Erhalten Sie Ihr Angebot in 24 Stunden.',
-    iconURL: '/assets/icons/offer.svg',
-  },
-  {
-    title: 'Jetzt beraten lassen',
-    description: 'Wir helfen Ihnen persönlich weiter.',
-    iconURL: '/assets/icons/phone.svg',
+    iconURL: '',
   },
 ];
