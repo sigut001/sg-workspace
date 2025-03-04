@@ -74,20 +74,24 @@ export const allChooseableColors = {
   terracotta: { label: 'Terracotta', hex: '#E2725B' },
 };
 export const materialTypes = {
-  PLA: { name: 'PLA', path: 'pla' },
-  AbsLikeResin: { name: 'AbsLikeResin', path: 'abs-like-resin' },
-  TpuLikeResin: { name: 'TpuLikeResin', path: 'tpu-like-resin' },
-  ASA: { name: 'ASA', path: 'asa' },
-  TPU: { name: 'TPU', path: 'tpu' },
-  PETG: { name: 'PETG', path: 'petg' },
-  ABS: { name: 'ABS', path: 'abs' },
-  ABS_CF_GF: { name: 'ABS_CF_GF', path: 'abs-cf-gf' },
-  PA6_CF_GF: { name: 'PA6_CF_GF', path: 'pa6-cf-gf' },
-  Resin: { name: 'Resin', path: 'resin' },
-  Nylon: { name: 'Nylon', path: 'nylon' },
+  PLA: { name: 'Polylactid (PLA)', path: 'pla' },
+  AbsLikeResin: { name: 'ABS-ähnliches Resin', path: 'abs-like-resin' },
+  TpuLikeResin: { name: 'TPU-ähnliches Resin', path: 'tpu-like-resin' },
+  ASA: { name: 'Acrylnitril-Styrol-Acrylat (ASA)', path: 'asa' },
+  TPU: { name: 'Thermoplastisches Polyurethan (TPU)', path: 'tpu' },
+  PETG: { name: 'Polyethylenterephthalat-Glykol (PETG)', path: 'petg' },
+  ABS: { name: 'Acrylnitril-Butadien-Styrol (ABS)', path: 'abs' },
+  ABS_CF_GF: { name: 'ABS mit Kohlenstoff- und Glasfasern', path: 'abs-cf-gf' },
+  PA6_CF_GF: {
+    name: 'Polyamid 6 mit Kohlenstoff- und Glasfasern',
+    path: 'pa6-cf-gf',
+  },
+  Resin: { name: 'Harz (Resin)', path: 'resin' },
+  Nylon: { name: 'Nylon (Polyamid)', path: 'nylon' },
   Metall: { name: 'Metall', path: 'metall' },
   Keramik: { name: 'Keramik', path: 'keramik' },
 } as const;
+
 export type MaterialType = (typeof materialTypes)[keyof typeof materialTypes];
 export const TechnicalDetailMaterialLabels = {
   density: 'Dichte',
@@ -103,7 +107,7 @@ export const TechnicalDetailMaterialLabels = {
 export type TechnicalDetailMaterialLabel =
   (typeof TechnicalDetailMaterialLabels)[keyof typeof TechnicalDetailMaterialLabels];
 export const processTypes = {
-  FDM: { name: 'FDM', path: 'fdm' },
+  FDM_small_scale: { name: 'FDM_small_scale', path: 'fdm-small' },
   FDM_big_scale: { name: 'FDM_big_scale', path: 'fdm-big-scale' },
   SLA: { name: 'SLA', path: 'sla' },
   SLS: { name: 'SLS', path: 'sls' },
@@ -161,7 +165,10 @@ export const materials: Material[] = [
           'Weniger temperaturbeständig als ABS oder Nylon',
           'Brüchiger bei mechanischer Belastung',
         ],
-        suitableProcesses: [processTypes.FDM],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: ['Prototyping', 'Modellbau', 'Spielzeugherstellung'],
         recommendedFor: 'Hobby-Drucker und Einsteiger',
@@ -278,7 +285,10 @@ export const materials: Material[] = [
           'Gute mechanische Eigenschaften',
         ],
         disadvantages: ['Warping', 'Benötigt geschlossene Druckumgebung'],
-        suitableProcesses: [processTypes.FDM],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: ['Technische Bauteile', 'Gehäuse', 'Mechanische Prototypen'],
         recommendedFor: 'Erfahrene Drucker mit geschlossener Kammer',
@@ -366,7 +376,10 @@ export const materials: Material[] = [
           'Erfordert eine geschlossene Druckkammer',
           'Kann Druckdüsen schneller abnutzen',
         ],
-        suitableProcesses: [processTypes.FDM],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
           'Industriebauteile',
@@ -459,7 +472,11 @@ export const materials: Material[] = [
           'Erfordert hohe Drucktemperaturen',
           'Kann Düsen schneller abnutzen',
         ],
-        suitableProcesses: [processTypes.FDM, processTypes.SLS],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+          processTypes.SLS,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
           'Industriebauteile',
@@ -552,7 +569,10 @@ export const materials: Material[] = [
           'Kann Fäden ziehen (Stringing)',
           'Nicht so hart wie ABS oder Nylon',
         ],
-        suitableProcesses: [processTypes.FDM],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
           'Outdoor-Bauteile',
@@ -644,7 +664,10 @@ export const materials: Material[] = [
           'Schwerer zu drucken als starre Materialien',
           'Erfordert langsamere Druckgeschwindigkeiten',
         ],
-        suitableProcesses: [processTypes.FDM],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
           'Stoßdämpfende Bauteile',
@@ -736,7 +759,10 @@ export const materials: Material[] = [
           'Benötigt beheizte Druckplatte und hohe Drucktemperaturen',
           'Kann Warping aufweisen ohne geschlossene Kammer',
         ],
-        suitableProcesses: [processTypes.FDM],
+        suitableProcesses: [
+          processTypes.FDM_big_scale,
+          processTypes.FDM_small_scale,
+        ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
           'Außenbauteile',
@@ -1189,13 +1215,13 @@ export const processes: Process[] = [
     },
   },
   {
-    type: processTypes.FDM,
+    type: processTypes.FDM_small_scale,
     informations: {
-      label: 'Fused Deposition Modeling (FDM)',
+      label: 'Fused Deposition Modeling (FDM) für kleine Bauteile',
       oneLineDescription:
         'Kostengünstiger und zuverlässiger 3D-Druck mit einer großen Materialvielfalt.',
       numberCompletedProjects: '300',
-      path: processTypes.FDM.path,
+      path: processTypes.FDM_small_scale.path,
 
       media: {
         heroImage: {

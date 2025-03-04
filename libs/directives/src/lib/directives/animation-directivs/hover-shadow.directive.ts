@@ -38,16 +38,15 @@ export class HoverShadowDirective {
   }
 
   private getTailwindColor(): string {
-    // Erstelle ein temporäres Element, um die Tailwind-Farbe auszulesen
     const tempElement = document.createElement('div');
-    tempElement.classList.add(`text-${this.shadowColorClass}`); // Nutzt Tailwind-Klasse
+    tempElement.classList.add(`bg-${this.shadowColorClass}`);
     document.body.appendChild(tempElement);
 
-    // Hole den berechneten Farbwert (funktioniert mit Tailwind)
-    const computedColor = window.getComputedStyle(tempElement).color;
-    document.body.removeChild(tempElement); // Entferne das Element
+    const computedColor = window.getComputedStyle(tempElement).backgroundColor;
+    document.body.removeChild(tempElement);
 
-    // Ändere den Farbwert in eine RGBA-Version für dezente Opazität
+    console.log('Extracted Color:', computedColor);
+
     return computedColor
       .replace('rgb', 'rgba')
       .replace(')', `, ${this.shadowOpacity})`);
