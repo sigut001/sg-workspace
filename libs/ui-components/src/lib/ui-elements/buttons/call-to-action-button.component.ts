@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
       ]"
       [disabled]="disabled"
       (click)="navigate()"
-      class="shadow-lg hover:bg-action-600 focus:outline-none transition-all duration-150 w-full shadow-[0_4px_6px_rgba(0, 123, 255, 0.3)]"
+      class="shadow-lg hover:bg-action-600 focus:outline-none transition-all duration-150 w-full shadow-[0_4px_6px_rgba(0, 123, 255, 0.3)] overflow-hidden text-ellipsis whitespace-nowrap"
     >
       @if (tel) {
       <a id="beratungAnfragenButton" [href]="'tel:' + tel">

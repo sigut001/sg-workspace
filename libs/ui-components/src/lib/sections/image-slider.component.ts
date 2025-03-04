@@ -23,8 +23,8 @@ import { CommonModule } from '@angular/common';
       "
     >
       <div class="flex flex-col items-center justify-center">
-        <p class="text-4xl font-bold">{{ headline() }}</p>
-        <p class="text-lg">{{ subheadline() }}</p>
+        <p class="text-4xl font-bold text-center">{{ headline() }}</p>
+        <p class="text-lg text-center ">{{ subheadline() }}</p>
       </div>
       <swiper-container init="false" class="w-full h-[23rem]">
         @for (image of imageUrls(); track image; let i = $index) {

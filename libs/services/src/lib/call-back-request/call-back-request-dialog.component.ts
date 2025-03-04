@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormsModule,
@@ -50,25 +50,9 @@ import { MatIconModule } from '@angular/material/icon';
     ]),
   ],
   template: `
-    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg mx-auto ">
-      <div
-        *ngIf="submitted"
-        @fadeInOut
-        class="flex flex-col items-center justify-center p-2"
-      >
-        <span
-          id="logoIcon"
-          class="material-symbols-outlined text-green-600 text-4xl "
-        >
-          deployed_code
-        </span>
-        <p class="text-green-600 text-lg font-semibold text-center">
-          Ihre Anfrage ist eingegangen, <br />
-          wir melden uns bei Ihnen.
-        </p>
-      </div>
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg mx-auto">
       <div class="p-2">
-        <p class="text-primary-500 text-start ">
+        <p class="text-primary-500 text-start">
           Bitte geben Sie Ihre Kontaktdaten an und wählen Sie einen bevorzugten
           Zeitbereich für ein Beratungsgespräch aus.
         </p>
@@ -148,7 +132,27 @@ import { MatIconModule } from '@angular/material/icon';
           </mat-checkbox>
         </div>
       </form>
-      <div class="flex justify-end gap-2 pt-4 ">
+
+      <!-- Bestätigungs-Nachricht -->
+      <div
+        *ngIf="submitted"
+        @fadeInOut
+        class="flex flex-col items-center justify-center p-2"
+        #confirmationMessage
+      >
+        <span
+          id="logoIcon"
+          class="material-symbols-outlined text-green-600 text-4xl"
+        >
+          deployed_code
+        </span>
+        <p class="text-green-600 text-lg font-semibold text-center">
+          Ihre Anfrage ist eingegangen, <br />
+          wir melden uns bei Ihnen.
+        </p>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-4">
         <button mat-flat-button (click)="cancel()">Abbrechen</button>
         <button
           mat-flat-button
@@ -163,6 +167,8 @@ import { MatIconModule } from '@angular/material/icon';
   `,
 })
 export class CallBackRequestDialogComponent {
+  @ViewChild('confirmationMessage') confirmationMessage!: ElementRef;
+
   availabilityForm: FormGroup;
   isAllDay = false;
   submitted = false;
@@ -209,6 +215,17 @@ export class CallBackRequestDialogComponent {
   save(): void {
     if (this.availabilityForm.valid) {
       this.submitted = true;
+
+      // Warte kurz, damit sich die Animation entfalten kann, dann scrolle zum Bestätigungsbereich
+      setTimeout(() => {
+        if (this.confirmationMessage) {
+          this.confirmationMessage.nativeElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }
+      }, 300); // Leichte Verzögerung für flüssigere UX
+
       setTimeout(
         () => this.dialogRef.close(this.availabilityForm.value),
         this.autoCloseTime + 1800
@@ -227,9 +244,8 @@ export class CallBackRequestDialogComponent {
     const startTime = group.get('startTime')?.value;
     const endTime = group.get('endTime')?.value;
 
-    if (!allDay && (!startTime || !endTime)) {
-      return { timeOrAllDayRequired: true };
-    }
-    return null;
+    return !allDay && (!startTime || !endTime)
+      ? { timeOrAllDayRequired: true }
+      : null;
   }
 }

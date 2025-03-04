@@ -79,7 +79,7 @@ import {
         <!-- Materialeigenschaften -->
         <div class="flex flex-col justify-center items-center gap-8 w-full">
           <p class="text-4xl font-bold text-slate-200 text-center">
-            Technische Eigenschaften von {{ material.informations.label }}
+            Technische Eigenschaften
           </p>
           <sg-lib-component-table
             [columns]="materialTechnicalDetailsColumns()"
@@ -91,7 +91,7 @@ import {
         <!-- Geeignete Verfahren für das Material -->
         <div class="flex flex-col justify-center items-center gap-8 w-full">
           <p class="text-4xl font-bold text-slate-200 text-center">
-            Geeignete Verfahren für {{ material.informations.label }}
+            Geeignete Verfahren
           </p>
           <sg-lib-component-table
             [columns]="processTechnicalDetailsColumns()"

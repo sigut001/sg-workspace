@@ -16,9 +16,9 @@ import { Component, input } from '@angular/core';
       "
     >
       <div
-        class="absolute top-1/4 lg:top-1/3 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 text-center text-white px-8"
+        class="absolute top-1/4 lg:top-1/3 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 text-center text-white px-8 overflow-hidden"
       >
-        <p class="text-4xl font-bold text-slate-100">{{ headline() }}</p>
+        <p class="text-4xl font-bold text-slate-100 ">{{ headline() }}</p>
         <p class="text-lg mt-2 text-slate-200">{{ subheadline() }}</p>
       </div>
     </div>

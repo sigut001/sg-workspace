@@ -96,13 +96,15 @@ import { ScreenSizeService } from '@sg-shared-librarys/services';
             </div>
             <!-- Button am Ende der Karte -->
             @if (links() && links()![row[columns()[0]]]) {
-            <sg-lib-component-call-to-action-button
-              [buttonText]="'Details zu ' + row[columns()[0]]"
-              [link]="links()![row[columns()[0]]]"
-              size="small"
-              rounded="large"
-              class="w-full"
-            ></sg-lib-component-call-to-action-button>
+            <div class="py-4">
+              <sg-lib-component-call-to-action-button
+                [buttonText]="'Details zu ' + row[columns()[0]]"
+                [link]="links()![row[columns()[0]]]"
+                size="small"
+                rounded="large"
+                class="w-full"
+              ></sg-lib-component-call-to-action-button>
+            </div>
             }
           </div>
         </swiper-slide>

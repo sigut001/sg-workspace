@@ -241,7 +241,6 @@ export const materials: Material[] = [
             'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpla_technical.jpg?alt=media',
         },
       ],
-
       costs: {
         priceEntry: [
           {
@@ -264,11 +263,11 @@ export const materials: Material[] = [
       path: 'abs',
       media: {
         heroImage: {
-          url: 'https://example.com/abs-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ABS Filament',
         },
         mainImage: {
-          url: 'https://example.com/abs-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ABS Filament',
         },
         mainVideo: { url: '', description: '' },
@@ -319,12 +318,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Robust und beständig',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'ABS ist für seine hohe Schlagzähigkeit und Temperaturbeständigkeit bekannt.',
-            'Daher ist es besonders für technische Anwendungen geeignet.',
+            'ABS ist eines der meistgenutzten Materialien für technische und funktionale 3D-Drucke.',
+            'Es eignet sich besonders für mechanische Prototypen, Gehäuse und widerstandsfähige Bauteile.',
+            'Dank seiner hohen Schlagfestigkeit wird es in der Automobilindustrie, im Maschinenbau und in der Elektronik verwendet.',
           ],
-          imageURL: 'https://example.com/abs-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'ABS ist temperaturbeständig bis zu 85°C und bietet eine hohe mechanische Belastbarkeit.',
+            'Es ist widerstandsfähig gegenüber Stößen und kann nachträglich mit Aceton geglättet werden, um eine glänzende Oberfläche zu erzielen.',
+            'Trotz seiner Vorteile benötigt ABS eine beheizte Druckplatte und eine geschlossene Druckkammer, um Warping zu vermeiden.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit anderen 3D-Druckmaterialien',
+          paragraphs: [
+            'Im Vergleich zu PLA ist ABS stabiler und hitzebeständiger, erfordert jedoch anspruchsvollere Druckbedingungen.',
+            'Gegenüber PETG ist ABS fester und leichter nachbearbeitbar, hat aber eine stärkere Neigung zu Warping.',
+            'Für Anwendungen, die hohe Festigkeit und Temperaturbeständigkeit benötigen, ist ABS die bevorzugte Wahl.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'ABS sollte in einer geschlossenen Druckkammer bei Temperaturen von mindestens 220°C gedruckt werden, um optimale Ergebnisse zu erzielen.',
+            'Eine beheizte Druckplatte bei etwa 100°C hilft, Warping zu reduzieren und eine bessere Haftung zu gewährleisten.',
+            'Nachbearbeitung durch Acetondampf sorgt für eine glatte, glänzende Oberfläche und verbessert die mechanische Stabilität.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -343,18 +374,17 @@ export const materials: Material[] = [
   {
     type: materialTypes.ABS_CF_GF,
     informations: {
-      label:
-        'ABS CF / GF (Acrylnitril-Butadien-Styrol mit Carbon- oder Glasfaserverstärkung)',
+      label: 'ABS mit Carbon- oder Glasfaser',
       oneLineDescription:
         'Verstärktes ABS für höhere Festigkeit, Steifigkeit und Temperaturbeständigkeit.',
       path: 'abs-cf-gf',
       media: {
         heroImage: {
-          url: 'https://example.com/abs-cf-gf-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ABS CF / GF Filament',
         },
         mainImage: {
-          url: 'https://example.com/abs-cf-gf-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ABS CF / GF Filament',
         },
         mainVideo: { url: '', description: '' },
@@ -409,18 +439,50 @@ export const materials: Material[] = [
       callToAction: {
         paragraph1: 'Nutze ABS CF / GF für hochbelastbare, präzise Bauteile!',
         paragraph2:
-          'Dank Carbon- oder Glasfaserverstärkung bietet es maximale Stabilität und Temperaturbeständigkeit.',
+          'Dank Carbon- oder Glasfaser bietet es maximale Stabilität und Temperaturbeständigkeit.',
         paragraph3:
           'Jetzt dein Hochleistungs-Filament in deiner Wunschfarbe sichern!',
       },
       contentSections: [
         {
-          header: 'Maximale Festigkeit und Beständigkeit',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'ABS CF / GF kombiniert die Robustheit von ABS mit der Steifigkeit von Carbon- oder Glasfasern.',
-            'Ideal für anspruchsvolle Anwendungen, die hohe Belastbarkeit erfordern.',
+            'ABS CF / GF eignet sich perfekt für Anwendungen, die hohe mechanische Festigkeit und Temperaturbeständigkeit erfordern.',
+            'Dank der Carbon- oder Glasfaserverstärkung ist es ideal für industrielle Bauteile, funktionale Prototypen und mechanisch belastbare Konstruktionen.',
+            'Es wird häufig für Strukturkomponenten, Gehäuse, Halterungen und Bauteile in der Automobil- oder Luftfahrtbranche verwendet.',
           ],
-          imageURL: 'https://example.com/abs-cf-gf-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'ABS CF / GF bietet eine deutlich höhere Steifigkeit und Schlagfestigkeit als herkömmliches ABS.',
+            'Die verstärkte Struktur minimiert Warping und sorgt für präzisere Druckergebnisse, selbst bei großen Bauteilen.',
+            'Mit einer Wärmebeständigkeit von bis zu 100°C ist es besonders für Anwendungen mit hohen Temperaturen geeignet.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit Standard-ABS und anderen Materialien',
+          paragraphs: [
+            'Im Vergleich zu Standard-ABS bietet ABS CF / GF eine verbesserte Steifigkeit und geringere Verformung beim Drucken.',
+            'Gegenüber PLA ist es mechanisch stabiler und hitzebeständiger, jedoch anspruchsvoller in der Verarbeitung.',
+            'Im Gegensatz zu PA6 CF / GF ist es einfacher zu drucken, bietet jedoch nicht dieselbe Zähigkeit und Temperaturbeständigkeit.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Für den Druck mit ABS CF / GF ist eine geschlossene Druckkammer empfohlen, um Warping zu reduzieren.',
+            'Die Carbon- oder Glasfasern erhöhen den Verschleiß der Druckdüse, daher sollten gehärtete oder beschichtete Düsen verwendet werden.',
+            'Nachbearbeitungen wie Bohren, Schleifen oder chemisches Glätten mit Aceton sind möglich und verbessern die Oberflächenqualität.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -439,18 +501,17 @@ export const materials: Material[] = [
   {
     type: materialTypes.PA6_CF_GF,
     informations: {
-      label:
-        'PA6 CF / GF (Polyamid 6 mit Carbon- oder Glasfaserverstärkung) / aka Nylon',
+      label: 'PA6 mit Carbon- oder Glasfaser',
       oneLineDescription:
         'Hochfeste und temperaturbeständige Nylon-Variante mit Carbon- oder Glasfasern.',
       path: 'pa6-cf-gf',
       media: {
         heroImage: {
-          url: 'https://example.com/pa6-cf-gf-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'PA6 CF / GF Filament',
         },
         mainImage: {
-          url: 'https://example.com/pa6-cf-gf-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'PA6 CF / GF Filament',
         },
         mainVideo: { url: '', description: '' },
@@ -507,18 +568,50 @@ export const materials: Material[] = [
         paragraph1:
           'Nutze PA6 CF / GF für industrielle und hochbelastbare Bauteile!',
         paragraph2:
-          'Dank Carbon- oder Glasfaserverstärkung bietet es maximale Stabilität.',
+          'Dank Carbon- oder Glasfaser bietet es maximale Stabilität.',
         paragraph3:
           'Jetzt dein Hochleistungs-Filament in deiner Wunschfarbe sichern!',
       },
       contentSections: [
         {
-          header: 'Extrem widerstandsfähig',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'PA6 CF / GF kombiniert die Flexibilität von Nylon mit der Festigkeit von Carbon- oder Glasfasern.',
-            'Es eignet sich für Anwendungen, die hohe mechanische Belastbarkeit erfordern.',
+            'PA6 CF / GF ist ideal für industrielle Anwendungen, die hohe Festigkeit und Temperaturbeständigkeit erfordern.',
+            'Dank der Carbon- oder Glasfaserverstärkung eignet es sich für mechanische Komponenten, die stark belastet werden.',
+            'Es wird häufig für Funktionsprototypen, Maschinenbauteile und technische Konstruktionen verwendet.',
           ],
-          imageURL: 'https://example.com/pa6-cf-gf-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'Die Carbon- oder Glasfaserverstärkung sorgt für eine außergewöhnliche Steifigkeit und hohe mechanische Belastbarkeit.',
+            'Mit einer Wärmebeständigkeit von bis zu 120°C hält PA6 CF / GF hohen Temperaturen stand.',
+            'Es neigt zu geringem Warping und hat eine hohe Dimensionsstabilität, wodurch es sich für anspruchsvolle Drucke eignet.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit anderen Hochleistungsmaterialien',
+          paragraphs: [
+            'PA6 CF / GF bietet eine höhere Festigkeit als Standard-PA6, bleibt jedoch flexibler als reine Carbon-Verbundmaterialien.',
+            'Im Vergleich zu ABS ist es deutlich hitzebeständiger und mechanisch belastbarer.',
+            'Es ist robuster als PETG und PLA, erfordert aber spezielle Druckbedingungen, wie eine beheizte Kammer und gehärtete Düsen.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'PA6 CF / GF benötigt eine hohe Drucktemperatur von mindestens 250°C und eine beheizte Druckplatte, um optimale Ergebnisse zu erzielen.',
+            'Da Carbon- oder Glasfasern abrasive Eigenschaften haben, sollten gehärtete oder beschichtete Düsen verwendet werden.',
+            'Nachbearbeitungen wie Bohren, Schleifen oder CNC-Bearbeitung sind problemlos möglich und verbessern die Endqualität weiter.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -543,11 +636,11 @@ export const materials: Material[] = [
       path: 'petg',
       media: {
         heroImage: {
-          url: 'https://example.com/petg-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'PETG Filament',
         },
         mainImage: {
-          url: 'https://example.com/petg-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'PETG Filament',
         },
         mainVideo: { url: '', description: '' },
@@ -608,12 +701,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Robust und vielseitig',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'PETG ist ein idealer Kompromiss zwischen PLA und ABS, mit hoher Festigkeit und einfacher Druckbarkeit.',
-            'Es eignet sich besonders für mechanisch beanspruchte Bauteile oder Outdoor-Projekte.',
+            'PETG ist besonders widerstandsfähig gegen Feuchtigkeit und UV-Strahlung, was es ideal für Outdoor-Anwendungen macht.',
+            'Es wird häufig für technische Bauteile, Gehäuse, Schutzabdeckungen und sogar lebensmittelsichere Behälter verwendet.',
+            'Dank seiner hohen Schlagfestigkeit eignet es sich für mechanisch belastete Konstruktionen, die gleichzeitig eine gewisse Flexibilität benötigen.',
           ],
-          imageURL: 'https://example.com/petg-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'PETG vereint die einfache Druckbarkeit von PLA mit der Haltbarkeit von ABS und ist daher eine beliebte Wahl für viele Anwendungen.',
+            'Es weist eine hohe chemische Beständigkeit auf und ist weniger anfällig für Verformungen während des Drucks.',
+            'Durch seine Flexibilität ist PETG weniger spröde als ABS und widersteht mechanischer Belastung besser als PLA.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit anderen 3D-Druckmaterialien',
+          paragraphs: [
+            'Im Vergleich zu PLA ist PETG widerstandsfähiger gegenüber Hitze und mechanischen Belastungen, bleibt jedoch ähnlich einfach zu drucken.',
+            'Gegenüber ABS bietet PETG eine bessere Druckstabilität, da es weniger zum Warping neigt und keine geschlossene Kammer benötigt.',
+            'Es ist flexibler als ABS, aber nicht so elastisch wie TPU, wodurch es sich für viele industrielle und technische Anwendungen eignet.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Für den Druck mit PETG empfiehlt sich eine leicht beheizte Druckplatte (ca. 70-80°C), um optimale Haftung zu gewährleisten.',
+            'Da PETG zum Fädenziehen neigt, sollten die Retraktionseinstellungen sorgfältig optimiert werden.',
+            'Nachbearbeitung durch Schleifen oder Bohren ist problemlos möglich, zudem kann PETG für zusätzliche Stabilität verklebt oder verschweißt werden.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -638,11 +763,11 @@ export const materials: Material[] = [
       path: 'tpu',
       media: {
         heroImage: {
-          url: 'https://example.com/tpu-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'TPU Filament',
         },
         mainImage: {
-          url: 'https://example.com/tpu-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'TPU Filament',
         },
         mainVideo: { url: '', description: '' },
@@ -703,12 +828,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Maximale Elastizität',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'TPU ist extrem dehnbar und eignet sich perfekt für flexible Anwendungen.',
-            'Es kombiniert hohe Schlagfestigkeit mit guter Chemikalienbeständigkeit.',
+            'TPU ist ideal für Anwendungen, die hohe Flexibilität, Stoßfestigkeit und Abriebfestigkeit erfordern.',
+            'Es wird häufig für stoßdämpfende Bauteile, flexible Gehäuse und Dichtungen eingesetzt.',
+            'Dank seiner hohen chemischen Beständigkeit eignet es sich auch für technische Anwendungen in anspruchsvollen Umgebungen.',
           ],
-          imageURL: 'https://example.com/tpu-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'TPU kombiniert hohe Elastizität mit ausgezeichneter mechanischer Widerstandsfähigkeit.',
+            'Mit einer Bruchdehnung von bis zu 500 % ist es eines der dehnbarsten 3D-Druckmaterialien.',
+            'Es bietet zudem eine hervorragende Abriebfestigkeit und bleibt auch bei wiederholter Beanspruchung stabil.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit anderen flexiblen Materialien',
+          paragraphs: [
+            'Im Vergleich zu Silikon ist TPU belastbarer und einfacher zu drucken.',
+            'Gegenüber PLA und ABS bietet es eine wesentlich höhere Elastizität und Stoßdämpfung.',
+            'Es ist flexibler als ABS Like Resin, jedoch schwieriger zu drucken als feste Materialien.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Für den Druck von TPU wird ein Direktantriebs-Extruder empfohlen, da Bowden-Extruder Probleme mit der Flexibilität haben können.',
+            'Langsamere Druckgeschwindigkeiten und eine optimierte Retraktionseinstellung verhindern Fadenbildung und verbessern die Druckqualität.',
+            'Nachbearbeitungen wie Schleifen oder chemisches Glätten sind möglich, erfordern jedoch spezielle Methoden aufgrund der Elastizität des Materials.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -733,11 +890,11 @@ export const materials: Material[] = [
       path: 'asa',
       media: {
         heroImage: {
-          url: 'https://example.com/asa-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ASA Filament',
         },
         mainImage: {
-          url: 'https://example.com/asa-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ASA Filament',
         },
         mainVideo: { url: '', description: '' },
@@ -797,12 +954,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Maximale Witterungsbeständigkeit',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'ASA ist die perfekte Wahl für langlebige, wetterfeste Bauteile.',
-            'Es ist resistent gegen UV-Strahlung und behält seine mechanischen Eigenschaften über lange Zeit.',
+            'ASA ist besonders für den Außeneinsatz geeignet, da es eine hohe Witterungs- und UV-Beständigkeit aufweist.',
+            'Es wird häufig für technische Bauteile, Fahrzeugkomponenten und wetterfeste Gehäuse verwendet.',
+            'Dank seiner mechanischen Festigkeit eignet es sich auch für funktionale Prototypen und langlebige Konstruktionen.',
           ],
-          imageURL: 'https://example.com/asa-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'ASA ist eine verbesserte Alternative zu ABS mit höherer UV-Beständigkeit und geringerer Vergilbung.',
+            'Es verfügt über eine hohe mechanische Stabilität, wodurch es auch für beanspruchte Bauteile ideal ist.',
+            'Durch die reduzierte Schrumpfung im Vergleich zu ABS lassen sich präzisere Druckergebnisse erzielen.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit ABS und anderen Materialien',
+          paragraphs: [
+            'ASA bietet ähnliche mechanische Eigenschaften wie ABS, jedoch mit besserer Witterungs- und UV-Beständigkeit.',
+            'Im Gegensatz zu PLA ist ASA hitzebeständiger und widerstandsfähiger gegenüber äußeren Einflüssen.',
+            'Für Anwendungen im Freien ist ASA eine der besten Optionen, da es seine Farbe und Stabilität langfristig beibehält.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Für den Druck mit ASA ist eine beheizte Druckplatte erforderlich, um Warping zu vermeiden.',
+            'Eine geschlossene Druckkammer verbessert die Druckqualität und verhindert ungewollte Verformungen.',
+            'Nachbearbeitung durch Schleifen oder chemisches Glätten mit Aceton kann die Oberflächenqualität weiter verbessern.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -827,11 +1016,11 @@ export const materials: Material[] = [
       path: 'standard-resin',
       media: {
         heroImage: {
-          url: 'https://example.com/resin-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'Standard Resin',
         },
         mainImage: {
-          url: 'https://example.com/resin-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'Standard Resin',
         },
         mainVideo: { url: '', description: '' },
@@ -885,12 +1074,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Maximale Detailgenauigkeit',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'Standard Resin ermöglicht hochpräzise Drucke mit extrem feinen Details.',
-            'Perfekt für Miniaturen, Schmuckdesign und andere filigrane Anwendungen.',
+            'Standard Resin eignet sich hervorragend für hochpräzise Modelle mit glatter Oberfläche.',
+            'Es wird oft für Miniaturen, Prototypen und Modellbau eingesetzt, wo eine feine Detailwiedergabe erforderlich ist.',
+            'Dank seiner hohen Auflösung ist es ideal für Anwendungen, bei denen visuelle Qualität und feine Strukturen im Vordergrund stehen.',
           ],
-          imageURL: 'https://example.com/resin-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'Standard Resin zeichnet sich durch eine extrem hohe Detailgenauigkeit aus, die mit FDM-Druck nicht erreichbar ist.',
+            'Die glatte Oberflächenstruktur sorgt für ein professionelles Erscheinungsbild und ist ideal für ästhetische Modelle.',
+            'Obwohl es spröder als technische Resine ist, bietet es eine solide Basis für Präsentationsmodelle und Designprototypen.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit anderen 3D-Druckmaterialien',
+          paragraphs: [
+            'Im Vergleich zu ABS Like Resin ist Standard Resin weniger schlagfest, dafür jedoch feiner in der Detailwiedergabe.',
+            'Während FDM-Druckmaterialien robuster sind, bietet Standard Resin eine glattere Oberfläche und schärfere Kanten.',
+            'Es ist nicht so flexibel oder hitzebeständig wie technische Resine, eignet sich aber hervorragend für detaillierte Visualisierungen.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Nach dem Druck sollte Standard Resin unter UV-Licht ausgehärtet werden, um maximale Stabilität zu erreichen.',
+            'Eine Reinigung mit Isopropanol sorgt für eine glatte und saubere Oberfläche ohne Rückstände.',
+            'Für eine noch feinere Nachbearbeitung können Modelle geschliffen oder grundiert und lackiert werden.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -915,11 +1136,11 @@ export const materials: Material[] = [
       path: 'abs-like-resin',
       media: {
         heroImage: {
-          url: 'https://example.com/abs-like-resin-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ABS Like Resin',
         },
         mainImage: {
-          url: 'https://example.com/abs-like-resin-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'ABS Like Resin',
         },
         mainVideo: { url: '', description: '' },
@@ -973,12 +1194,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Hohe mechanische Festigkeit',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'ABS Like Resin bietet eine verbesserte Zähigkeit im Vergleich zu Standard Resin.',
-            'Perfekt für Prototypen, die mechanischer Belastung standhalten müssen.',
+            'ABS Like Resin eignet sich hervorragend für funktionale Prototypen und mechanisch beanspruchte Bauteile.',
+            'Es ist die perfekte Wahl für Modelle, die hohe Stabilität und eine gute Schlagfestigkeit erfordern.',
+            'Typische Anwendungen sind Funktionsprototypen, Gehäuse, Halterungen und technische Bauteile.',
           ],
-          imageURL: 'https://example.com/abs-like-resin-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'ABS Like Resin überzeugt durch seine hohe mechanische Festigkeit und Schlagzähigkeit.',
+            'Mit einer Zugfestigkeit von 65 MPa ist es deutlich robuster als herkömmliches Standard Resin.',
+            'Seine Wärmebeständigkeit bis 65°C macht es ideal für anspruchsvolle Anwendungen, die eine gewisse Temperaturstabilität erfordern.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit Standard Resin und anderen Materialien',
+          paragraphs: [
+            'Im Vergleich zu Standard Resin bietet ABS Like Resin eine verbesserte Zähigkeit und höhere Schlagfestigkeit.',
+            'Während Standard Resin oft spröde ist, hält ABS Like Resin mechanischen Belastungen besser stand.',
+            'Es ist jedoch weniger flexibel als TPU-ähnliche Materialien, eignet sich aber hervorragend für feste, widerstandsfähige Bauteile.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Um die optimale Festigkeit zu erreichen, ist eine sorgfältige Nachhärtung unter UV-Licht erforderlich.',
+            'Eine Reinigung mit Isopropanol sorgt für eine saubere Oberfläche und entfernt überschüssiges Resin.',
+            'Für mechanische Anwendungen können nachträgliche Bearbeitungen wie Bohren oder Schleifen problemlos durchgeführt werden.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
@@ -1003,11 +1256,11 @@ export const materials: Material[] = [
       path: 'tpu-like-resin',
       media: {
         heroImage: {
-          url: 'https://example.com/tpu-like-resin-hero.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'TPU Like Resin',
         },
         mainImage: {
-          url: 'https://example.com/tpu-like-resin-main.jpg',
+          url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
           altText: 'TPU Like Resin',
         },
         mainVideo: { url: '', description: '' },
@@ -1064,12 +1317,44 @@ export const materials: Material[] = [
       },
       contentSections: [
         {
-          header: 'Maximale Flexibilität',
+          header: 'Anwendungsbereiche und Einsatzmöglichkeiten',
           paragraphs: [
-            'TPU Like Resin bietet eine hohe Elastizität und eignet sich für flexible Bauteile.',
-            'Es vereint die Vorteile von Resin- und TPU-Druck für strapazierfähige Anwendungen.',
+            'TPU Like Resin ist ideal für zahlreiche Anwendungen, die eine Kombination aus Elastizität, Widerstandsfähigkeit und Präzision erfordern.',
+            'Es eignet sich besonders für Schutzgehäuse, stoßabsorbierende Bauteile und flexible Komponenten.',
+            'Typische Einsatzbereiche umfassen Gehäuse für Elektronik, weiche Griffe, elastische Dichtungen und funktionale Prototypen.',
           ],
-          imageURL: 'https://example.com/tpu-like-resin-section.jpg',
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Technische Vorteile und Eigenschaften',
+          paragraphs: [
+            'TPU Like Resin vereint die Detailgenauigkeit des Resindrucks mit der Elastizität von TPU.',
+            'Mit einer Bruchdehnung von bis zu 200 % bietet es eine hohe Flexibilität, während es gleichzeitig widerstandsfähig gegen Stöße bleibt.',
+            'Die feine Oberflächenstruktur ermöglicht präzise Drucke mit glatter Haptik – ideal für funktionale Prototypen oder Endprodukte.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Vergleich mit anderen flexiblen Materialien',
+          paragraphs: [
+            'Im Vergleich zu FDM-gedrucktem TPU bietet TPU Like Resin eine viel höhere Oberflächenqualität und Detailgenauigkeit.',
+            'Während FDM-TPU für extreme Dehnbarkeit besser geeignet ist, zeichnet sich das Resin durch bessere Formstabilität und eine feinere Textur aus.',
+            'Es eignet sich besonders für Anwendungen, die präzise Maße, Elastizität und gleichzeitig eine gewisse Steifigkeit erfordern.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
+        },
+        {
+          header: 'Tipps zur Verarbeitung und Nachbearbeitung',
+          paragraphs: [
+            'Um die optimale Elastizität zu erreichen, ist eine gezielte Nachhärtung erforderlich – idealerweise unter kontrollierter UV-Bestrahlung.',
+            'Die Reinigung mit Isopropanol sorgt für eine glatte und saubere Oberfläche ohne klebrige Rückstände.',
+            'Für eine längere Haltbarkeit sollten TPU Like Resin-Drucke keiner direkten Hitze über 50°C ausgesetzt werden, um ihre Flexibilität zu bewahren.',
+          ],
+          imageURL:
+            'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
       ],
       costs: {
