@@ -19,22 +19,24 @@ import { MatIconModule } from '@angular/material/icon';
       @for (employee of employees(); track employee.id) {
       <div
         #cardRef
-        class="bg-primary-500 shadow-xl rounded-sm p-6 flex flex-col items-center text-center w-full"
+        class="bg-slate-300 shadow-xl rounded-md p-6 flex flex-col items-center text-center w-full"
       >
         <img
           *ngIf="employee.profilePictureURL"
           [src]="employee.profilePictureURL"
           alt="{{ employee.name }}"
-          class="w-36 h-36 rounded-full mb-4 border-4 border-gray-300 object-cover"
+          class="w-36 h-36 rounded-full mb-4 border-2 border-primary-600 object-cover"
         />
-        <div class="text-2xl font-bold text-slate-300">{{ employee.name }}</div>
-        <div class="text-lg font-medium mt-1 text-slate-400">
+        <div class="text-2xl font-bold text-primary-300">
+          {{ employee.name }}
+        </div>
+        <div class="text-lg font-medium mt-1 text-primary-400">
           {{ employee.position }}
         </div>
         @if (employee.department) {
         <div class="text-sm mt-1">{{ employee.department }}</div>
         }
-        <div class="text-sm mt-4 px-4 flex-grow text-slate-500">
+        <div class="text-sm mt-4 px-4 flex-grow text-primary-500">
           @if (employee.bio) {
           <p>{{ employee.bio }}</p>
           }

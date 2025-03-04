@@ -96,16 +96,16 @@ export const jobPositions: JobPositions = {
 };
 
 export const companyInformations: CompanyInformations = {
-  companyName: 'Trabbsi 3D Druck',
-  address: 'Kellerstraße 3',
-  postalCode: '12345',
-  city: 'Berlin',
+  companyName: 'Creative Designs and Works',
+  address: 'Baldurstraße 31',
+  postalCode: '44805',
+  city: 'Bochum',
   country: 'Deutschland',
-  phone: '+49 123 456789',
-  email: 'info@trabbsi3d.de',
-  website: 'https://trabbsi3d.de',
-  managingDirectors: ['Max Trabbsi'],
-  contactPerson: 'Max Trabbsi',
+  phone: '+49 15724548008',
+  email: 'kaytrabandt@gmail.com',
+  website: 'https://creative-designs-and-works.de',
+  managingDirectors: ['Kay Trabandt'],
+  contactPerson: 'Kay Trabandt',
   companyHistorieCards: [
     {
       imgUrl:

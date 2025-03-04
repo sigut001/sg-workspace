@@ -12,6 +12,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { HighlightElementsDirective } from '@sg-shared-librarys/directives';
 import { Router } from '@angular/router';
+import { CallBackRequestService } from '@sg-shared-librarys/services';
 
 @Component({
   selector: 'app-printed-text',
@@ -70,8 +71,9 @@ import { Router } from '@angular/router';
                 <button
                   id="beratungAnfragenButton"
                   class="bg-secondary-500 text-white py-2 px-4 text-base lg:text-xl rounded-full hover:bg-secondary-700"
+                  (click)="this.callBackRequestService.openDialog()"
                 >
-                  <a [href]="secondaryActionUrl()">
+                  <a>
                     {{ secondaryActionLabel() }}
                   </a>
                 </button>
@@ -92,6 +94,7 @@ import { Router } from '@angular/router';
   `,
 })
 export class PrintedTextComponent implements OnInit, OnChanges {
+  callBackRequestService = inject(CallBackRequestService);
   icon = input.required<string>();
   text = input.required<string>();
   primaryActionLabel = input.required<string>();

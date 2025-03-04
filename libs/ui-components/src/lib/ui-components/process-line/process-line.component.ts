@@ -30,7 +30,7 @@ import { selectProcessLineElements } from './state/costumer-reviews-state.select
       >
         <div
           *ngFor="let element of processLineElements(); let i = index"
-          class="p-4 bg-primary-500 border border-primary-300 shadow-sm rounded-sm opacity-0 h-60 w-full flex flex-col justify-center "
+          class="p-4 bg-primary-500 border border-primary-300 shadow-sm rounded-lg opacity-0 h-60 w-full flex flex-col justify-center "
         >
           <div
             class="flex items-center justify-center w-10 h-10 bg-slate-200 text-black rounded-full mb-4 mx-auto"

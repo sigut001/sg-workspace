@@ -7,7 +7,7 @@ import { CustomerReview } from './costumer-review.model';
   standalone: true,
   imports: [CommonModule],
   template: `<div
-    class="grid grid-cols-2 grid-rows-2 bg-primary-500 rounded-md  xl:rounded-lg shadow-lg p-6 h-72 w-full max-w-4xl text-slate-200 gap-4 mx-auto "
+    class="grid grid-cols-2 grid-rows-2 bg-slate-300 rounded-lg shadow-lg p-6 h-72 w-full max-w-4xl text-primary-500 gap-4 mx-auto "
   >
     <!-- Quadrant 1: Bild -->
     <div class="row-span-1 col-span-1 flex items-center justify-center">
@@ -24,18 +24,18 @@ import { CustomerReview } from './costumer-review.model';
       class="row-span-1 col-span-1 flex flex-col justify-center items-center gap-2 p-4 text-center "
     >
       <span
-        class="text-md text-slate-200 font-bold  w-full overflow-hidden whitespace-nowrap"
+        class="text-md text-primary-200 font-bold  w-full overflow-hidden whitespace-nowrap"
       >
         {{ review.name }}
       </span>
-      <span class="text-sm font-medium text-slate-300">
+      <span class="text-sm font-medium text-primary-300">
         {{ review.title }}
       </span>
     </div>
 
     <!-- Quadrant 3 und 4: Kommentartext -->
     <div class="row-span-1 col-span-2 flex items-center justify-center p-4">
-      <p class="text-slate-400 text-sm text-center px-4">
+      <p class="text-primary-400 text-sm text-center px-4">
         "{{ review.comment }}"
       </p>
     </div>

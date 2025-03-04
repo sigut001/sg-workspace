@@ -9,17 +9,17 @@ import { selectMaterials } from '../../../state/state-threeDPrinting/threeDPrint
   standalone: true,
   template: `
     <section
-      class="flex flex-col items-center text-center text-slate-200 gap-8"
+      class="flex flex-col items-center text-center text-slate-200 gap-12"
     >
       <div class="flex flex-col">
         <p class="text-3xl md:text-5xl font-bold">Materialübersicht</p>
-        <p class="text-gray-600 mt-2 text-sm md:text-base">
+        <p class="text-slate-500 text-sm md:text-base">
           Entdecken Sie die Eigenschaften und Anwendungsbereiche unserer
           3D-Druckmaterialien.
         </p>
       </div>
 
-      <div class="w-11/12">
+      <div class="w-11/12 lg:w-8/12 2xl:w-1/2">
         <iframe
           class="w-full aspect-video block max-w-[100%]"
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -27,13 +27,13 @@ import { selectMaterials } from '../../../state/state-threeDPrinting/threeDPrint
           allowfullscreen
         ></iframe>
       </div>
-      <div class="flex flex-col">
-        <p class="text-slate-300 text-base text-justify p-2">
+      <div class="flex flex-col text-slate-300 lg:text-lg ">
+        <p class="text-justify p-2">
           Unsere Materialien beziehen wir von unserem renommierten Partner XY,
           der sich durch höchste Qualität, Nachhaltigkeit und innovative
           Fertigungsmethoden auszeichnet.
         </p>
-        <p class="text-slate-300 text-base text-justify p-2">
+        <p class=" text-justify p-2">
           Dank modernster Technologien und strengen Qualitätskontrollen
           gewährleisten wir, dass jedes Material optimal für den 3D-Druck
           geeignet ist und den höchsten Anforderungen in Design, Funktionalität

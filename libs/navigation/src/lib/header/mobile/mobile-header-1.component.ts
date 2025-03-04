@@ -22,6 +22,8 @@ import {
 import { ScrollPaddingTransitionDirective } from '@sg-shared-librarys/directives';
 import { ScrollRotateDirective } from '@sg-shared-librarys/directives';
 import { HeaderState } from '../state/header-state.reducer';
+import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
+import { CompanyInformations } from '@sg-shared-librarys/models';
 
 @Component({
   selector: 'sg-lib-component-mobile-header',
@@ -64,10 +66,10 @@ import { HeaderState } from '../state/header-state.reducer';
           </span>
           <span
             id="textContent"
-            class="leading-none text-center relative"
+            class="leading-none text-center relative text-sm"
             style="top: 2px;"
           >
-            Trabbis <strong>3D-Druck</strong>
+            {{ this.$companyInforamtions()?.companyName }}
           </span>
         </a>
         <!-- Burger Menu Button für mobile und Tablet Ansichten -->
@@ -87,6 +89,7 @@ import { HeaderState } from '../state/header-state.reducer';
         class="fixed inset-0 z-50"
         (click)="toggleMenu()"
         (keydown.enter)="toggleMenu()"
+        (keydown.space)="toggleMenu()"
         tabindex="0"
       ></div>
       }
@@ -158,7 +161,11 @@ import { HeaderState } from '../state/header-state.reducer';
                   class="flex flex-col items-start justify-start pt-2  w-full relative"
                 >
                   <p
-                    class="text-md relative top-0 left-0 text-slate-300 font-semibold tracking-widest uppercase "
+                    class="text-md relative top-0 left-0 text-slate-400 font-semibold tracking-widest uppercase"
+                    (click)="$event.stopPropagation()"
+                    (keydown.enter)="$event.stopPropagation()"
+                    (keydown.space)="$event.stopPropagation()"
+                    tabindex="0"
                   >
                     {{ categorie.label }}
                   </p>
@@ -245,6 +252,7 @@ export class MobileHeader1Component {
   $isMobileMenuOpen = signal<boolean>(false);
   $navItems = signal<NavItem[]>([]);
   $logoPath = signal<string>('');
+  $companyInforamtions = signal<CompanyInformations | null>(null);
 
   constructor() {
     this.store.select(selectIsMobileMenuOpen).subscribe((mobileMenuState) => {
@@ -258,6 +266,11 @@ export class MobileHeader1Component {
     this.store.select(selectLogoPath).subscribe((logoPath) => {
       this.$logoPath.set(logoPath);
     });
+    this.store
+      .select(selectCompanyInformations)
+      .subscribe((companyInformations) => {
+        this.$companyInforamtions.set(companyInformations);
+      });
   }
 
   toggleMenu() {

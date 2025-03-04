@@ -59,7 +59,7 @@ function generateDynamicNavItems(): NavItem[] {
     subNavItems: SubNavItem[];
   } = {
     label: 'Materialien',
-    path: '3d-druck-infos/materialien',
+    path: '3d-druck-infos/materialien-uebersicht',
     subNavItems: [
       {
         label: 'Übersicht',
@@ -90,7 +90,7 @@ function generateDynamicNavItems(): NavItem[] {
     subNavItems: SubNavItem[];
   } = {
     label: 'Fertigungsverfahren',
-    path: '3d-druck-infos/fertigungsverfahren',
+    path: '3d-druck-infos/fertigungsverfahren-uebersicht',
     subNavItems: [
       {
         label: 'Übersicht',

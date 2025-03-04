@@ -59,7 +59,7 @@ a {
 /* 2xl (ab 1536px) */
 @media (min-width: 1536px) {
   section {
-    padding-left: 12%;
-    padding-right: 12%;
+    padding-left: 15%;
+    padding-right: 15%;
   }
 }

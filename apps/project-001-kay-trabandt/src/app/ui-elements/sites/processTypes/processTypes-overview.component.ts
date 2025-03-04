@@ -16,7 +16,7 @@ import { selectProcessTypes } from '../../../state/state-threeDPrinting/threeDPr
     >
       <div class="flex flex-col">
         <p class="text-3xl md:text-5xl font-bold">Verfahren im 3D-Druck</p>
-        <p class="text-gray-600 text-sm md:text-base">
+        <p class="text-slate-500 text-sm md:text-base">
           Erfahren Sie mehr über die verschiedenen 3D-Drucktechnologien, <br />
           ihre Anwendungen und Vorteile.
         </p>
@@ -31,8 +31,8 @@ import { selectProcessTypes } from '../../../state/state-threeDPrinting/threeDPr
         ></iframe>
       </div>
 
-      <div class="flex flex-col lg:p-8">
-        <p class="text-slate-300 text-base text-justify p-2">
+      <div class="flex flex-col lg:p-8 text-slate-300 text-lg">
+        <p class=" text-justify p-2">
           In der additiven Fertigung gibt es verschiedene Verfahren, die je nach
           Anwendungsbereich ihre spezifischen Vorteile bieten. Von Fused
           Deposition Modeling (FDM) für Prototypen und funktionale Bauteile über
@@ -40,7 +40,7 @@ import { selectProcessTypes } from '../../../state/state-threeDPrinting/threeDPr
           selektivem Lasersintern (SLS) für belastbare und komplexe Strukturen –
           jedes Verfahren hat seine Stärken.
         </p>
-        <p class="text-slate-300 text-base text-justify p-2">
+        <p class=" text-justify p-2">
           Durch den Einsatz modernster Technologien und hochpräziser Maschinen
           stellen wir sicher, dass jedes Bauteil mit höchster Qualität gefertigt
           wird. Unsere Fertigungsverfahren ermöglichen eine effiziente

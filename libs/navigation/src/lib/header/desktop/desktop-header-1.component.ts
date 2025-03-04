@@ -27,6 +27,7 @@ import { EnlargeTextDirective } from '@sg-shared-librarys/directives';
 import { ScrollHeightCollapseDirective } from '@sg-shared-librarys/directives';
 import { CompanyInformations } from '@sg-shared-librarys/models';
 import { HeaderState } from '../state/header-state.reducer';
+import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
 
 @Component({
   selector: 'sg-lib-component-desktop-header-1',
@@ -53,13 +54,13 @@ import { HeaderState } from '../state/header-state.reducer';
     >
       <span appScrollHeightCollapse [transitionDuration]="0.4">
         Rufen Sie uns gerne unkompliziert an, wir beraten Sie gerne!
+        <a
+          class=" text-slate-200 hover:underline [text-shadow:1px_1px_2px_rgba(0,0,0,0.8)]"
+          href="tel:{{ this.$companyInforamtions()?.phone }}"
+        >
+          {{ this.$companyInforamtions()?.phone }}
+        </a>
       </span>
-      <a
-        class="text-action-500 hover:underline [text-shadow:1px_1px_2px_rgba(0,0,0,0.8)]"
-        href="tel:{{ this.$companyInforamtions()?.phone }}"
-      >
-        {{ this.$companyInforamtions()?.phone }}
-      </a>
     </aside>
 
     <header
@@ -99,10 +100,10 @@ import { HeaderState } from '../state/header-state.reducer';
           </span>
           <span
             id="textContent"
-            class="leading-none text-center relative"
+            class="leading-none text-center relative text-base"
             style="top: 2px;"
           >
-            Trabbis <strong>3D-Druck</strong>
+            {{ this.$companyInforamtions()?.companyName }}
           </span>
         </a>
 
@@ -157,6 +158,11 @@ export class DesktopHeader1Component implements OnDestroy {
     this.store.select(selectLogoPath).subscribe((logoPath) => {
       this.$logoPath.set(logoPath);
     });
+    this.store
+      .select(selectCompanyInformations)
+      .subscribe((companyInformations) => {
+        this.$companyInforamtions.set(companyInformations);
+      });
 
     // Listener für Klicks außerhalb hinzufügen
     document.addEventListener('click', this.handleClickOutside.bind(this));
@@ -164,9 +170,10 @@ export class DesktopHeader1Component implements OnDestroy {
 
   // Methode zur Verarbeitung von Klicks außerhalb von Dropdown und Navbar
   handleClickOutside(event: MouseEvent) {
+    console.log('Click Outside happend');
     const target = event.target as HTMLElement;
-    const dropdown = document.querySelector('sg-lib-component-dropdown-menu');
-    const navbar = document.querySelector('sg-lib-component-navbar');
+    const dropdown = document.querySelector('sg-lib-component-dropdown-menu-1');
+    const navbar = document.querySelector('sg-lib-component-navbar-1');
 
     // Überprüfen, ob der Klick außerhalb von Dropdown und Navbar war
     if (
@@ -175,6 +182,7 @@ export class DesktopHeader1Component implements OnDestroy {
       !dropdown.contains(target) &&
       !navbar.contains(target)
     ) {
+      console.log('deactvtae dropdown');
       this.store.dispatch(setActiveDropdown({ activeDropdown: null }));
     }
   }

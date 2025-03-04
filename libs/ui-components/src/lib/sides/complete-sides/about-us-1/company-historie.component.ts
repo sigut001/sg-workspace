@@ -21,20 +21,18 @@ import { CommonModule } from '@angular/common';
       class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6"
     >
       @for (event of companyHistorieCards(); track event.title) {
-      <div
-        class="opacity-0 bg-primary-500 shadow-lg rounded-none overflow-hidden"
-      >
+      <div class="opacity-0 bg-slate-300 shadow-lg overflow-hidden rounded-md">
         <img
           [src]="event.imgUrl"
           [alt]="event.title"
           class="w-full h-40 object-cover"
         />
         <div class="p-4">
-          <p class="text-xl text-slate-200 mb-2">
+          <p class="text-xl text-primary-200 mb-2">
             {{ event.title }}
           </p>
-          <p class="text-slate-300">{{ event.description }}</p>
-          <p class="text-sm text-slate-400 mt-2" *ngIf="event.timePeriod">
+          <p class="text-primary-300">{{ event.description }}</p>
+          <p class="text-sm text-primary-400 mt-2" *ngIf="event.timePeriod">
             {{ event.timePeriod }}
           </p>
         </div>

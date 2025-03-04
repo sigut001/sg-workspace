@@ -27,9 +27,9 @@
           buttonText="Angebot erhalten"
         ></sg-lib-component-call-to-action-button>
         <sg-lib-component-call-to-action-button
-          tel="+38292746482"
           class="w-full md:w-fit"
           buttonText="Kostenlose Beratung erhalten"
+          (click)="this.callBackRequestService.openDialog()"
         ></sg-lib-component-call-to-action-button>
       </div>
       <!-- Short text focus on data security -->
@@ -77,18 +77,12 @@
       class="flex flex-col w-full gap-6 lg:gap-12 justify-center items-start py-8 lg:px-2 lg:py-8 text-justify lg:text-start"
     >
       <div
-        class="flex flex-col w-full gap-2 lg:gap-4 justify-center items-start"
+        class="flex flex-col w-full gap-2 lg:gap-4 justify-center items-center lg:items-start text-3xl xl:text-3xl 2xl:text-5xl font-bold"
         appSlideInChildren
       >
-        <span class="text-3xl xl:text-3xl 2xl:text-5xl font-bold">
-          Schnelle Entwicklung
-        </span>
-        <span class="text-3xl xl:text-3xl 2xl:text-5xl font-bold">
-          Schnelle Produktion
-        </span>
-        <span class="text-3xl xl:text-3xl 2xl:text-5xl font-bold">
-          Bereits in wenigen Tagen bei ihnen!
-        </span>
+        <span> Schnelle Entwicklung </span>
+        <span> Schnelle Produktion </span>
+        <span class="text-center"> Bereits in wenigen Tagen bei Ihnen! </span>
       </div>
       <div class="text-base 2xl:text-lg flex flex-col gap-2 w-full">
         <p>

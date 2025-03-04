@@ -17,7 +17,11 @@ import {
   CallToActionButtonComponent,
 } from '@sg-shared-librarys/ui-components';
 import { SlideInChildrenDirective } from '@sg-shared-librarys/directives';
-import { WarningDialogService } from '@sg-shared-librarys/services';
+import {
+  CallBackRequestService,
+  ScreenSizeService,
+  WarningDialogService,
+} from '@sg-shared-librarys/services';
 import { PrintedTextComponent } from '../../elements/printed-text/PrintedText.component';
 import { mediaURLs } from '../../../media/mediaURL';
 @Component({
@@ -37,6 +41,8 @@ import { mediaURLs } from '../../../media/mediaURL';
 })
 export class UnternehmenComponent implements OnInit, AfterViewInit, OnDestroy {
   warningDialogService = inject(WarningDialogService);
+  callBackRequestService = inject(CallBackRequestService);
+  screenSizeService = inject(ScreenSizeService);
   partners = signal<string[]>(['./logo.png', './logo.png', './logo.png']);
   trigger = signal(false);
 
