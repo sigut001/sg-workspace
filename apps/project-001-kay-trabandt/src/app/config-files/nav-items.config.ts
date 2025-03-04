@@ -51,7 +51,35 @@ function generateDynamicNavItems(): NavItem[] {
       },
     },
   ];
-
+  // Prozesse zur Navigation hinzufügen
+  const processNavItem: {
+    label: string;
+    path: string;
+    subNavItems: SubNavItem[];
+  } = {
+    label: 'Fertigungsverfahren',
+    path: '3d-druck-infos/fertigungsverfahren-uebersicht',
+    subNavItems: [
+      {
+        label: 'Übersicht',
+        path: '3d-druck-infos/fertigungsverfahren-uebersicht',
+        type: 'ContentPage' as const,
+        meta: {
+          title: 'Fertigungsverfahren Übersicht',
+          description: 'Eine Übersicht über alle Fertigungsverfahren',
+        },
+      },
+      ...processes.map((process) => ({
+        label: `${process.informations.label}`,
+        path: `3d-druck-infos/fertigungsverfahren/${process.informations.path}`,
+        type: 'ContentPage' as const,
+        meta: {
+          title: `${process.type} Übersicht`,
+          description: '',
+        },
+      })),
+    ],
+  };
   // Materialien zur Navigation hinzufügen
   const materialNavItem: {
     label: string;
@@ -83,39 +111,10 @@ function generateDynamicNavItems(): NavItem[] {
     ],
   };
 
-  // Prozesse zur Navigation hinzufügen
-  const processNavItem: {
-    label: string;
-    path: string;
-    subNavItems: SubNavItem[];
-  } = {
-    label: 'Fertigungsverfahren',
-    path: '3d-druck-infos/fertigungsverfahren-uebersicht',
-    subNavItems: [
-      {
-        label: 'Übersicht',
-        path: '3d-druck-infos/fertigungsverfahren-uebersicht',
-        type: 'ContentPage' as const,
-        meta: {
-          title: 'Fertigungsverfahren Übersicht',
-          description: 'Eine Übersicht über alle Fertigungsverfahren',
-        },
-      },
-      ...processes.map((process) => ({
-        label: `${process.informations.label}`,
-        path: `3d-druck-infos/fertigungsverfahren/${process.informations.path}`,
-        type: 'ContentPage' as const,
-        meta: {
-          title: `${process.type} Übersicht`,
-          description: '',
-        },
-      })),
-    ],
-  };
-
   // Materialien und Prozesse zur Navigation hinzufügen
-  dynamicNavItems[1].categories?.push(materialNavItem);
   dynamicNavItems[1].categories?.push(processNavItem);
+
+  dynamicNavItems[1].categories?.push(materialNavItem);
 
   return dynamicNavItems;
 }

@@ -42,7 +42,19 @@ import { ScreenSizeService } from '@sg-shared-librarys/services';
             <td
               class="border border-gray-300 p-4 text-center align-middle bg-primary-500"
             >
+              @if ( links() && links()![row[column]]) {
+              <!-- Erster Spalteneintrag als Call-to-Action-Button -->
+              <sg-lib-component-call-to-action-button
+                [buttonText]="'Details zu ' + row[column]"
+                [link]="links()![row[column]]"
+                size="small"
+                rounded="large"
+                class="w-full"
+              ></sg-lib-component-call-to-action-button>
+              } @else {
+              <!-- Standard-Tabelleintrag -->
               {{ row[column] }}
+              }
             </td>
             } @if (colors() && colors()![row['Material']]) {
             <td

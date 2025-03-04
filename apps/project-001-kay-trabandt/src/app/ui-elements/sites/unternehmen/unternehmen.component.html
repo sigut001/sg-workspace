@@ -6,7 +6,8 @@
   >
     <div class="flex flex-col gap-6 text-center sm:text-left">
       <p class="text-4xl lg:text-6xl 2xl:text-7xl font-bold text-slate-200">
-        Professioneller 3D-Druck<br />für Prototypen und Kleinserien
+        Professioneller <br *ngIf="this.screenSizeService.isMobile()" />
+        3D-Druck<br />für Prototypen und Kleinserien
       </p>
       <div>
         <p class="text-base text-slate-300">

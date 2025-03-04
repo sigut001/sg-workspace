@@ -56,7 +56,9 @@ import {
       [backgroundUrl]="material.informations.media.heroImage.url"
       [subheadline]="material.informations.oneLineDescription"
       [headline]="material.informations.label"
+      class="overflow-hidden text-ellipsis"
     ></sg-lib-component-hero-image>
+
     <!-- Eigenschaften & Anwendung -->
     @for (section of material.informations.contentSections; track
     section.header) {
@@ -66,6 +68,7 @@ import {
       [imageURL]="section.imageURL || 'https://via.placeholder.com/800x600'"
       [title]="section.header"
       [paragraphs]="section.paragraphs"
+      class="overflow-hidden text-ellipsis"
     ></sg-lib-component-text-image-choose-direction-and-color>
     }
 
@@ -78,7 +81,9 @@ import {
       >
         <!-- Materialeigenschaften -->
         <div class="flex flex-col justify-center items-center gap-8 w-full">
-          <p class="text-4xl font-bold text-slate-200 text-center">
+          <p
+            class="text-4xl font-bold text-slate-200 text-center overflow-hidden text-ellipsis "
+          >
             Technische Eigenschaften
           </p>
           <sg-lib-component-table
@@ -90,7 +95,9 @@ import {
 
         <!-- Geeignete Verfahren für das Material -->
         <div class="flex flex-col justify-center items-center gap-8 w-full">
-          <p class="text-4xl font-bold text-slate-200 text-center">
+          <p
+            class="text-4xl font-bold text-slate-200 text-center overflow-hidden text-ellipsis"
+          >
             Geeignete Verfahren
           </p>
           <sg-lib-component-table
@@ -109,8 +116,10 @@ import {
 
     <!-- Call-to-action -->
     <section class="flex flex-col gap-16 py-40" #materialAnimation>
-      <p class="text-3xl font-bold text-slate-200 text-center">
-        Interesse an {{ material.informations.label }} als Durckmaterial?
+      <p
+        class="text-3xl font-bold text-slate-200 text-center overflow-hidden text-ellipsis"
+      >
+        Interesse an {{ material.informations.label }}, als Druckmaterial?
       </p>
       <app-printed-text
         [trigger]="trigger()"
@@ -124,29 +133,12 @@ import {
           ' an!'
         "
         [primaryActionLabel]="'Angebot anfordern'"
-        [primaryActionRoute]="'/materialanfrage'"
+        [primaryActionRoute]="'/druckanfrage'"
         [secondaryActionLabel]="'Beratung anfragen'"
         [secondaryActionUrl]="'tel:+492282920472'"
+        class="overflow-hidden text-ellipsis"
       ></app-printed-text>
     </section>
-
-    <!-- Vorteile & Nachteile -->
-    <sg-lib-component-pros-cons
-      [headline]="material.informations.label + ' Eigenschaften'"
-      [pros]="materialAdvantages()"
-      [cons]="materialDisadvantages()"
-      [theme]="'light'"
-    ></sg-lib-component-pros-cons>
-
-    <!-- Galerie -->
-    <sg-lib-component-image-slider
-      [imageUrls]="imageUrls()"
-      theme="dark"
-      [pagination]="true"
-      headline="Angefertigte Kundenprojekte in {{
-        material.informations.label
-      }}"
-    ></sg-lib-component-image-slider>
   </div>`,
 })
 export class MaterialViewComponent implements AfterViewInit, OnDestroy {
@@ -166,16 +158,30 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
       .map((segment) => segment.path)
       .pop();
 
+    console.log('🔍 Material Path from URL:', materialPathFromUrl);
+
     if (!materialPathFromUrl) throw new Error('No material path found in URL');
 
     this.store
       .select(selectMaterialByPath(materialPathFromUrl))
       .subscribe((material) => {
+        console.log('📦 Material from Store:', material);
+
         this.materialSignal.set(material);
+
         if (material) {
+          console.log(
+            '✅ Material is defined. Checking informations:',
+            material.informations
+          );
+
+          if (!material.informations) {
+            console.error('❌ Error: material.informations is undefined');
+          }
+
           // Holen der zugehörigen Prozessarten
-          const processes = material.informations.summary.suitableProcesses.map(
-            (proc) =>
+          const processes =
+            material.informations?.summary?.suitableProcesses?.map((proc) =>
               this.store
                 .select(selectProcessTypes)
                 .pipe(
@@ -183,13 +189,21 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
                     processTypes.find((p) => p.type.name === proc.name)
                   )
                 )
-          );
+            ) ?? [];
+
+          console.log('🔄 Suitable Processes:', processes);
 
           // Alle passenden Prozesse abrufen und speichern
-          combineLatest(processes).subscribe((processData) =>
+          combineLatest(processes).subscribe((processData) => {
+            console.log('📊 Process Data:', processData);
             this.processesSignal.set(
               processData.filter((p) => p !== null) as Process[]
-            )
+            );
+          });
+        } else {
+          console.error(
+            '❌ Material not found in store for path:',
+            materialPathFromUrl
           );
         }
       });
@@ -197,9 +211,11 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     if (this.sectionElementMaterial) {
+      console.log('🎥 Observing Material Animation Section');
       this.observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
+            console.log('📌 Material section is visible!');
             this.trigger.set(true);
           }
         },
@@ -211,22 +227,25 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.observer) {
+      console.log('🛑 Disconnecting observer');
       this.observer.disconnect();
     }
   }
 
   // Spalten für die Material-Tabelle
-  materialTechnicalDetailsColumns = computed(() =>
-    this.materialSignal()?.informations.technicalDetails
+  materialTechnicalDetailsColumns = computed(() => {
+    console.log('📋 Computing Technical Details Columns');
+    return this.materialSignal()?.informations?.technicalDetails
       ? Object.values(
           this.materialSignal()?.informations.technicalDetails ?? {}
         ).map((detail) => detail.key)
-      : []
-  );
+      : [];
+  });
 
   // Daten für die Material-Tabelle
-  materialTechnicalDetailsData = computed(() =>
-    this.materialSignal()?.informations.technicalDetails
+  materialTechnicalDetailsData = computed(() => {
+    console.log('📊 Computing Technical Details Data');
+    return this.materialSignal()?.informations?.technicalDetails
       ? [
           Object.values(
             this.materialSignal()?.informations.technicalDetails ?? {}
@@ -235,23 +254,27 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
             return acc;
           }, {} as Record<string, string>),
         ]
-      : []
-  );
+      : [];
+  });
 
-  materialAdvantages = computed(
-    () => this.materialSignal()?.informations.summary.advantages ?? []
-  );
+  materialAdvantages = computed(() => {
+    console.log('✅ Computing Material Advantages');
+    return this.materialSignal()?.informations?.summary?.advantages ?? [];
+  });
 
-  materialDisadvantages = computed(
-    () => this.materialSignal()?.informations.summary.disadvantages ?? []
-  );
+  materialDisadvantages = computed(() => {
+    console.log('❌ Computing Material Disadvantages');
+    return this.materialSignal()?.informations?.summary?.disadvantages ?? [];
+  });
 
-  imageUrls = computed(
-    () =>
-      this.materialSignal()?.informations.media.additionalImages?.map(
+  imageUrls = computed(() => {
+    console.log('🖼 Computing Image URLs');
+    return (
+      this.materialSignal()?.informations?.media?.additionalImages?.map(
         (img) => img.url
       ) || []
-  );
+    );
+  });
 
   // Liste der 5 wichtigsten technischen Details für Prozessarten
   importantProcessDetails = new Set<TechnicalDetailProcessLabel>([
@@ -262,19 +285,17 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
     TechnicalDetailProcessLabels.standardVorlaufzeiten,
   ]);
 
-  processTechnicalDetailsColumns = computed(() =>
-    this.processesSignal()?.length > 0
+  processTechnicalDetailsColumns = computed(() => {
+    console.log('📊 Computing Process Technical Details Columns');
+    return this.processesSignal()?.length > 0
       ? ['Prozessarten', ...Array.from(this.importantProcessDetails)]
-      : []
-  );
+      : [];
+  });
 
   processTechnicalDetailsData = computed(
     () =>
       this.processesSignal()?.map((process) => {
-        console.log(
-          'Technische Details:',
-          process.informations.technicalDetails
-        );
+        console.log('🔎 Technische Details für Prozess:', process);
 
         const row: Record<string, string> = {
           Prozessarten: process.type.name,
@@ -297,28 +318,15 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
       }) ?? []
   );
 
-  processLinks = computed(() =>
-    this.processesSignal()?.reduce((acc, process) => {
+  processLinks = computed(() => {
+    console.log('🔗 Computing Process Links');
+    return this.processesSignal()?.reduce((acc, process) => {
       if (process.informations.path) {
         acc[
           process.type.name
         ] = `/3d-druck-infos/fertigungsverfahren/${process.informations.path}`;
       }
       return acc;
-    }, {} as Record<string, string>)
-  );
-
-  // materialColors = computed(() => {
-  //   const material = this.materialSignal();
-
-  //   if (!material || !material.informations?.summary?.chooseableColors) {
-  //     return {};
-  //   }
-
-  //   return {
-  //     [material.type.name]: material.informations.summary.chooseableColors.map(
-  //       (color) => color.hex
-  //     ),
-  //   };
-  // });
+    }, {} as Record<string, string>);
+  });
 }

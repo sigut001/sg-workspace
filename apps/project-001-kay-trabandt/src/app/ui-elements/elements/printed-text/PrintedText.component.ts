@@ -97,10 +97,10 @@ export class PrintedTextComponent implements OnInit, OnChanges {
   callBackRequestService = inject(CallBackRequestService);
   icon = input.required<string>();
   text = input.required<string>();
-  primaryActionLabel = input.required<string>();
-  primaryActionRoute = input.required<string>();
-  secondaryActionLabel = input.required<string>();
-  secondaryActionUrl = input.required<string>();
+  primaryActionLabel = input<string>();
+  primaryActionRoute = input<string>();
+  secondaryActionLabel = input<string>();
+  secondaryActionUrl = input<string>();
   ids = input.required<string[]>();
   animationSpeed = input.required<number>();
   totalSteps = input.required<number>();

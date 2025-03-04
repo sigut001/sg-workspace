@@ -4,6 +4,7 @@ import {
   computed,
   ViewChild,
   ElementRef,
+  AfterViewInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CompanyInformations } from '@sg-shared-librarys/models';
@@ -79,7 +80,7 @@ import {
     </section>
   `,
 })
-export class AboutUs1Component {
+export class AboutUs1Component implements AfterViewInit {
   companyInformations = signal<CompanyInformations | undefined>(undefined);
   jobPositions = signal<JobPositions | undefined>(undefined);
   companyValuesInView = signal(false); // Signal für das Sichtbarkeits-Triggern
@@ -96,7 +97,7 @@ export class AboutUs1Component {
             observer.disconnect(); // Observer deaktivieren, nachdem das Element sichtbar wurde
           }
         },
-        { threshold: 0.5 } // Wird ausgelöst, wenn 30% des Elements sichtbar sind
+        { threshold: 0.2 } // Wird ausgelöst, wenn 30% des Elements sichtbar sind
       );
 
       observer.observe(this.companyValuesSection.nativeElement);

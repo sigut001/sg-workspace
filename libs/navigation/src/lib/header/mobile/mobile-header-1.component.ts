@@ -96,7 +96,7 @@ import { CompanyInformations } from '@sg-shared-librarys/models';
 
       <!-- Sidemenu -->
       <div
-        class="fixed inset-y-0 left-0 z-50 w-64 bg-primary-500 shadow-lg overflow-y-auto"
+        class="fixed inset-y-0 left-0 z-50 w-72 bg-primary-500 shadow-lg overflow-y-auto"
         [@menuAnimation]="$isMobileMenuOpen() ? 'open' : 'closed'"
       >
         <a

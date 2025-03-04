@@ -34,7 +34,7 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
 
         <div class="flex flex-col gap-8">
           @if (title) {
-          <span class="text-3xl font-bold w-fit overflow-hidden ">{{
+          <span class="text-3xl font-bold w-fit overflow-hidden text-center ">{{
             title
           }}</span>
           }
@@ -49,7 +49,7 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
             class="w-full"
             [buttonText]="buttonText"
             size="medium"
-            [rounded]="'small'"
+            [rounded]="'large'"
           ></sg-lib-component-call-to-action-button>
           }
         </div>
@@ -83,7 +83,7 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
             class="w-full md:w-fit"
             [buttonText]="buttonText"
             [size]="'small'"
-            [rounded]="'small'"
+            [rounded]="'large'"
           ></sg-lib-component-call-to-action-button>
           }
         </div>
@@ -107,7 +107,7 @@ import { CallToActionButtonComponent } from '../ui-elements/buttons/call-to-acti
             class="w-full md:w-fit"
             [buttonText]="buttonText"
             [size]="'small'"
-            [rounded]="'small'"
+            [rounded]="'large'"
           ></sg-lib-component-call-to-action-button>
           }
         </div>

@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
   imports: [CommonModule],
   template: `
     <div
-      class="relative bg-cover bg-center bg-fixed"
+      class="relative bg-cover bg-center bg-fixed overflow-hidden"
       [ngClass]="hight()"
       [style.background-image]="
         'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' +
@@ -16,7 +16,7 @@ import { Component, input } from '@angular/core';
       "
     >
       <div
-        class="absolute top-1/4 lg:top-1/3 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 text-center text-white px-8 overflow-hidden"
+        class="absolute text-center top-1/4 lg:top-1/3 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2  text-white px-8 overflow-hidden"
       >
         <p class="text-4xl font-bold text-slate-100 ">{{ headline() }}</p>
         <p class="text-lg mt-2 text-slate-200">{{ subheadline() }}</p>

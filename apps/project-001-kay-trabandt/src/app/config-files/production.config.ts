@@ -74,15 +74,15 @@ export const allChooseableColors = {
   terracotta: { label: 'Terracotta', hex: '#E2725B' },
 };
 export const materialTypes = {
-  PLA: { name: 'Polylactid (PLA)', path: 'pla' },
+  PLA: { name: 'PLA', path: 'pla' },
   AbsLikeResin: { name: 'ABS-ähnliches Resin', path: 'abs-like-resin' },
   TpuLikeResin: { name: 'TPU-ähnliches Resin', path: 'tpu-like-resin' },
-  ASA: { name: 'Acrylnitril-Styrol-Acrylat (ASA)', path: 'asa' },
-  TPU: { name: 'Thermoplastisches Polyurethan (TPU)', path: 'tpu' },
-  PETG: { name: 'Polyethylenterephthalat-Glykol (PETG)', path: 'petg' },
-  ABS: { name: 'Acrylnitril-Butadien-Styrol (ABS)', path: 'abs' },
-  ABS_CF_GF: { name: 'ABS mit Kohlenstoff- und Glasfasern', path: 'absCfGf' },
-  PA6_CF_GF: {
+  ASA: { name: 'ASA', path: 'asa' },
+  TPU: { name: 'TPU', path: 'tpu' },
+  PETG: { name: 'PETG', path: 'petg' },
+  ABS: { name: 'ABS', path: 'abs' },
+  ABSCFGF: { name: 'ABS mit Kohlenstoff- und Glasfasern', path: 'absCfGf' },
+  PA6CFGF: {
     name: 'Polyamid 6 mit Kohlenstoff- und Glasfasern',
     path: 'pa6CfGf',
   },
@@ -110,11 +110,6 @@ export const processTypes = {
   FDM_small_scale: { name: 'FDM_small_scale', path: 'fdm-small' },
   FDM_big_scale: { name: 'FDM_big_scale', path: 'fdm-big-scale' },
   SLA: { name: 'SLA', path: 'sla' },
-  SLS: { name: 'SLS', path: 'sls' },
-  DLP: { name: 'DLP', path: 'dlp' },
-  MJF: { name: 'MJF', path: 'mjf' },
-  EBM: { name: 'EBM', path: 'ebm' },
-  SLM: { name: 'SLM', path: 'slm' },
 } as const;
 export type ProcessType = (typeof processTypes)[keyof typeof processTypes];
 
@@ -133,7 +128,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.PLA,
     informations: {
-      label: 'PLA (Polylactid)',
+      label: materialTypes.PLA.name,
       oneLineDescription:
         'Einfach zu drucken, biologisch abbaubar und vielseitig einsetzbar.',
       path: materialTypes.PLA.path,
@@ -221,7 +216,7 @@ export const materials: Material[] = [
             'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpla_sustainability.jpg?alt=media',
         },
         {
-          header: 'Vielseitige Anwendungsmöglichkeiten',
+          header: 'Vielseitig einsetzbar',
           paragraphs: [
             'PLA wird in zahlreichen Bereichen eingesetzt – von der Spielzeugherstellung über Architekturmodelle bis hin zu personalisierten Haushaltsgegenständen.',
             'Dank der hohen Verfügbarkeit in verschiedenen Farben und Spezialvarianten (z. B. Holz- oder Metalloptik) lassen sich kreative Projekte mit einzigartigen Designs realisieren.',
@@ -257,7 +252,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.ABS,
     informations: {
-      label: 'ABS (Acrylnitril-Butadien-Styrol)',
+      label: materialTypes.ABS.name,
       oneLineDescription:
         'Robust, temperaturbeständig und für technische Anwendungen geeignet.',
       path: materialTypes.ABS.path,
@@ -372,12 +367,13 @@ export const materials: Material[] = [
     },
   },
   {
-    type: materialTypes.ABS_CF_GF,
+    type: materialTypes.ABSCFGF,
     informations: {
-      label: 'ABS mit Carbon- oder Glasfaser',
+      label: materialTypes.ABSCFGF.name,
+
       oneLineDescription:
         'Verstärktes ABS für höhere Festigkeit, Steifigkeit und Temperaturbeständigkeit.',
-      path: materialTypes.ABS_CF_GF.path,
+      path: materialTypes.ABSCFGF.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -499,12 +495,12 @@ export const materials: Material[] = [
     },
   },
   {
-    type: materialTypes.PA6_CF_GF,
+    type: materialTypes.PA6CFGF,
     informations: {
-      label: 'PA6 mit Carbon- oder Glasfaser',
+      label: materialTypes.PA6CFGF.name,
       oneLineDescription:
         'Hochfeste und temperaturbeständige Nylon-Variante mit Carbon- oder Glasfasern.',
-      path: materialTypes.PA6_CF_GF.path,
+      path: materialTypes.PA6CFGF.path,
       media: {
         heroImage: {
           url: 'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
@@ -536,7 +532,6 @@ export const materials: Material[] = [
         suitableProcesses: [
           processTypes.FDM_big_scale,
           processTypes.FDM_small_scale,
-          processTypes.SLS,
         ],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
@@ -594,7 +589,7 @@ export const materials: Material[] = [
             'https://firebasestorage.googleapis.com/v0/b/trabbis3dprintservice.firebasestorage.app/o/website-media%2Fpexels-jakubzerdzicki-19376296.jpg?alt=media&token=bb240385-bc1b-4aee-be50-418a7a50d6b0',
         },
         {
-          header: 'Vergleich mit anderen Hochleistungsmaterialien',
+          header: 'Vergleich mit anderen Materialien',
           paragraphs: [
             'PA6 CF / GF bietet eine höhere Festigkeit als Standard-PA6, bleibt jedoch flexibler als reine Carbon-Verbundmaterialien.',
             'Im Vergleich zu ABS ist es deutlich hitzebeständiger und mechanisch belastbarer.',
@@ -630,7 +625,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.PETG,
     informations: {
-      label: 'PETG (Polyethylenterephthalat-Glykol)',
+      label: materialTypes.PETG.name,
       oneLineDescription:
         'Robust, flexibel und widerstandsfähig gegen Feuchtigkeit und Chemikalien.',
       path: materialTypes.PETG.path,
@@ -758,7 +753,8 @@ export const materials: Material[] = [
   {
     type: materialTypes.TPU,
     informations: {
-      label: 'TPU (Thermoplastisches Polyurethan)',
+      label: materialTypes.TPU.name,
+
       oneLineDescription:
         'Flexibles, stoßfestes und langlebiges Material mit hoher Elastizität.',
       path: materialTypes.TPU.path,
@@ -886,7 +882,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.ASA,
     informations: {
-      label: 'ASA (Acrylnitril-Styrol-Acrylat)',
+      label: materialTypes.ASA.name,
       oneLineDescription:
         'Witterungsbeständiges und UV-resistentes Material für den Außeneinsatz.',
       path: materialTypes.ASA.path,
@@ -1013,7 +1009,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.Resin,
     informations: {
-      label: 'Standard Resin',
+      label: materialTypes.Resin.name,
       oneLineDescription:
         'Detaillierte Druckergebnisse mit glatter Oberfläche für hochpräzise Modelle.',
       path: materialTypes.Resin.path,
@@ -1047,7 +1043,7 @@ export const materials: Material[] = [
           'Benötigt UV-Nachhärtung',
           'Nicht so temperatur- und stoßfest wie technische Resine',
         ],
-        suitableProcesses: [processTypes.SLA, processTypes.DLP],
+        suitableProcesses: [processTypes.SLA],
         chooseableColors: Object.values(allChooseableColors),
         useCases: ['Miniaturen', 'Modellbau', 'Detaillierte Prototypen'],
         recommendedFor: 'Design- und Modellbauprojekte mit hoher Präzision',
@@ -1134,7 +1130,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.AbsLikeResin,
     informations: {
-      label: 'ABS Like Resin',
+      label: materialTypes.AbsLikeResin.name,
       oneLineDescription:
         'Hohe Zähigkeit und verbesserte Schlagfestigkeit für funktionale Prototypen.',
       path: materialTypes.AbsLikeResin.path,
@@ -1167,7 +1163,7 @@ export const materials: Material[] = [
           'Benötigt Nachhärtung für optimale Festigkeit',
           'Nicht so flexibel wie TPU oder andere Elastomere',
         ],
-        suitableProcesses: [processTypes.SLA, processTypes.DLP],
+        suitableProcesses: [processTypes.SLA],
         chooseableColors: Object.values(allChooseableColors),
         useCases: ['Funktionsprototypen', 'Mechanische Bauteile', 'Modellbau'],
         recommendedFor: 'Anwendungen mit höheren mechanischen Anforderungen',
@@ -1255,7 +1251,7 @@ export const materials: Material[] = [
   {
     type: materialTypes.TpuLikeResin,
     informations: {
-      label: 'TPU Like Resin',
+      label: materialTypes.TpuLikeResin.name,
       oneLineDescription:
         'Elastisches Resin für flexible und strapazierfähige Drucke.',
       path: materialTypes.TpuLikeResin.path,
@@ -1287,7 +1283,7 @@ export const materials: Material[] = [
           'Benötigt spezielle Nachhärtung für optimale Elastizität',
           'Kann nicht so stark gedehnt werden wie FDM-TPU',
         ],
-        suitableProcesses: [processTypes.SLA, processTypes.DLP],
+        suitableProcesses: [processTypes.SLA],
         chooseableColors: Object.values(allChooseableColors),
         useCases: [
           'Stoßdämpfende Bauteile',
@@ -1558,9 +1554,9 @@ export const processes: Process[] = [
         suitableMaterials: [
           materialTypes.ABS,
           materialTypes.PLA,
-          materialTypes.PA6_CF_GF,
+          materialTypes.PA6CFGF,
           materialTypes.PETG,
-          materialTypes.ABS_CF_GF,
+          materialTypes.ABSCFGF,
           materialTypes.TPU,
           materialTypes.ASA,
         ],
