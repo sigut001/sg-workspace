@@ -16,7 +16,6 @@ import {
   HeroImageComponent,
   HeroContainerComponent,
   ProsConsComponent,
-  ImageSliderComponent,
   TextImageChooseDirectionAndColorComponent,
   CallToActionButtonComponent,
 } from '@sg-shared-librarys/ui-components';
@@ -44,7 +43,6 @@ import {
     HeroContainerComponent,
     ProsConsComponent,
     PrintedTextComponent,
-    ImageSliderComponent,
     TextImageChooseDirectionAndColorComponent,
     CallToActionButtonComponent,
   ],
@@ -113,6 +111,13 @@ import {
         </div>
       </div>
     </sg-lib-component-hero-container>
+    <!-- Vorteile & Nachteile -->
+    <sg-lib-component-pros-cons
+      [headline]="prosConsData().headline"
+      [pros]="prosConsData().pros"
+      [cons]="prosConsData().cons"
+      [theme]="'light'"
+    ></sg-lib-component-pros-cons>
 
     <!-- Call-to-action -->
     <section class="flex flex-col gap-16 py-40" #materialAnimation>
@@ -328,5 +333,16 @@ export class MaterialViewComponent implements AfterViewInit, OnDestroy {
       }
       return acc;
     }, {} as Record<string, string>);
+  });
+
+  prosConsData = computed(() => {
+    const material = this.materialSignal();
+    if (!material) return { pros: [], cons: [], headline: '' };
+
+    return {
+      pros: material.informations.summary.advantages ?? [],
+      cons: material.informations.summary.disadvantages ?? [],
+      headline: material.informations.label,
+    };
   });
 }

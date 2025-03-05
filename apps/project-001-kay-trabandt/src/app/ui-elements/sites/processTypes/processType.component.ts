@@ -5,6 +5,8 @@ import {
   inject,
   ViewChild,
   ElementRef,
+  AfterViewInit,
+  OnDestroy,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -165,7 +167,7 @@ import {
     ></sg-lib-component-image-slider>
   </div>`,
 })
-export class ProcessTypeComponent {
+export class ProcessTypeComponent implements AfterViewInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   processTypeSignal = signal<Process | undefined>(undefined);
@@ -281,7 +283,7 @@ export class ProcessTypeComponent {
           material.informations.technicalDetails
         );
 
-        const row: Record<string, any> = {
+        const row: Record<string, string> = {
           Material: material.type.name, // Erste Spalte mit dem Materialnamen
         };
 
