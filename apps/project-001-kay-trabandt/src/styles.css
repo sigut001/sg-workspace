@@ -1,4 +1,10 @@
 /* league-spartan-regular - latin */
+/* 
+   Alle Schriftarten in diesem Stylesheet sind unter der SIL Open Font License (OFL) lizenziert.
+   Sie sind kostenlos nutzbar, auch für kommerzielle Zwecke. Weitere Informationen zur Lizenz:
+   https://openfontlicense.org/
+*/
+
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'League Spartan';
@@ -7,6 +13,7 @@
   src: url('/assets/fonts/league-spartan-v11-latin-regular.woff2')
     format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* onest-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -15,6 +22,7 @@
   font-weight: 400;
   src: url('/assets/fonts/onest-v6-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* onest-600 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
