@@ -22,7 +22,7 @@ import { selectMaterials } from '../../../state/state-threeDPrinting/threeDPrint
       <div class="w-11/12 lg:w-8/12 2xl:w-1/2">
         <iframe
           class="w-full aspect-video block max-w-[100%]"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
           frameborder="0"
           allowfullscreen
         ></iframe>

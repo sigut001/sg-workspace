@@ -22,16 +22,6 @@
         "destination": "/index.html"
       }
     ],
-    "headers": [
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "Firebase-Analytics-Collection-Enabled",
-            "value": "false"
-          }
-        ]
-      }
-    ]
+    "headers": []
   }
 }

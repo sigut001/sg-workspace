@@ -7,18 +7,19 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "apps/project-001-kay-trabandt/dist",
         "index": "apps/project-001-kay-trabandt/src/index.html",
-        "browser": "apps/project-001-kay-trabandt/src/main.ts",
+        "main": "apps/project-001-kay-trabandt/src/main.ts",
+
         "polyfills": ["zone.js"],
         "tsConfig": "apps/project-001-kay-trabandt/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/project-001-kay-trabandt/public"
+            "input": "apps/project-001-kay-trabandt/src/assets"
           }
         ],
         "styles": [
@@ -26,7 +27,10 @@
           "apps/project-001-kay-trabandt/src/styles.css",
           "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
         ],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["./node_modules"]
+        }
       },
       "configurations": {
         "production": {

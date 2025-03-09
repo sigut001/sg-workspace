@@ -2,8 +2,15 @@
   "name": "@sg-shared-librarys/formulars",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@angular/common": "~19.1.0",
+    "@angular/core": "~19.1.0",
+    "@angular/material": "^19.2.1",
+    "@angular/forms": "~19.1.0",
+    "@nx/angular": "20.4.6"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "dependencies": {},
+  "devDependencies": {
+    "angular-eslint": "^19.0.2"
+  }
 }

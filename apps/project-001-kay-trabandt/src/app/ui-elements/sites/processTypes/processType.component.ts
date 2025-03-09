@@ -130,7 +130,7 @@ import {
         [animationSpeed]="175"
         [totalSteps]="30"
         [ids]="['angebotAnfordernButton', 'beratungAnfragenButton']"
-        [icon]="'deployed_code'"
+        [icon]="'deployed_icon'"
         [text]="
           'Fordern Sie ein unverbindliches Angebot an! Und wir drucken Ihnen im ' +
           processType.informations.label +

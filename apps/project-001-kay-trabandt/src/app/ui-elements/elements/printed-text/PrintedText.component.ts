@@ -41,12 +41,14 @@ import { CallBackRequestService } from '@sg-shared-librarys/services';
           <div
             class="flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-10"
           >
-            <span
-              id="logoIconInActionBox"
-              class="material-symbols-outlined text-6xl lg:text-9xl leading-none text-white"
-            >
-              {{ icon() }}
-            </span>
+            <img
+              [src]="'icons/' + icon() + '.svg'"
+              alt="Deployed Code Icon"
+              width="50"
+              height="50"
+              id="logoIcon"
+            />
+
             <div class="flex flex-col gap-4 lg:gap-8">
               <p class="text-sm lg:text-lg text-white text-center lg:text-left">
                 {{ text() }}

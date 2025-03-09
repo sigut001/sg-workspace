@@ -23,7 +23,7 @@ import {
   WarningDialogService,
 } from '@sg-shared-librarys/services';
 import { PrintedTextComponent } from '../../elements/printed-text/PrintedText.component';
-import { mediaURLs } from '../../../media/mediaURL';
+import { mediaURLs } from '../../../../assets/media/mediaURL';
 @Component({
   selector: 'app-unternehmen',
   standalone: true,

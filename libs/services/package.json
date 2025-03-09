@@ -2,12 +2,19 @@
   "name": "@sg-shared-librarys/services",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@angular/common": "~19.1.0",
+    "@angular/core": "~19.1.0",
+    "@angular/fire": "^19.0.0",
+    "rxjs": "~7.8.0",
+    "@sg-shared-librarys/models": "^0.0.1",
+    "@angular/forms": "~19.1.0",
+    "@angular/material": "^19.2.1",
+    "@angular/animations": "~19.1.0",
+    "@angular/cdk": "^19.2.1"
   },
   "sideEffects": false,
-  "dependencies": {
-    "@angular/fire": "^19.0.0",
-    "firebase": "^11.4.0"
+  "dependencies": {},
+  "devDependencies": {
+    "angular-eslint": "^19.0.2"
   }
 }

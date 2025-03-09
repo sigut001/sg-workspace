@@ -131,7 +131,7 @@ import {
         [animationSpeed]="175"
         [totalSteps]="30"
         [ids]="['angebotAnfordernButton', 'beratungAnfragenButton']"
-        [icon]="'inventory'"
+        [icon]="'deployed_icon'"
         [text]="
           'Fragen Sie jetzt Ihr individuelles Bauteil aus ' +
           material.informations.label +

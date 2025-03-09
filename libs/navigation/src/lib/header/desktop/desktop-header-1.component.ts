@@ -92,12 +92,14 @@ import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
           [scale]="105"
           [speed]="0.6"
         >
-          <span
+          <img
+            src="icons/deployed_code.svg"
+            alt="Deployed Code Icon"
+            width="30"
+            height="30"
             id="logoIcon"
-            class="material-symbols-outlined text-4xl leading-none"
-          >
-            deployed_code
-          </span>
+          />
+
           <span
             id="textContent"
             class="leading-none text-center relative text-base"

@@ -39,19 +39,7 @@ import { CallBackRequestService } from '@sg-shared-librarys/services';
       ></sg-lib-component-call-to-action>
       <div class="flex p-12 px-24">
         <!-- Box 1: Logo -->
-        <div class="w-1/6 ">
-          <!-- Haupt-Logo -->
-          <div class="flex flex-col items-center justify-center gap-8 mt-4">
-            <!-- Partner-Logos -->
-            <span class="material-symbols-outlined text-4xl">emoji_events</span>
-            <span class="material-symbols-outlined text-4xl"
-              >workspace_premium</span
-            >
-            <span class="material-symbols-outlined text-4xl"
-              >corporate_fare</span
-            >
-          </div>
-        </div>
+        <div class="w-1/6 "></div>
         <div class="flex justify-evenly items-start gap-2  w-full">
           <!-- Box 3: Lösungen -->
           <div>

@@ -23,17 +23,7 @@ import { selectNavItems } from '../../header/state/header-state.selectors';
       <div class="container mx-auto flex flex-col space-y-6">
         <!-- Box 1: Logo und Dropdown für Sprachen -->
         <div class="text-center">
-          <span class="material-symbols-outlined text-5xl mb-2">business</span>
-
-          <div class="flex justify-center gap-4 mt-2">
-            <span class="material-symbols-outlined text-3xl">emoji_events</span>
-            <span class="material-symbols-outlined text-3xl"
-              >workspace_premium</span
-            >
-            <span class="material-symbols-outlined text-3xl"
-              >corporate_fare</span
-            >
-          </div>
+          <div class="flex justify-center gap-4 mt-2"></div>
 
           <!-- <div class="mt-4">
             <button mat-button [matMenuTriggerFor]="langMenu">Sprache</button>

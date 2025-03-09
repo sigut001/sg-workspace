@@ -2,14 +2,20 @@
   "name": "@sg-shared-librarys/navigation",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@nx/angular": "20.4.6",
+    "@angular/common": "~19.1.0",
+    "@angular/core": "~19.1.0",
+    "@angular/animations": "~19.1.0",
+    "@angular/material": "^19.2.1",
+    "@angular/router": "~19.1.0",
+    "@ngrx/store": "^19.0.1",
+    "@ngrx/router-store": "^19.0.1",
+    "rxjs": "~7.8.0",
+    "@sg-shared-librarys/ui-components": "^0.0.1",
+    "@sg-shared-librarys/services": "^0.0.1",
+    "@sg-shared-librarys/directives": "^0.0.1",
+    "@sg-shared-librarys/models": "^0.0.1"
   },
   "sideEffects": false,
-  "dependencies": {
-    "@angular/animations": "^19.2.0",
-    "@angular/cdk": "^19.2.1",
-    "@angular/material": "^19.2.1",
-    "@ngrx/router-store": "^19.0.1"
-  }
+  "dependencies": {}
 }

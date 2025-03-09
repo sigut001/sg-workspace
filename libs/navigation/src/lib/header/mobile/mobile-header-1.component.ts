@@ -19,7 +19,10 @@ import {
   selectLogoPath,
   selectNavItems,
 } from '../state/header-state.selectors';
-import { ScrollPaddingTransitionDirective } from '@sg-shared-librarys/directives';
+import {
+  ScrollHeightCollapseDirective,
+  ScrollPaddingTransitionDirective,
+} from '@sg-shared-librarys/directives';
 import { ScrollRotateDirective } from '@sg-shared-librarys/directives';
 import { HeaderState } from '../state/header-state.reducer';
 import { selectCompanyInformations } from '@sg-shared-librarys/ui-components';
@@ -36,8 +39,29 @@ import { CompanyInformations } from '@sg-shared-librarys/models';
     RouterModule,
     ScrollPaddingTransitionDirective,
     ScrollRotateDirective,
+    ScrollHeightCollapseDirective,
   ],
   template: `
+    <!-- Leiste über dem Header -->
+    <aside
+      class="w-full bg-action-300 flex items-center justify-center gap-2 border-b-2 border-textDark box-border text-slate-300 overflow-hidden "
+      appScrollHeightCollapse
+      [transitionDuration]="0.4"
+    >
+      <span
+        appScrollHeightCollapse
+        [transitionDuration]="0.4"
+        class="text-center  p-2"
+      >
+        Rufen Sie uns gerne unkompliziert an, wir beraten Sie gerne!
+        <a
+          class=" text-slate-200 underline [text-shadow:1px_1px_2px_rgba(0,0,0,0.8)]"
+          href="tel:{{ this.$companyInforamtions()?.phone }}"
+        >
+          {{ this.$companyInforamtions()?.phone }}
+        </a>
+      </span>
+    </aside>
     <header
       class="flex flex-col w-full bg-primary-500 text-white py-4"
       appScrollPaddingTransition
@@ -58,12 +82,13 @@ import { CompanyInformations } from '@sg-shared-librarys/models';
           tabindex="0"
           appScrollRotate="logoIcon"
         >
-          <span
+          <img
+            src="icons/deployed_code.svg"
+            alt="Deployed Code Icon"
+            width="30"
+            height="30"
             id="logoIcon"
-            class="material-symbols-outlined text-4xl leading-none"
-          >
-            deployed_code
-          </span>
+          />
           <span
             id="textContent"
             class="leading-none text-center relative text-sm"
@@ -79,7 +104,13 @@ import { CompanyInformations } from '@sg-shared-librarys/models';
           (keydown.enter)="toggleMenu()"
           aria-label="Open menu"
         >
-          <mat-icon>menu</mat-icon>
+          <img
+            src="icons/menu.svg"
+            alt="Deployed Code Icon"
+            width="30"
+            height="30"
+            id="logoIcon"
+          />
         </button>
       </div>
 
@@ -107,12 +138,13 @@ import { CompanyInformations } from '@sg-shared-librarys/models';
           tabindex="0"
           appScrollRotate="logoIcon"
         >
-          <span
+          <img
+            src="icons/deployed_code.svg"
+            alt="Deployed Code Icon"
+            width="30"
+            height="30"
             id="logoIcon"
-            class="material-symbols-outlined text-4xl leading-none"
-          >
-            deployed_code
-          </span>
+          />
         </a>
         <ul class="p-4">
           <!-- Menüeinträge mit möglichen Dropdowns -->
@@ -141,11 +173,15 @@ import { CompanyInformations } from '@sg-shared-librarys/models';
               <span class="text-xl cursor-pointer">
                 {{ item.label }}
               </span>
-              <mat-icon
+
+              <img
                 [@rotateIcon]="isDropdownOpen(item) ? 'active' : 'inactive'"
-              >
-                arrow_drop_down
-              </mat-icon>
+                src="icons/arrow_drop_down.svg"
+                alt="Deployed Code Icon"
+                width="30"
+                height="30"
+                id="logoIcon"
+              />
               }
             </div>
 

@@ -8,6 +8,7 @@ import { provideStore } from '@ngrx/store';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
 
 import {
   provideHeaderState,
@@ -58,6 +59,8 @@ export const appConfig: ApplicationConfig = {
 
     // Firebase Storage Provider einbinden
     provideStorage(() => getStorage()),
+
+    provideAnalytics(() => getAnalytics()),
   ],
 };
 
